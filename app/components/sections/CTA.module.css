@@ -1,0 +1,55 @@
+.ctaSection {
+    background: var(--dark-bg);
+    color: var(--foreground);
+    padding: 120px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: var(--foreground);
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.button:hover {
+    background: #e0e0e0;
+}
+
+.right {
+    text-align: right;
+}
+
+.contactText {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #888;
+    font-family: monospace;
+    /* Consistency with other technical details */
+}
+
+.right p:nth-child(2) {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-family: var(--font-h1);
+    /* Standard font, not monospace for phone */
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .right {
+        text-align: center;
+    }
+}

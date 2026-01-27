@@ -1,0 +1,36 @@
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    /* Sharp corners for industrial look */
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.primary {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.outline {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.outline:hover {
+    background: white;
+    color: var(--foreground);
+}

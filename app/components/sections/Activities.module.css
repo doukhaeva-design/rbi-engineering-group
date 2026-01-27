@@ -1,0 +1,80 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Fluid, magazine layout */
+    gap: 1px;
+    /* Minimal gap for stylish borders */
+    background: var(--border-color);
+    /* Lines between cards */
+    padding: 1px;
+    /* Exterior border */
+}
+
+.card {
+    background: var(--secondary-color);
+    padding: 60px 40px;
+    /* More breathing room */
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Push arrow to bottom */
+    transition: background 0.4s ease;
+    border: none;
+    position: relative;
+    border-radius: 0;
+}
+
+.card:hover {
+    background: #252525;
+    /* Slightly lighter interaction */
+    transform: none;
+    box-shadow: none;
+}
+
+.cardTitle {
+    font-size: 20px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.cardDesc {
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.card::after {
+    content: "→";
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+    color: var(--border-color);
+    transition: color 0.3s;
+}
+
+.card:hover::after {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 16px;
+    }
+
+    .card {
+        height: auto;
+        min-height: 240px;
+        padding: 32px;
+    }
+
+    .card::after {
+        bottom: 24px;
+        right: 24px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,110 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* Asymmetric grid for style */
+    gap: 32px;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    /* Taller for detail */
+    border-radius: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.imagePlaceholder {
+    flex: 2;
+    /* Image takes more space */
+    background-color: #1a1a1a;
+    /* Stylish Noise Texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    position: relative;
+}
+
+.imagePlaceholder::after {
+    content: "NO IMAGE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.2);
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.content {
+    background: var(--secondary-color);
+    padding: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+}
+
+.type {
+    font-size: 12px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.specItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.specLabel {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.specValue {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: monospace;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        /* Reset to single column on mobile */
+        gap: 32px;
+    }
+
+    .card {
+        height: auto;
+        /* Allow content to dictate height */
+        min-height: 380px;
+    }
+}

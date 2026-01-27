@@ -1,27 +1,53 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --max-width: 1280px;
+  --padding-x: 32px;
+  --vertical-gap: 100px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-h1: 72px;
+  --font-h2: 32px;
+  --font-h3: 20px;
+  --font-text: 16px;
+  --font-small: 14px;
+
+  --spacing-tight: -0.02em;
+  --spacing-wide: 0.05em;
+  --font-small: 14px;
+
+  @media (max-width: 768px) {
+    --padding-x: 24px;
+    --vertical-gap: 60px;
+    --font-h1: 36px;
+    --font-h2: 28px;
+    --font-h3: 20px;
+    --font-text: 16px;
   }
+
+  /* Premium Construction Palette ("Luxury Graphite") */
+  --background: #121212;
+  /* True black/dark graphite */
+  --foreground: #F5F5F7;
+  /* Apple-style off-white */
+
+  --primary-color: #C68E68;
+  /* Earthy Copper/Bronze - Premium & Construction feel */
+  --primary-dark: #A57251;
+
+  /* Panels are slightly lighter but not "space grey" */
+  --secondary-color: #1A1A1A;
+  --accent-grey: #8E8E93;
+  --border-color: #333333;
+  --dark-bg: #000000;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-text);
+  line-height: 1.5;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -30,13 +56,61 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-size: var(--font-h1);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.2;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: 1.3;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+p {
+  font-size: var(--font-text);
+  margin-bottom: 16px;
+}
+
+small {
+  font-size: var(--font-small);
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-x);
+  width: 100%;
+}
+
+/* Ensure container doesn't overflow */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--padding-x);
   }
+}
+
+.section {
+  padding: var(--vertical-gap) 0;
 }
