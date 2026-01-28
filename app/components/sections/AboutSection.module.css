@@ -1,0 +1,160 @@
+.section {
+    background-color: var(--background);
+    padding: 80px 0;
+    /* Reduced from 120px */
+    position: relative;
+    overflow: hidden;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Reduced gap */
+}
+
+/* Profiles / Manifesto */
+.profile {
+    max-width: 800px;
+    position: relative;
+    padding-left: 32px;
+}
+
+.profile::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: var(--primary-color);
+}
+
+.tagline {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 20px;
+    /* Reduced from 32px for professionalism */
+    line-height: 1.6;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.description p {
+    margin-bottom: 20px;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.subDescription {
+    color: #a0a5b0;
+    font-size: 18px;
+}
+
+.accent {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Stats: Technical Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* All in one row for compactness */
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statCard {
+    background-color: var(--background);
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    transition: all 0.4s ease;
+}
+
+.dominant {
+    grid-column: span 1;
+    /* Removed span 2 for more compact look */
+}
+
+.valueWrapper {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.number {
+    font-size: 42px;
+    /* Reduced from 72px */
+    font-weight: 300;
+    line-height: 1;
+    background: linear-gradient(135deg, #F2D5B5 0%, #DFA076 50%, #C67D53 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.suffix {
+    font-size: 20px;
+    font-weight: 200;
+    color: #DFA076;
+    margin-left: 4px;
+}
+
+.label {
+    font-size: 10px;
+    /* Smaller labels */
+    line-height: 1.4;
+    color: #888e96;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .statsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statCard {
+        min-height: auto;
+    }
+
+    .number {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+}

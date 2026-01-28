@@ -13,7 +13,7 @@ export default function WhereUsed() {
     ];
 
     return (
-        <section className={`section`}>
+        <section className={`section-alt`}>
             <div className={`container`}>
                 <h2 className={styles.title}>Сферы применения</h2>
                 <div className={styles.grid}>

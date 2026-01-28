@@ -18,15 +18,15 @@
 }
 
 .primary {
-    background: linear-gradient(135deg, #F2D5B5 0%, #DFA076 50%, #C67D53 100%);
-    /* More vibrant copper */
-    color: #0f1115;
+    /* Modern, clean gradient (Subtle depth) */
+    background: linear-gradient(110deg, #E68442 0%, #D67635 100%);
+    /* Warm copper orange */
+    color: #ffffff;
     border: none;
-    box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3);
-    /* Top rim light */
-    font-weight: 800;
+    box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
+    /* Soft outer glow only */
+    font-weight: 700;
+    /* Slightly lighter weight for modern look */
 }
 
 .primary::before {
@@ -46,7 +46,7 @@
 .primary:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 8px 25px rgba(198, 142, 104, 0.3),
+        0 8px 25px rgba(230, 132, 66, 0.4),
         inset 0 1px 1px rgba(255, 255, 255, 0.4);
     filter: brightness(1.05);
 }
@@ -62,10 +62,14 @@
 .outline {
     background: transparent;
     color: var(--primary-color);
-    border-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    /* Subtle border */
+    box-shadow: none;
 }
 
 .outline:hover {
     background: var(--primary-color);
-    color: #0f1115;
+    color: #ffffff;
+    /* White text on hover */
+    box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
 }

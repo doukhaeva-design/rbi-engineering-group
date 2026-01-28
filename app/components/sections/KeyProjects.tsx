@@ -30,7 +30,7 @@ export default function KeyProjects() {
     ];
 
     return (
-        <section className={`section`} id="projects">
+        <section className={`section-alt`} id="projects">
             <div className={`container`}>
                 <h2 style={{ marginBottom: '10px' }}>Проекты</h2>
                 <p style={{ marginBottom: '40px', fontSize: '18px', color: '#ccc' }}>Примеры выполненных работ по модульным решениям и монтажным проектам.</p>

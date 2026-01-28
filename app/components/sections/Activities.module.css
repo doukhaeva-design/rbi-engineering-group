@@ -2,29 +2,97 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
+    position: relative;
+    padding: 40px 0;
+}
+
+/* Unified Engineering Grid with Faded Edges */
+.gridContainer {
+    position: relative;
+    width: 100%;
+}
+
+.gridContainer::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -100vw;
+    right: -100vw;
+    bottom: -50px;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+    /* Smoothly fade out the grid at the edges */
+    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .card {
-    background: var(--secondary-color);
-    /* Lighter than background */
-    padding: 40px 30px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    /* Softer corners */
-    transition: all 0.3s ease;
+    background: rgba(22, 25, 31, 0.6);
+    padding: 50px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-    transition: background 0.4s ease;
-    border: none;
-    position: relative;
-    border-radius: 0;
 }
 
 .card:hover {
-    background: #252525;
-    /* Slightly lighter interaction */
-    transform: none;
-    box-shadow: none;
+    background: rgba(37, 37, 37, 0.8);
+    border-color: rgba(230, 132, 66, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Hover Accent Line */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.4s ease;
+}
+
+.card:hover::before {
+    width: 100%;
+}
+
+.cardNumber {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 12px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.2em;
+    transition: color 0.4s ease;
+}
+
+.card:hover .cardNumber {
+    color: var(--primary-color);
+}
+
+.iconContainer {
+    width: 48px;
+    height: 48px;
+    color: #9ca3af;
+    /* Lighter Platinum Steel */
+    margin-bottom: 24px;
+    transition: all 0.4s ease;
+    opacity: 0.8;
+}
+
+.card:hover .iconContainer {
+    transform: scale(1.1) translateY(-5px);
+    color: var(--primary-color);
+    opacity: 1;
 }
 
 .cardTitle {
@@ -38,13 +106,10 @@
 
 .cardDesc {
     font-size: 16px;
-    /* Bup to 16px */
     color: #a0a5b0;
     line-height: 1.7;
     font-weight: 400;
 }
-
-/* Arrow removed for non-clickable cards */
 
 @media (max-width: 768px) {
     .grid {
@@ -54,14 +119,6 @@
     }
 
     .card {
-        height: auto;
-        min-height: 240px;
         padding: 32px;
-    }
-
-    .card::after {
-        bottom: 24px;
-        right: 24px;
-        font-size: 20px;
     }
 }

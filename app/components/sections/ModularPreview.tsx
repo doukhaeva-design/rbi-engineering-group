@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 export default function ModularPreview() {
     return (
-        <section className={`section-alt ${styles.section}`} id="modular">
+        <section className={`section ${styles.section}`} id="modular">
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
                     <h2 className={styles.title}>Модульные сооружения</h2>
