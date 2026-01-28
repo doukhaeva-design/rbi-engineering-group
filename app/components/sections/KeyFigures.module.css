@@ -64,24 +64,33 @@
 }
 
 @media (max-width: 768px) {
+    .figuresSection {
+        padding: 40px 0;
+    }
+
     .grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 10px;
     }
 
     .item {
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 32px 0;
+        border-bottom: none;
+        padding: 0;
         width: 100%;
     }
 
-    .item:last-child {
-        border-bottom: none;
+    .number {
+        font-size: 40px;
     }
 
-    .number {
-        font-size: 56px;
+    .suffix {
+        font-size: 24px;
+    }
+
+    .label {
+        font-size: 11px;
+        max-width: 120px;
     }
 }

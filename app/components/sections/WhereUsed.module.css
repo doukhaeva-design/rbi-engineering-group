@@ -32,3 +32,19 @@
     font-weight: 500;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .card {
+        padding: 16px 10px;
+        min-height: 80px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+}

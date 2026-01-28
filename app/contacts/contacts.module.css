@@ -62,3 +62,23 @@
     color: #888;
     margin-top: 10px;
 }
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .heroTitle {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .info {
+        font-size: 16px;
+    }
+
+    .formContainer {
+        padding: 0 10px;
+    }
+}

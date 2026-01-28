@@ -44,8 +44,8 @@ export default function Header() {
           <Link href="/#services" className={styles.link} onClick={handleLinkClick}>Услуги</Link>
           <Link href="/#modular" className={styles.link} onClick={handleLinkClick}>Модульные</Link>
           <Link href="/#projects" className={styles.link} onClick={handleLinkClick}>Проекты</Link>
-          <Link href="/#about" className={styles.link} onClick={handleLinkClick}>О компании</Link>
-          <Link href="/#licenses" className={styles.link} onClick={handleLinkClick}>Лицензии</Link>
+          <Link href="/about" className={styles.link} onClick={handleLinkClick}>О компании</Link>
+          <Link href="/licenses" className={styles.link} onClick={handleLinkClick}>Лицензии</Link>
           <Link href="/#contacts" className={styles.link} onClick={handleLinkClick}>Контакты</Link>
 
           {/* Mobile only CTA */}

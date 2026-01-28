@@ -120,13 +120,26 @@
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
-        /* Reset to single column on mobile */
-        gap: 32px;
+        gap: 20px;
     }
 
     .card {
-        height: auto;
-        /* Allow content to dictate height */
-        min-height: 380px;
+        min-height: 280px;
+    }
+
+    .imagePlaceholder {
+        flex: 1.2;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .type {
+        font-size: 11px;
     }
 }

@@ -129,7 +129,7 @@
     }
 
     .nav.open {
-        transform: translateY(0);
+        right: 0;
     }
 
     .mobileMenuBtn {
