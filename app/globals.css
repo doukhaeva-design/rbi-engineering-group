@@ -23,27 +23,22 @@
     /* Keep 16px for mobile */
   }
 
-  /* Premium Construction Palette ("Luxury Graphite") */
-  --background: #121212;
-  /* True black/dark graphite */
-  --foreground: #F5F5F7;
-  --background: #0f1115;
-  /* slightly lighter deep dark */
-  --secondary-color: #16191f;
-  /* distinct card background */
-  --background-offset: #1c2026;
-  /* lighter accent for variation */
+  /* Premium Midnight Palette (Deepest Blue-Black) */
+  --background: #030508;
+  /* Deepest midnight, almost black */
+  --foreground: #f8fafc;
+  --secondary-color: #0c0f16;
+  /* Card background, subtle blue depth */
+  --background-offset: #080a0f;
+  /* Secondary section background */
+  --border-color: #161b22;
+  /* Subtle technical border */
 
   --primary-color: #E68442;
-  /* Warm Apricot/Copper */
-  --steel-color: #7d8ea3;
-  /* Muted Gray-Blue for Metal */
-  --text-main: #f0f0f0;
-  /* Brighter white for better reading */
-  --text-secondary: #a0a5b0;
-  /* Muted gray-blue for less distraction */
-  --border-color: #2a2e36;
-  /* Subtle border */
+  --steel-color: #8fa3b8;
+  --text-main: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #1a1f26;
 
   --font-family: -apple-system,
   BlinkMacSystemFont,
@@ -159,12 +154,11 @@ a {
 
 .section-alt {
   padding: 120px 0;
-  background-color: #161a20;
-  /* Darker navy/graphite for better contrast */
+  background-color: var(--background-offset);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.02), transparent 40%);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.01), transparent 40%);
 }
 
 /* Architectural Marker for Section Transitions */

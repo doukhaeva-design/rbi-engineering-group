@@ -22,7 +22,7 @@
     height: 110%;
     /* Rich Gradient: Vignette style (Focus in center, dark edges) */
     background-image:
-        radial-gradient(circle at center, rgba(10, 12, 16, 0.75) 0%, rgba(5, 6, 8, 0.98) 90%),
+        radial-gradient(circle at center, rgba(5, 10, 20, 0.8) 0%, #030508 95%),
         url('/HeroBackground.png');
     background-size: cover;
     background-position: center;
