@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Button.module.css';
+import Link from 'next/link';
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -22,9 +23,9 @@ export default function Button({
 
     if (href) {
         return (
-            <a href={href} className={buttonClass}>
+            <Link href={href} className={buttonClass}>
                 {children}
-            </a>
+            </Link>
         );
     }
 

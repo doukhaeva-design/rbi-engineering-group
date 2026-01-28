@@ -1,24 +1,19 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Fluid, magazine layout */
-    gap: 1px;
-    /* Minimal gap for stylish borders */
-    background: var(--border-color);
-    /* Lines between cards */
-    padding: 1px;
-    /* Exterior border */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: var(--secondary-color);
-    padding: 60px 40px;
-    /* More breathing room */
-    height: 350px;
+    /* Lighter than background */
+    padding: 40px 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    /* Softer corners */
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* Push arrow to bottom */
     transition: background 0.4s ease;
     border: none;
     position: relative;
@@ -45,19 +40,7 @@
     line-height: 1.6;
 }
 
-.card::after {
-    content: "→";
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    font-size: 24px;
-    color: var(--border-color);
-    transition: color 0.3s;
-}
-
-.card:hover::after {
-    color: var(--primary-color);
-}
+/* Arrow removed for non-clickable cards */
 
 @media (max-width: 768px) {
     .grid {

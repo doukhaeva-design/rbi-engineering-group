@@ -1,0 +1,47 @@
+.hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    background-color: var(--background);
+    text-align: center;
+}
+
+.heroTitle {
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.heroText {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.block {
+    margin-bottom: 80px;
+    max-width: 800px;
+}
+
+.blockTitle {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+}
+
+.text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.list {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ddd;
+    padding-left: 20px;
+}
+
+.list li {
+    margin-bottom: 12px;
+}

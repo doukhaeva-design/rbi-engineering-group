@@ -1,0 +1,114 @@
+.hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.heroTitle {
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.heroText {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.primaryGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.primaryCard {
+    background: var(--secondary-color);
+    padding: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.primaryTitle {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.primaryDesc {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Accents */
+.accentModular {
+    border-top: 4px solid var(--primary-color);
+}
+
+.accentSMR {
+    border-top: 4px solid #7a8fa3;
+}
+
+/* Secondary Grid for other services */
+.secondaryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.secondaryCard {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.secondaryCard:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+.secondaryTitle {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.secondaryDesc {
+    font-size: 14px;
+    color: #999;
+}
+
+.sectionTitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: white;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+@media (max-width: 900px) {
+    .primaryGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .primaryCard {
+        padding: 30px;
+    }
+
+    .primaryTitle {
+        font-size: 24px;
+    }
+}

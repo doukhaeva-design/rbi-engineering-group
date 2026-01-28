@@ -1,0 +1,39 @@
+.backBtn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+
+    /* Flow based positioning */
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: -30px;
+    /* Slight pull up */
+}
+
+/* If inside a container */
+.containerWrapper {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.backBtn:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .backBtn {
+        font-size: 13px;
+        margin-top: -10px;
+    }
+}

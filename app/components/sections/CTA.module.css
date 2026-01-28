@@ -1,55 +1,25 @@
 .ctaSection {
-    background: var(--dark-bg);
-    color: var(--foreground);
-    padding: 120px 0;
-    border-top: 1px solid var(--border-color);
+    background-color: var(--background);
+    padding: 100px 0;
+    text-align: center;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    max-width: 600px;
 }
 
 .title {
-    color: var(--foreground);
-    margin-bottom: 32px;
-    max-width: 500px;
+    margin-bottom: 24px;
 }
 
-.button:hover {
-    background: #e0e0e0;
-}
-
-.right {
-    text-align: right;
-}
-
-.contactText {
+.text {
     font-size: 18px;
-    margin-bottom: 12px;
-    color: #888;
-    font-family: monospace;
-    /* Consistency with other technical details */
-}
-
-.right p:nth-child(2) {
-    color: var(--primary-color);
-    font-size: 24px;
-    font-family: var(--font-h1);
-    /* Standard font, not monospace for phone */
-    font-weight: 300;
-    margin: 20px 0;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .right {
-        text-align: center;
-    }
+    margin-bottom: 24px;
+    line-height: 1.6;
+    color: #ccc;
 }

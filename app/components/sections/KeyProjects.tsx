@@ -1,70 +1,65 @@
+"use client";
+
 import styles from './KeyProjects.module.css';
+import Button from '../ui/Button';
+import Link from 'next/link';
 
 export default function KeyProjects() {
-    // Creating 4 placeholder projects based on the example to fill the 2x2 grid
+    // Top 4 curated projects for the homepage
     const projects = [
         {
             title: "ВЭС «Хромтау»",
-            type: "Монтаж конструкций",
-            specs: [
-                { label: "Заказчик", value: "Power China" },
-                { label: "Год", value: "2023-2024" },
-                { label: "Объем", value: "150 МВт" }
-            ]
+            category: "Модульные сооружения",
+            specs: { label: "Партнеры", value: "Sinohydro / Power China" }
         },
         {
-            title: "Проект Алматы",
-            type: "Модульное здание",
-            specs: [
-                { label: "Заказчик", value: "KPO" },
-                { label: "Год", value: "2023" },
-                { label: "Площадь", value: "1200 м²" }
-            ]
+            title: "Монтаж ветровых генераторов",
+            category: "Монтаж / металлоконструкции",
+            specs: { label: "Локация", value: "Петропавловск" }
         },
         {
-            title: "Завод Астана",
-            type: "Инженерные сети",
-            specs: [
-                { label: "Статус", value: "Генподряд" },
-                { label: "Год", value: "2024" },
-                { label: "Тип", value: "Реконструкция" }
-            ]
+            title: "Столовая для военной базы",
+            category: "Модульные сооружения",
+            specs: { label: "Заказчик", value: "АО «Əскери Құрылыс»" }
         },
         {
-            title: "Вахтовый поселок",
-            type: "Строительство «под ключ»",
-            specs: [
-                { label: "Заказчик", value: "ТенгизШевройл" },
-                { label: "Год", value: "2022" },
-                { label: "Мест", value: "500 чел" }
-            ]
+            title: "Монтаж конструкции ТРЦ «Хан Шатыр»",
+            category: "Монтаж / металлоконструкции",
+            specs: { label: "Объект", value: "Хан Шатыр" }
         }
     ];
 
     return (
         <section className={`section`} id="projects">
             <div className={`container`}>
-                <h2 style={{ marginBottom: '40px' }}>Ключевые проекты</h2>
+                <h2 style={{ marginBottom: '10px' }}>Проекты</h2>
+                <p style={{ marginBottom: '40px', fontSize: '18px', color: '#ccc' }}>Примеры выполненных работ по модульным решениям и монтажным проектам.</p>
+
                 <div className={styles.grid}>
                     {projects.map((project, index) => (
-                        <div key={index} className={styles.card}>
+                        <Link
+                            href={`/projects?filter=${project.category === "Модульные сооружения" ? 'modular' : 'metal'}`}
+                            key={index}
+                            className={styles.card}
+                        >
                             <div className={styles.imagePlaceholder}></div>
                             <div className={styles.content}>
                                 <div className={styles.header}>
-                                    <p className={styles.type}>{project.type}</p>
+                                    <p className={styles.type}>{project.category}</p>
                                     <h3 className={styles.title}>{project.title}</h3>
                                 </div>
                                 <div className={styles.specs}>
-                                    {project.specs.map((spec, i) => (
-                                        <div key={i} className={styles.specItem}>
-                                            <span className={styles.specLabel}>{spec.label}</span>
-                                            <span className={styles.specValue}>{spec.value}</span>
-                                        </div>
-                                    ))}
+                                    <div className={styles.specItem}>
+                                        <span className={styles.specLabel}>{project.specs.label}</span>
+                                        <span className={styles.specValue}>{project.specs.value}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
+                </div>
+                <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
+                    <Button href="/projects" variant="outline">Смотреть все проекты</Button>
                 </div>
             </div>
         </section>

@@ -6,15 +6,21 @@ export default function Hero() {
         <section className={styles.hero}>
             <div className={`container ${styles.heroContainer}`}>
                 <h1 className={styles.title}>
-                    Промышленное строительство и инжиниринг
+                    RBI Engineering Group
                 </h1>
                 <p className={styles.subtitle}>
-                    Реализация инфраструктурных проектов полного цикла<br />
-                    для бизнеса и государственного сектора
+                    Строительство и модульные сооружения в Казахстане
+                </p>
+                <p className={styles.description}>
+                    Выполняем строительно-монтажные работы любой сложности и строим мобильные модульные сооружения.<br />
+                    Ставим на технологии, качество и оперативность.
                 </p>
                 <div className={styles.buttonGroup}>
-                    <Button href="#projects" variant="outline">Проекты</Button>
-                    <Button href="#contacts" variant="primary">Рассчитать проект</Button>
+                    <Button href="/contacts" variant="primary">Запросить коммерческое предложение</Button>
+                    <Button href="/projects" variant="outline">Смотреть проекты</Button>
+                </div>
+                <div className={styles.trustLine}>
+                    13+ лет • 62+ проектов • лицензия 1 категории
                 </div>
             </div>
         </section>

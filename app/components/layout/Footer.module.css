@@ -1,0 +1,91 @@
+.footer {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-color);
+    padding: 60px 0 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.desc {
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.link {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--primary-color);
+}
+
+.contactRow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contactItem {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

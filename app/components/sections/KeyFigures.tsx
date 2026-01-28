@@ -59,11 +59,12 @@ const AnimatedCounter = ({ value, suffix, label }: { value: number, suffix: stri
 
 export default function KeyFigures() {
     const figures = [
-        { value: 13, suffix: "+", label: "лет на рынке" },
-        { value: 50, suffix: "+", label: "реализованных объектов" },
+        { value: 13, suffix: "+", label: "лет на рынке Казахстана" },
+        { value: 62, suffix: "+", label: "реализованных проектов" },
         { value: 50, suffix: "+", label: "сотрудников" },
-        { value: 53, suffix: "", label: "единицы техники" },
-        { value: 1, suffix: " кат.", label: "лицензия" },
+        { value: 53, suffix: "+", label: "единицы строительной техники" },
+        { value: 68, suffix: "+", label: "рекомендательных писем" },
+        { value: 1, suffix: " кат.", label: "лицензия на СМР" },
     ];
 
     return (
