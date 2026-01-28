@@ -6,12 +6,12 @@
   --font-h1: 72px;
   --font-h2: 32px;
   --font-h3: 20px;
-  --font-text: 16px;
+  --font-text: 18px;
+  /* Standardize desktop body text to 18px */
   --font-small: 14px;
 
   --spacing-tight: -0.02em;
   --spacing-wide: 0.05em;
-  --font-small: 14px;
 
   @media (max-width: 768px) {
     --padding-x: 24px;
@@ -20,6 +20,7 @@
     --font-h2: 28px;
     --font-h3: 20px;
     --font-text: 16px;
+    /* Keep 16px for mobile */
   }
 
   /* Premium Construction Palette ("Luxury Graphite") */
@@ -35,6 +36,8 @@
 
   --primary-color: #C68E68;
   /* Bronze/Copper */
+  --steel-color: #7d8ea3;
+  /* Muted Gray-Blue for Metal */
   --text-main: #f0f0f0;
   /* Brighter white for better reading */
   --text-secondary: #a0a5b0;
@@ -90,8 +93,10 @@ h1 {
   line-height: 1.1;
   margin-bottom: 24px;
   text-transform: uppercase;
-  letter-spacing: var(--spacing-wide);
-  font-weight: 700;
+  letter-spacing: 0.08em;
+  /* Wider stance */
+  font-weight: 800;
+  /* Impact */
 }
 
 h2 {
@@ -114,7 +119,12 @@ h3 {
 
 p {
   font-size: var(--font-text);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  /* Luxury spacing */
+  color: #d1d5db;
+  /* Premium off-white */
+  font-weight: 400;
 }
 
 small {
@@ -142,4 +152,51 @@ a {
 
 .section {
   padding: var(--vertical-gap) 0;
+  background-color: var(--background);
+  position: relative;
+}
+
+.section-alt {
+  padding: var(--vertical-gap) 0;
+  background-color: #181b21;
+  /* Lighter dark to separate from main bg */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  /* Subtle separator line */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-alt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(198, 142, 104, 0.03) 0%, transparent 60%),
+    radial-gradient(circle at 85% 70%, rgba(198, 142, 104, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-alt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3F%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  /* Very subtle noise */
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.section-alt>* {
+  position: relative;
+  z-index: 1;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import styles from './Hero.module.css';
 import Button from '../ui/Button';
 
@@ -16,7 +18,7 @@ export default function Hero() {
                     Ставим на технологии, качество и оперативность.
                 </p>
                 <div className={styles.buttonGroup}>
-                    <Button href="/contacts" variant="primary">Запросить коммерческое предложение</Button>
+                    <Button href="/contacts" variant="primary">Запросить предложение</Button>
                     <Button href="/projects" variant="outline">Смотреть проекты</Button>
                 </div>
                 <div className={styles.trustLine}>

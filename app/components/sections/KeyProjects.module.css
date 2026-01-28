@@ -36,17 +36,40 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     text-decoration: none;
+    position: relative;
     /* For Link wrapper */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     border-color: #444;
+}
+
+/* Category Vertical Line */
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: transparent;
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
+.card[data-category="modular"]::before {
+    background: var(--primary-color);
+}
+
+.card[data-category="metal"]::before {
+    background: var(--steel-color);
 }
 
 .imagePlaceholder {
@@ -81,13 +104,26 @@
 }
 
 .type {
-    font-size: 13px;
+    display: inline-block;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-weight: 700;
     letter-spacing: 0.05em;
-    font-weight: 600;
-    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card[data-category="modular"] .type {
+    color: var(--primary-color);
+    background: rgba(198, 142, 104, 0.1);
+}
+
+.card[data-category="metal"] .type {
+    color: var(--steel-color);
+    background: rgba(125, 142, 163, 0.1);
 }
 
 .specs {

@@ -1,8 +1,5 @@
 .figuresSection {
-    background-color: var(--secondary-color);
     padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
 }
 
 .grid {
@@ -27,14 +24,13 @@
 
 .number {
     font-size: 72px;
-    /* Increased size */
     font-weight: 300;
     margin-bottom: 8px;
     font-variant-numeric: tabular-nums;
     line-height: 1;
 
-    /* Metallic Copper Gradient */
-    background: linear-gradient(135deg, #E8C39E 0%, #C68E68 50%, #8B5E3C 100%);
+    /* Vibrant Copper Gradient (Matches Buttons) */
+    background: linear-gradient(135deg, #F2D5B5 0%, #DFA076 50%, #C67D53 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -45,21 +41,23 @@
 
 .suffix {
     font-size: 40px;
-    /* Smaller suffix for elegance */
     margin-left: 4px;
     font-weight: 200;
-    -webkit-text-fill-color: #C68E68;
-    /* Solid color for suffix or keep gradient */
-    opacity: 0.8;
+    -webkit-text-fill-color: #DFA076;
+    /* Match middle of gradient */
+    opacity: 0.9;
 }
 
 .label {
-    font-size: 13px;
+    font-size: 14px;
+    /* Increased readability */
     text-transform: uppercase;
-    color: #888;
+    color: #b0b5bd;
+    /* Muted steel */
     max-width: 150px;
-    line-height: 1.4;
-    letter-spacing: 0.05em;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    /* Premium spacing */
     font-weight: 600;
 }
 

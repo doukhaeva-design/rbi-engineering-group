@@ -68,7 +68,7 @@ export default function KeyFigures() {
     ];
 
     return (
-        <section className={styles.figuresSection}>
+        <section className={`section-alt ${styles.figuresSection}`}>
             <div className={`container ${styles.grid}`}>
                 {figures.map((item, index) => (
                     <AnimatedCounter

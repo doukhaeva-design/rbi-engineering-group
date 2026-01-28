@@ -33,7 +33,7 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
     const competencies = limited ? fullCompetencies.slice(0, 3) : fullCompetencies;
 
     return (
-        <section className={`section ${styles.section}`}>
+        <section className={`section-alt ${styles.section}`}>
             <div className={`container`}>
                 <h2 className={styles.title}>{limited ? 'Почему выбирают нас' : 'Ключевые компетенции'}</h2>
                 <div className={styles.grid}>

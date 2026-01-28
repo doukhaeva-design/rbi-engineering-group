@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 export default function ModularPreview() {
     return (
-        <section className={`section ${styles.section}`} id="modular">
+        <section className={`section-alt ${styles.section}`} id="modular">
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
                     <h2 className={styles.title}>Модульные сооружения</h2>
@@ -22,9 +22,9 @@ export default function ModularPreview() {
                                 Полная заводская готовность, включая отделку и инженерные системы.
                             </p>
                             <ul className={styles.list} style={{ marginTop: '20px' }}>
-                                <li>• Сборка за несколько дней</li>
-                                <li>• Работает в любых погодных условиях</li>
-                                <li>• Легко перевезти на новое место</li>
+                                <li>Сборка за несколько дней</li>
+                                <li>Работает в любых погодных условиях</li>
+                                <li>Легко перевезти на новое место</li>
                             </ul>
                         </div>
                     </div>

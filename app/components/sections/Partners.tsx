@@ -2,7 +2,7 @@ import styles from './Partners.module.css';
 
 export default function Partners() {
     return (
-        <section className={`section ${styles.partnersSection}`}>
+        <section className={`section-alt ${styles.partnersSection}`}>
             <div className={`container`}>
                 <h2 style={{ marginBottom: '10px' }}>Партнёры и заказчики</h2>
                 <p style={{ marginBottom: '40px', fontSize: '18px', color: '#ccc' }}>Сотрудничаем с крупными партнёрами и выполняем проекты для организаций на постоянной основе.</p>

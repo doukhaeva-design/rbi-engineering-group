@@ -1,8 +1,5 @@
 .section {
-    background-color: var(--background-offset);
-    /* Slightly lighter background to distinguish section */
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    position: relative;
 }
 
 .container {
@@ -20,13 +17,16 @@
 }
 
 .text {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 20px;
+    margin-bottom: 50px;
     line-height: 1.6;
-    color: #ccc;
+    color: #e0e0e0;
+    /* Brighter intro text */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 300;
+    /* Lighter weight for elegance */
 }
 
 .detailsGrid {
@@ -37,21 +37,56 @@
 }
 
 .subtitle {
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
     color: var(--primary-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subtitle::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: var(--primary-color);
 }
 
 .list {
-    padding-left: 20px;
-    color: #ddd;
+    padding-left: 0;
+    list-style: none;
+    color: #d1d5db;
     line-height: 1.8;
 }
 
+.list li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    font-size: 15px;
+}
+
+.list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    line-height: 1;
+    top: 2px;
+}
+
 .detailText {
-    color: #ddd;
-    line-height: 1.6;
-    margin-bottom: 16px;
+    font-size: 16px;
+    color: #d1d5db;
+    line-height: 1.8;
+    /* More breath */
+    margin-bottom: 24px;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {

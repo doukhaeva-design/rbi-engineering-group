@@ -41,6 +41,7 @@ export default function KeyProjects() {
                             href={`/projects?filter=${project.category === "Модульные сооружения" ? 'modular' : 'metal'}`}
                             key={index}
                             className={styles.card}
+                            data-category={project.category === "Модульные сооружения" ? "modular" : "metal"}
                         >
                             <div className={styles.imagePlaceholder}></div>
                             <div className={styles.content}>

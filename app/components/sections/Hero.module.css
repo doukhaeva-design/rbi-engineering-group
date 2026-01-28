@@ -4,52 +4,208 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #121212;
-    /* Placeholder background */
-    background-image: linear-gradient(rgba(10, 10, 12, 0.9), rgba(10, 10, 12, 0.8));
-    /* Darker graphite overlay for better contrast */
-    background-size: cover;
-    background-position: center;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
     text-align: center;
     color: white;
     padding-top: 90px;
+}
+
+/* Background Zoom Effect */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    /* Rich Gradient: Vignette style (Focus in center, dark edges) */
+    background-image:
+        radial-gradient(circle at center, rgba(10, 12, 16, 0.75) 0%, rgba(5, 6, 8, 0.98) 90%),
+        url('/HeroBackground.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    animation: zoomBreath 40s infinite alternate ease-in-out;
+    filter: blur(2px);
+    /* Depth of field effect */
+}
+
+@keyframes zoomBreath {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.03);
+        /* Minimal zoom */
+    }
+}
+
+.hero>* {
+    position: relative;
+    z-index: 1;
 }
 
 .heroContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
+    max-width: 900px;
+    position: relative;
+    padding: 60px 40px;
+    /* More vertical breathing room */
+    margin-bottom: 40px;
+    /* Push content up slightly from bottom edge */
+}
+
+/* Engineering Corner Accents */
+.heroContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid rgba(198, 142, 104, 0.6);
+    border-left: 1px solid rgba(198, 142, 104, 0.6);
+    transition: all 0.5s ease;
+}
+
+.heroContainer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1px solid rgba(198, 142, 104, 0.6);
+    border-right: 1px solid rgba(198, 142, 104, 0.6);
+    transition: all 0.5s ease;
+}
+
+.heroContainer:hover::before,
+.heroContainer:hover::after {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+}
+
+/* Staggered Entrance Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .title {
-    font-size: var(--font-h1);
-    margin-bottom: 24px;
-    font-weight: 800;
-    letter-spacing: 0.05em;
+    font-size: clamp(40px, 6vw, 82px);
+    line-height: 1.1;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+
+    /* Liquid Metal Gradient (Warm Platinum/Champagne to match Copper) */
+    background: linear-gradient(110deg,
+            #a8a8a8 0%,
+            #e6e1d8 10%,
+            #ffffff 20%,
+            #ffffff 30%,
+            #e6e1d8 40%,
+            #a8a8a8 100%);
+    background-size: 200% auto;
+
+    /* Clip to text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    /* Fallback */
+
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+
+    /* Combined Animations: Entrance + Infinite Shimmer */
+    opacity: 0;
+    animation:
+        fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards,
+        shine 12s infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% center;
+    }
+
+    33% {
+        background-position: 200% center;
+        /* Slow movement (approx 4s) */
+    }
+
+    100% {
+        background-position: 200% center;
+        /* Pause (approx 8s) */
+    }
 }
 
 .subtitle {
-    font-size: 24px;
-    margin-bottom: 16px;
-    line-height: 1.4;
-    opacity: 0.9;
-    max-width: 800px;
-    font-weight: 500;
+    order: -1;
+    /* Move above title */
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    opacity: 0;
+    white-space: nowrap;
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+}
+
+.subtitle::before,
+.subtitle::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color));
+    opacity: 0.7;
+}
+
+.subtitle::after {
+    background: linear-gradient(90deg, var(--primary-color), transparent);
 }
 
 .description {
     font-size: 18px;
-    margin-bottom: 48px;
-    line-height: 1.6;
-    opacity: 0.8;
-    max-width: 700px;
+    line-height: 1.8;
+    color: #ffffff;
+    /* Pure snow white for max contrast */
+    max-width: 600px;
+    margin-bottom: 56px;
+    font-weight: 400;
+    /* Increased from 300 for better legibility */
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
 }
 
 .buttonGroup {
     display: flex;
     gap: 20px;
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
 }
 
 /* Mobile Responsiveness for Hero */
@@ -62,12 +218,15 @@
     }
 
     .title {
-        margin-bottom: 16px;
+        margin-bottom: 24px;
+        font-size: 36px;
+        /* Explicit control for mobile */
     }
 
     .subtitle {
-        font-size: 18px;
+        font-size: 14px;
         margin-bottom: 32px;
+        letter-spacing: 0.1em;
     }
 
     .buttonGroup {
@@ -76,13 +235,106 @@
         max-width: 320px;
         gap: 16px;
     }
+
+    .scrollIndicator {
+        display: none !important;
+        /* Hide on mobile to save space */
+    }
 }
 
 .trustLine {
-    margin-top: 40px;
+    margin-top: 60px;
     font-size: 14px;
+    /* Increased from 11px */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.7;
+    letter-spacing: 0.15em;
+    /* Slightly tighter than 0.25em for better readability */
+    color: #e0e0e0;
+    /* Much brighter than rgba(255,255,255,0.3) */
     font-weight: 600;
+    /* Increased weight */
+    opacity: 0;
+    /* Init hidden, handles opacity animation */
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 1.0s forwards;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 24px;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    /* Slightly wider to accommodate larger text */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Add shadow for contrast against bg */
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 2s forwards, bounce 6s infinite 2s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.mouseIcon {
+    width: 24px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 2px;
+    height: 6px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scrollWheel 4s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(12px);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }

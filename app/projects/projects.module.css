@@ -131,21 +131,35 @@
 }
 
 /* Hover Effects */
-/* Hover effect removed to signify non-clickable items */
-/* .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-} */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border-color: #444;
+}
 
 .card:hover .arrow {
     opacity: 1;
     transform: translateX(0);
 }
 
+/* Category Vertical Line */
+.card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: transparent;
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
 /* Visual Dialects */
-.modularCard {
-    border-top: 3px solid var(--primary-color);
-    /* Copper accent */
+/* Visual Dialects */
+.modularCard::after {
+    background: var(--primary-color);
 }
 
 .modularCard::before {
@@ -157,11 +171,11 @@
     height: 60px;
     background-image: repeating-linear-gradient(90deg, transparent 0, transparent 2px, rgba(198, 142, 104, 0.1) 2px, rgba(198, 142, 104, 0.1) 4px);
     pointer-events: none;
+    z-index: 1;
 }
 
-.steelCard {
-    border-top: 3px solid #7a8fa3;
-    /* Steel blue accent */
+.steelCard::after {
+    background: var(--steel-color);
 }
 
 .steelCard::before {
@@ -173,6 +187,7 @@
     height: 60px;
     background-image: repeating-linear-gradient(45deg, transparent 0, transparent 2px, rgba(122, 143, 163, 0.1) 2px, rgba(122, 143, 163, 0.1) 4px);
     pointer-events: none;
+    z-index: 1;
 }
 
 /* Card Content */
@@ -204,12 +219,27 @@
 }
 
 .categoryLabel {
+    display: inline-block;
+    width: fit-content;
     font-size: 10px;
     text-transform: uppercase;
     color: #666;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.modularCard .categoryLabel {
+    color: var(--primary-color);
+    background: rgba(198, 142, 104, 0.1);
+}
+
+.steelCard .categoryLabel {
+    color: var(--steel-color);
+    background: rgba(125, 142, 163, 0.1);
 }
 
 .cardTitle {
