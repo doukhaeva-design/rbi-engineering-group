@@ -1,12 +1,12 @@
-import { Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import React from "react";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin", "cyrillic"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={manrope.variable} suppressHydrationWarning={true}>
+      <body className={inter.variable} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>

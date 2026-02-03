@@ -19,11 +19,11 @@
 
 .primary {
     /* Modern, clean */
-    background: #F47C2B;
+    background: #EAA52F;
     /* User Requested Orange 3 */
     color: #ffffff;
     border: none;
-    box-shadow: 0 4px 20px rgba(244, 124, 43, 0.25);
+    box-shadow: 0 4px 20px rgba(234, 165, 47, 0.25);
     /* Soft outer glow only */
     font-weight: 700;
     /* Slightly lighter weight for modern look */
@@ -46,7 +46,7 @@
 .primary:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 8px 25px rgba(244, 124, 43, 0.4),
+        0 8px 25px rgba(234, 165, 47, 0.4),
         inset 0 1px 1px rgba(255, 255, 255, 0.4);
     filter: brightness(1.05);
 }

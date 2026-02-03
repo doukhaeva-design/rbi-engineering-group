@@ -12,7 +12,7 @@ export default function Hero() {
             {/* Content Container - Aligned with Global Layout */}
             <div className={styles.heroContent}>
                 <h1 className={styles.title}>
-                    RBI Engineering<br className={styles.mobileBreak} /> Group
+                    RBI Engineering<br /> Group
                 </h1>
                 <p className={styles.subtitle}>
                     Строительство и модульные сооружения в&nbsp;Казахстане
