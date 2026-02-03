@@ -74,11 +74,33 @@
     box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
 }
 
+/* Responsive Button: Outline on Desktop, Solid on Mobile */
+.filled {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.filled:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(47, 93, 159, 0.4);
+}
+
 @media (max-width: 768px) {
     .button {
         padding: 14px 24px;
         font-size: 14px;
         width: 100%;
         letter-spacing: 0.1em;
+    }
+
+    .filled {
+        background: var(--primary-color);
+        color: #ffffff;
+        border: none;
+        box-shadow: 0 4px 20px rgba(47, 93, 159, 0.25);
     }
 }

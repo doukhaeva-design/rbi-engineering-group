@@ -60,7 +60,7 @@ export default function KeyProjects() {
                     ))}
                 </div>
                 <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                    <Button href="/projects" variant="outline">Смотреть все проекты</Button>
+                    <Button href="/projects" variant="filled">Смотреть все проекты</Button>
                 </div>
             </div>
         </section>

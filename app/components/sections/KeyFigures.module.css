@@ -67,28 +67,46 @@
     }
 
     .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
     }
 
     .item {
+        flex: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 24px 0;
         border-right: none;
-        border-bottom: none;
-        padding: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         width: 100%;
+        gap: 24px;
+        text-align: left;
+    }
+
+    .item:last-child {
+        border-bottom: none;
     }
 
     .number {
-        font-size: 40px;
+        font-size: 48px;
+        margin-bottom: 0;
+        min-width: 110px;
+        justify-content: flex-start;
     }
 
     .suffix {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .label {
-        font-size: 11px;
-        max-width: 120px;
+        font-size: 12px;
+        max-width: none;
+        text-align: left;
+        color: var(--text-secondary);
+        letter-spacing: 0.05em;
+        line-height: 1.4;
     }
 }

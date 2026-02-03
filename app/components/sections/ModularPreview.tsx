@@ -30,7 +30,7 @@ export default function ModularPreview() {
                     </div>
 
                     <div style={{ marginTop: '40px' }}>
-                        <Button href="/modular" variant="outline">Подробнее о модульных решениях</Button>
+                        <Button href="/modular" variant="filled">Подробнее о модульных решениях</Button>
                     </div>
                 </div>
             </div>
