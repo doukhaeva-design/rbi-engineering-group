@@ -76,7 +76,7 @@ export default function ServicesPage() {
                                 Комплексные решения «под ключ»: от производства до монтажа на объекте.
                                 Быстровозводимые здания для вахтовых поселков, офисов и технических нужд.
                             </p>
-                            <ul className={styles.detailList} style={{ color: '#bbb', lineHeight: '1.8' }}>
+                            <ul className={styles.detailList}>
                                 <li>• Сборно-разборные конструкции</li>
                                 <li>• Полная внутренняя отделка и коммуникации</li>
                                 <li>• Адаптация под климатические условия</li>
@@ -90,7 +90,7 @@ export default function ServicesPage() {
                                 Профессиональный монтаж металлоконструкций любой сложности,
                                 строительство промышленных и гражданских объектов.
                             </p>
-                            <ul className={styles.detailList} style={{ color: '#bbb', lineHeight: '1.8' }}>
+                            <ul className={styles.detailList}>
                                 <li>• Монтаж каркасов зданий и сооружений</li>
                                 <li>• Устройство фундаментов</li>
                                 <li>• Кровельные и фасадные работы</li>

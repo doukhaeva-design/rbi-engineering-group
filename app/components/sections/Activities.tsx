@@ -37,7 +37,7 @@ export default function Activities() {
     ];
 
     return (
-        <section className={`section`} id="services">
+        <section className={`section ${styles.activitiesSection}`} id="services">
             <div className={`container`}>
                 <h2 className={styles.sectionTitle}>Комплексные инженерные решения</h2>
                 <p className={styles.sectionDescription}>Обеспечиваем безупречное качество исполнения на каждом этапе проекта.</p>

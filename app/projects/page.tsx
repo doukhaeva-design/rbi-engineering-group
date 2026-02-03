@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Header from "../components/layout/Header";
 import styles from "./projects.module.css";
@@ -9,7 +9,7 @@ import Button from "../components/ui/Button";
 import BackButton from "../components/ui/BackButton";
 import Footer from "../components/layout/Footer";
 
-export default function ProjectsPage() {
+function ProjectsContent() {
     const searchParams = useSearchParams();
     const initialFilter = searchParams.get('filter');
 
@@ -216,5 +216,13 @@ export default function ProjectsPage() {
             </section>
             <Footer />
         </main >
+    );
+}
+
+export default function ProjectsPage() {
+    return (
+        <Suspense fallback={<div></div>}>
+            <ProjectsContent />
+        </Suspense>
     );
 }

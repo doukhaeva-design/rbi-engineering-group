@@ -14,7 +14,7 @@
     font-size: 18px;
     max-width: 700px;
     margin: 0 auto;
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -133,8 +133,9 @@
 /* Hover Effects */
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    border-color: #444;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    /* Lighter shadow for light theme */
+    border-color: var(--primary-color);
 }
 
 .card:hover .arrow {
@@ -194,7 +195,7 @@
 .cardCover {
     height: 100px;
     width: 100%;
-    background-color: #1a1d24;
+    background-color: var(--background-offset);
     position: relative;
     overflow: hidden;
 }
@@ -204,11 +205,13 @@
 }
 
 .coverModular {
-    background: linear-gradient(135deg, #2a1f1a, #16191f);
+    background: linear-gradient(135deg, var(--primary-color), #4079c9);
+    opacity: 0.9;
 }
 
 .coverSteel {
-    background: linear-gradient(135deg, #1a2026, #16191f);
+    background: linear-gradient(135deg, var(--steel-color), #94a3b8);
+    opacity: 0.9;
 }
 
 .cardContent {
@@ -245,7 +248,7 @@
 .cardTitle {
     margin: 0 0 16px 0;
     font-size: 20px;
-    color: white;
+    color: var(--text-main);
     font-weight: 700;
 }
 
@@ -257,9 +260,9 @@
     display: flex;
     justify-content: space-between;
     font-size: 13px;
-    color: #999;
+    color: var(--text-secondary);
     padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
     margin-top: auto;
     /* Push to bottom */
 }

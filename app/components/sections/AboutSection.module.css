@@ -15,40 +15,47 @@
 
 /* Profiles / Manifesto */
 .profile {
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* Split layout: Label | Content */
+    gap: 80px;
+    align-items: start;
+    padding: 0;
+    max-width: 100%;
     position: relative;
-    padding-left: 32px;
+    border-left: none;
+    /* Remove old border */
 }
 
+/* Remove old decorative line */
 .profile::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 5px;
-    bottom: 5px;
-    width: 2px;
-    background: var(--primary-color);
+    display: none;
 }
 
 .tagline {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--primary-color);
-    margin-bottom: 24px;
+    letter-spacing: 0.2em;
+    color: #EA580C;
     font-weight: 700;
+    margin: 0;
+    padding-top: 24px;
+    border-top: 2px solid #EA580C;
+    display: inline-block;
 }
 
 .description {
-    font-size: 20px;
-    /* Reduced from 32px for professionalism */
+    font-size: 22px;
+    /* Standardized */
     line-height: 1.6;
-    color: var(--text-main);
-    font-weight: 400;
+    color: #1F2937;
+    /* Dark Grey */
+    font-weight: 500;
+    max-width: 700px;
 }
 
 .description p {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .description p:last-child {
@@ -56,13 +63,18 @@
 }
 
 .subDescription {
-    color: var(--text-secondary);
-    font-size: 18px;
+    color: #4B5563;
+    /* Mid Grey */
+    font-size: 22px;
+    /* Standardized */
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .accent {
-    color: var(--primary-color);
-    font-weight: 600;
+    color: #EA580C;
+    /* Darker orange for better text contrast */
+    font-weight: 700;
 }
 
 /* Stats: Technical Grid */
@@ -166,25 +178,87 @@
         padding: 60px 0;
     }
 
+    .layout {
+        gap: 24px;
+        /* Tightened overall vertical layout */
+    }
+
+    .profile {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     .description {
         font-size: 18px;
     }
 
+    .description p {
+        margin-bottom: 0;
+        /* Remove margin as it's the only visible paragraph */
+    }
+
     .statsGrid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        margin-top: 12px;
+        /* Small gap instead of 32px */
+        padding-top: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .statCard {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         min-height: auto;
     }
 
+    .statCard:nth-child(odd) {
+        padding-right: 16px;
+        border-right: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .statCard:nth-child(even) {
+        padding-left: 16px;
+    }
+
+    .statCard:nth-child(5) {
+        grid-column: span 2;
+        border-bottom: none;
+        padding-bottom: 0;
+        padding-top: 24px;
+    }
+
     .number {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 2px;
+    }
+
+    .suffix {
+        font-size: 16px;
+    }
+
+    .label {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        opacity: 0.8;
+    }
+
+    .secondaryText {
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
     .statsGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .number {
+        font-size: 28px;
     }
 }

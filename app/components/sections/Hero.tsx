@@ -12,10 +12,10 @@ export default function Hero() {
             {/* Content Container - Aligned with Global Layout */}
             <div className={styles.heroContent}>
                 <h1 className={styles.title}>
-                    RBI Engineering Group
+                    RBI Engineering<br className={styles.mobileBreak} /> Group
                 </h1>
                 <p className={styles.subtitle}>
-                    Строительство и модульные сооружения в Казахстане
+                    Строительство и модульные сооружения в&nbsp;Казахстане
                 </p>
                 <p className={styles.description}>
                     Выполняем строительно-монтажные работы любой сложности и строим мобильные модульные сооружения. Ставим на технологии, качество и оперативность.
@@ -25,7 +25,8 @@ export default function Hero() {
                     <Button href="/projects" variant="outline">Смотреть проекты</Button>
                 </div>
                 <div className={styles.trustLine}>
-                    13+ лет • 62+ проектов • лицензия 1 категории
+                    <span>• 13+ лет • 62+ проекта </span>
+                    <span className={styles.trustBreak}>• Лицензия 1 категории</span>
                 </div>
             </div>
         </section>

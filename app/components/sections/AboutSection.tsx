@@ -35,7 +35,7 @@ export default function AboutSection() {
                     setCounts(stats.map(() => 0));
                 }
             },
-            { threshold: 0.1 }
+            { threshold: 0.5 }
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);
@@ -79,7 +79,7 @@ export default function AboutSection() {
                                 <span className={styles.accent}>RBI Engineering Group</span> — строительная организация полного цикла,
                                 специализирующаяся на сложных строительно-монтажных работах и проектировании высокотехнологичных модульных сооружений.
                             </p>
-                            <p className={styles.subDescription}>
+                            <p className={styles.secondaryText}>
                                 Мы реализуем индустриальные и инфраструктурные проекты по всему Казахстану,
                                 обеспечивая высокую культуру инжиниринга и соблюдение строгих технологических стандартов.
                             </p>

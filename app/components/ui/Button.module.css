@@ -73,3 +73,12 @@
     /* White text on hover */
     box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
 }
+
+@media (max-width: 768px) {
+    .button {
+        padding: 14px 24px;
+        font-size: 14px;
+        width: 100%;
+        letter-spacing: 0.1em;
+    }
+}

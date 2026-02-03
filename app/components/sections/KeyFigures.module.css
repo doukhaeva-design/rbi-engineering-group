@@ -52,13 +52,13 @@
     font-size: 14px;
     /* Increased readability */
     text-transform: uppercase;
-    color: #b0b5bd;
-    /* Muted steel */
+    color: #111827;
+    /* Black/Dark text */
     max-width: 150px;
     line-height: 1.5;
     letter-spacing: 0.08em;
     /* Premium spacing */
-    font-weight: 600;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
