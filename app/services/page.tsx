@@ -1,4 +1,4 @@
-
+import Image from 'next/image';
 import Header from "../components/layout/Header";
 import styles from "./services.module.css";
 import Button from "../components/ui/Button";
@@ -9,46 +9,66 @@ export default function ServicesPage() {
     const services = [
         {
             title: "Модульные сооружения",
-            desc: "Быстрые здания из модулей, которые можно собрать на объекте.",
+            desc: "Оперативное возведение высокотехнологичных объектов «под ключ».",
             details: [
-                "Дополнительная кровля",
-                "Крыльцо с козырьком",
-                "Наружная лестница",
-                "Дополнительные металлоконструкции",
-                "Инженерные системы: электричество, отопление, вентиляция"
+                "Сборно-разборные конструкции",
+                "Полная внутренняя отделка и коммуникации",
+                "Адаптация под климатические условия",
+                "Дополнительная кровля, крыльцо и лестницы",
+                "Инженерные системы: отопление, вентиляция, электрика"
             ],
-            button: "Обсудить модуль",
-            link: "/modular"
+            image: "/assets/drawings/modular_3d.png"
         },
         {
-            title: "Строительно-монтажные работы (СМР)",
-            desc: "Выполняем СМР любой сложности.",
-            button: "Запросить расчёт",
-            link: "/contacts"
+            title: "Строительно-монтажные работы",
+            desc: "Профессиональная реализация масштабных инфраструктурных и промышленных проектов.",
+            details: [
+                "Монтаж каркасов зданий и сооружений",
+                "Устройство фундаментов любой сложности",
+                "Кровельные и фасадные работы",
+                "Монтаж сэндвич-панелей"
+            ],
+            image: "/assets/drawings/construction_3d.png"
         },
         {
             title: "Инженерные сети",
-            desc: "Прокладываем инженерные сети.",
-            button: "Запросить расчёт",
-            link: "/contacts"
+            desc: "Проектирование и инсталляция сложных внутренних и внешних коммуникационных систем.",
+            details: [
+                "Прокладка сетей водоснабжения и канализации",
+                "Монтаж систем отопления и теплоснабжения",
+                "Электромонтажные работы"
+            ],
+            image: "/assets/drawings/networks_3d.png"
         },
         {
             title: "Отделочные работы",
-            desc: "Выполняем отделку помещений.",
-            button: "Запросить расчёт",
-            link: "/contacts"
+            desc: "Финальная отделка премиального уровня с использованием износостойких материалов.",
+            details: [
+                "Внутренняя отделка помещений",
+                "Фасадные решения",
+                "Укладка напольных покрытий"
+            ],
+            image: "/assets/drawings/finishing_3d.png"
         },
         {
             title: "Проектирование и планирование",
-            desc: "Градостроительное проектирование и планирование.",
-            button: "Запросить расчёт",
-            link: "/contacts"
+            desc: "Разработка высокоточной проектной документации и генеральное планирование.",
+            details: [
+                "Разработка эскизных и рабочих проектов",
+                "Генеральное планирование территории",
+                "Авторский надзор"
+            ],
+            image: "/assets/drawings/planning_3d.png"
         },
         {
-            title: "Монтаж и демонтаж",
-            desc: "Монтаж и демонтаж любой сложности.",
-            button: "Запросить расчёт",
-            link: "/contacts"
+            title: "Монтаж / демонтаж",
+            desc: "Сложный монтаж технологического оборудования и металлоконструкций любого масштаба.",
+            details: [
+                "Монтаж технологического оборудования",
+                "Демонтаж зданий и сооружений",
+                "Передислокация объектов"
+            ],
+            image: "/assets/drawings/mounting_3d.png"
         }
     ];
 
@@ -67,49 +87,36 @@ export default function ServicesPage() {
 
             <section className="section">
                 <div className="container">
-                    {/* Primary Services */}
-                    <div className={styles.primaryGrid}>
-                        {/* Modular */}
-                        <div className={`${styles.primaryCard} ${styles.accentModular}`}>
-                            <h2 className={styles.primaryTitle}>Модульные сооружения</h2>
-                            <p className={styles.primaryDesc}>
-                                Комплексные решения «под ключ»: от производства до монтажа на объекте.
-                                Быстровозводимые здания для вахтовых поселков, офисов и технических нужд.
-                            </p>
-                            <ul className={styles.detailList}>
-                                <li>• Сборно-разборные конструкции</li>
-                                <li>• Полная внутренняя отделка и коммуникации</li>
-                                <li>• Адаптация под климатические условия</li>
-                            </ul>
-                        </div>
+                    <div className={styles.grid}>
+                        {services.map((item, index) => (
+                            <div key={index} className={styles.card}>
+                                <div className={styles.cardContent}>
+                                    <span className={styles.cardNumber}>0{index + 1}</span>
+                                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                                    <p className={styles.cardDesc}>{item.desc}</p>
 
-                        {/* SMR */}
-                        <div className={`${styles.primaryCard} ${styles.accentSMR}`}>
-                            <h2 className={styles.primaryTitle}>Строительно-монтажные работы</h2>
-                            <p className={styles.primaryDesc}>
-                                Профессиональный монтаж металлоконструкций любой сложности,
-                                строительство промышленных и гражданских объектов.
-                            </p>
-                            <ul className={styles.detailList}>
-                                <li>• Монтаж каркасов зданий и сооружений</li>
-                                <li>• Устройство фундаментов</li>
-                                <li>• Кровельные и фасадные работы</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* Secondary Services Header */}
-                    <h3 className={styles.sectionTitle}>Дополнительные услуги</h3>
-
-                    {/* Secondary Services Grid */}
-                    <div className={styles.secondaryGrid}>
-                        {services.slice(2).map((service, index) => (
-                            <div key={index} className={styles.secondaryCard}>
-                                <h4 className={styles.secondaryTitle}>{service.title}</h4>
-                                <p className={styles.secondaryDesc}>{service.desc}</p>
+                                    {/* Render details list if available */}
+                                    {item.details && (
+                                        <ul className={styles.detailsList}>
+                                            {item.details.map((detail, idx) => (
+                                                <li key={idx} className={styles.detailItem}>{detail}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                                <div className={styles.imageWrapper}>
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className={styles.sketchImage}
+                                    />
+                                </div>
                             </div>
                         ))}
                     </div>
+
                     <div style={{ marginTop: '60px', textAlign: 'center' }}>
                         <Button href="/contacts" variant="primary">Запросить расчёт стоимости</Button>
                     </div>
@@ -117,5 +124,5 @@ export default function ServicesPage() {
             </section>
             <Footer />
         </main>
-    );
+    )
 }

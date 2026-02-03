@@ -26,24 +26,39 @@
     color: var(--text-main);
 }
 
-.grid {
+.advantagesList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
 }
 
-.card {
-    background: #FFFFFF;
-    border: 1px solid var(--border-color);
-    padding: 30px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-.card h3 {
-    margin: 0;
+.advantageItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     font-size: 18px;
+    color: var(--text-main);
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.checkIcon {
+    width: 24px;
+    height: 24px;
     color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .advantagesList {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
 
 .infoGrid {

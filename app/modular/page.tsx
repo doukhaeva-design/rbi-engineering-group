@@ -24,14 +24,44 @@ export default function ModularPage() {
             <section className="section">
                 <div className="container">
                     <h2 className={styles.sectionTitle}>Преимущества</h2>
-                    <div className={styles.grid}>
-                        <div className={styles.card}><h3>Быстро строится</h3></div>
-                        <div className={styles.card}><h3>Меньше затрат</h3></div>
-                        <div className={styles.card}><h3>Огнестойкость</h3></div>
-                        <div className={styles.card}><h3>Долговечность и простота сборки</h3></div>
-                        <div className={styles.card}><h3>Энергоэффективность</h3></div>
-                        <div className={styles.card}><h3>Можно строить в удалённых локациях</h3></div>
-                    </div>
+                    <ul className={styles.advantagesList}>
+                        <li className={styles.advantageItem}>
+                            <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>Быстро строится</span>
+                        </li>
+                        <li className={styles.advantageItem}>
+                            <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>Меньше затрат</span>
+                        </li>
+                        <li className={styles.advantageItem}>
+                            <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>Огнестойкость</span>
+                        </li>
+                        <li className={styles.advantageItem}>
+                            <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>Долговечность и простота сборки</span>
+                        </li>
+                        <li className={styles.advantageItem}>
+                            <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>Энергоэффективность</span>
+                        </li>
+                        <li className={styles.advantageItem}>
+                            <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>Можно строить в удалённых локациях</span>
+                        </li>
+                    </ul>
                 </div>
             </section>
 

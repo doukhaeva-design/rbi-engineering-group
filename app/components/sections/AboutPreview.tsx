@@ -7,7 +7,7 @@ export default function AboutPreview() {
             <div className={`container`}>
                 <div className={styles.content}>
                     <p className={styles.text}>
-                        <span className={styles.companyName}>RBI Engineering Group</span> — строительная компания, специализирующаяся на строительстве, строительно-монтажных работах и возведении мобильных модульных сооружений в Казахстане.
+                        <span className={styles.companyName}>RBI Engineering Group</span> работает в Казахстане и выполняет строительство, СМР и модульные решения.
                     </p>
                 </div>
             </div>

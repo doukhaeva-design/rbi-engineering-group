@@ -15,7 +15,7 @@
     font-weight: 700;
     opacity: 0.4;
     text-transform: uppercase;
-    color: white;
+    color: var(--text-main);
     letter-spacing: 0.05em;
     transition: opacity 0.3s ease;
 }
