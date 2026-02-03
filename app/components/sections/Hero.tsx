@@ -6,7 +6,11 @@ import Button from '../ui/Button';
 export default function Hero() {
     return (
         <section className={styles.hero}>
-            <div className={`container ${styles.heroContainer}`}>
+            {/* Glass Background Panel - Absolute */}
+            <div className={styles.glassPanel}></div>
+
+            {/* Content Container - Aligned with Global Layout */}
+            <div className={styles.heroContent}>
                 <h1 className={styles.title}>
                     RBI Engineering Group
                 </h1>
@@ -14,8 +18,7 @@ export default function Hero() {
                     Строительство и модульные сооружения в Казахстане
                 </p>
                 <p className={styles.description}>
-                    Выполняем строительно-монтажные работы любой сложности и строим мобильные модульные сооружения.<br />
-                    Ставим на технологии, качество и оперативность.
+                    Выполняем строительно-монтажные работы любой сложности и строим мобильные модульные сооружения. Ставим на технологии, качество и оперативность.
                 </p>
                 <div className={styles.buttonGroup}>
                     <Button href="/contacts" variant="primary">Запросить предложение</Button>

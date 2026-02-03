@@ -23,22 +23,26 @@
     /* Keep 16px for mobile */
   }
 
-  /* Premium Midnight Palette (Deepest Blue-Black) */
-  --background: #030508;
-  /* Deepest midnight, almost black */
-  --foreground: #f8fafc;
-  --secondary-color: #0c0f16;
-  /* Card background, subtle blue depth */
-  --background-offset: #080a0f;
-  /* Secondary section background */
-  --border-color: #161b22;
-  /* Subtle technical border */
+  /* Premium Light Palette (Construction & Engineering) */
+  --background: #F6F8FB;
+  /* Clean, professional light grey-blue */
+  --foreground: #1F2937;
+  /* Deep charcoal for main text */
+  --secondary-color: #FFFFFF;
+  /* Pure white for cards/sections */
+  --background-offset: #EEF2F6;
+  /* Slightly darker for alternating sections */
+  --border-color: #D9E2EC;
+  /* Soft cold grey for borders */
 
   --primary-color: #E68442;
-  --steel-color: #8fa3b8;
-  --text-main: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --border-color: #1a1f26;
+  /* Keep Safety Orange accent */
+  --steel-color: #64748b;
+  /* Steel blue-grey for secondary elements */
+  --text-main: #1F2937;
+  --text-secondary: #4B5563;
+  --text-inverse: #FFFFFF;
+  /* For buttons/dark areas */
 
   --font-family: -apple-system,
   BlinkMacSystemFont,
@@ -76,8 +80,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff;
-  /* Crisp white titles */
+  color: var(--text-main);
+  /* Dark titles */
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
@@ -117,8 +121,8 @@ p {
   margin-bottom: 24px;
   line-height: 1.7;
   /* Luxury spacing */
-  color: #d1d5db;
-  /* Premium off-white */
+  color: var(--text-secondary);
+  /* Premium dark grey */
   font-weight: 400;
 }
 
@@ -149,7 +153,7 @@ a {
   padding: 120px 0;
   background-color: var(--background);
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--border-color);
 }
 
 .section-alt {
@@ -157,8 +161,8 @@ a {
   background-color: var(--background-offset);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-  background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.01), transparent 40%);
+  border-top: 1px solid var(--border-color);
+  background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.03), transparent 40%);
 }
 
 /* Architectural Marker for Section Transitions */

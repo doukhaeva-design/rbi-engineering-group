@@ -7,7 +7,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-radius: 0;
+    border-radius: 4px;
     /* Sharp industrial aesthetic */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
@@ -18,12 +18,12 @@
 }
 
 .primary {
-    /* Modern, clean gradient (Subtle depth) */
-    background: linear-gradient(110deg, #E68442 0%, #D67635 100%);
-    /* Warm copper orange */
+    /* Modern, clean */
+    background: #F2A621;
+    /* Yellow/Orange */
     color: #ffffff;
     border: none;
-    box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
+    box-shadow: 0 4px 20px rgba(242, 166, 33, 0.4);
     /* Soft outer glow only */
     font-weight: 700;
     /* Slightly lighter weight for modern look */
@@ -46,7 +46,7 @@
 .primary:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 8px 25px rgba(230, 132, 66, 0.4),
+        0 8px 25px rgba(242, 166, 33, 0.6),
         inset 0 1px 1px rgba(255, 255, 255, 0.4);
     filter: brightness(1.05);
 }

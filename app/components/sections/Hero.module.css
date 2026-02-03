@@ -3,13 +3,14 @@
     min-height: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Aligns content to the left */
     background-color: var(--background);
     position: relative;
     overflow: hidden;
-    text-align: center;
-    color: white;
-    padding-top: 90px;
+    text-align: left;
+    color: #1F2937;
+    padding-top: 0;
 }
 
 /* Background Zoom Effect */
@@ -20,8 +21,7 @@
     left: -5%;
     width: 110%;
     height: 110%;
-    /* Rich Gradient: Vignette style (Focus in center, dark edges) */
-    background-image: url('/HeroNovoeFoto.png');
+    background-image: url('/HeroNoviyFon.png');
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -45,32 +45,57 @@
     z-index: 1;
 }
 
-.heroContainer {
+.glassPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66vw;
+    height: 100%;
+    /* Glass Effect */
+    background: rgba(253, 248, 240, 0.93);
+    /* Warm light beige/yellow-brown tint */
+    /* Strong white glass */
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-right: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 0 24px 24px 0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    /* Content above glass */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 900px;
-    position: relative;
-    padding: 60px 40px;
-    /* More vertical breathing room */
-    margin-bottom: 40px;
-    /* Push content up slightly from bottom edge */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 24px;
+    /* Exact match with Header padding */
+    max-width: 1400px;
+    /* Match header container width if possible, or keep it standard */
+    margin: 0 auto;
+    width: 100%;
+    /* Alignment is handled here now to match Header */
 }
 
 /* Engineering Corner Accents */
-.heroContainer::before {
+/* Engineering Corner Accents */
+.glassPanel::before {
     content: "";
     position: absolute;
     top: 0;
     left: 20px;
     width: 20px;
     height: 20px;
-    border-top: 1px solid rgba(230, 132, 66, 0.6);
-    border-left: 1px solid rgba(230, 132, 66, 0.6);
+    border-top: 1px solid rgba(230, 132, 66, 0.8);
+    border-left: 1px solid rgba(230, 132, 66, 0.8);
     transition: all 0.5s ease;
 }
 
-.heroContainer::after {
+.glassPanel::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -82,8 +107,8 @@
     transition: all 0.5s ease;
 }
 
-.heroContainer:hover::before,
-.heroContainer:hover::after {
+.glassPanel:hover::before,
+.glassPanel:hover::after {
     width: 40px;
     height: 40px;
     opacity: 1;
@@ -124,16 +149,14 @@
     font-size: clamp(40px, 6vw, 82px);
     line-height: 1.1;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: none;
+    white-space: nowrap;
     letter-spacing: -0.02em;
     margin-bottom: 32px;
-    background: linear-gradient(110deg, #a8a8a8 0%, #e6e1d8 10%, #ffffff 20%, #ffffff 30%, #e6e1d8 40%, #a8a8a8 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    color: #1F2937;
+    /* Dark text */
+    text-shadow: none;
+    /* Remove shadow */
     position: relative;
     z-index: 2;
 }
@@ -141,8 +164,9 @@
 .description {
     font-size: 18px;
     line-height: 1.8;
-    color: #ffffff;
-    max-width: 600px;
+    color: #4B5563;
+    /* Secondary dark text */
+    max-width: 800px;
     margin-bottom: 56px;
     font-weight: 400;
 }
@@ -216,9 +240,9 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #e0e0e0;
+    color: #4B5563;
     font-weight: 600;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 24px;
     display: inline-block;
     width: 100%;

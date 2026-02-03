@@ -4,23 +4,14 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(10, 12, 16, 0.85);
-    /* Slightly more transparent */
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .header::before {
-    content: "";
-    /* Top accent line */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(198, 142, 104, 0.5), transparent);
-    opacity: 0.6;
+    display: none;
 }
 
 .headerContainer {
@@ -29,21 +20,18 @@
     justify-content: space-between;
     height: 80px;
     max-width: 1400px;
-    /* Limit width for large screens */
     margin: 0 auto;
     padding: 0 24px;
 }
 
 .logo {
     font-size: 22px;
-    /* Slightly larger */
     font-weight: 800;
-    /* Extra bold */
-    color: white;
+    color: #000000;
+    /* Black */
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: -0.02em;
-    /* Tight confident spacing */
     z-index: 1001;
     white-space: nowrap;
     display: flex;
@@ -53,7 +41,6 @@
 
 .logo span {
     color: var(--primary-color);
-    /* Highlight first part if wrapped in span, or just visual contrast */
 }
 
 .nav {
@@ -67,15 +54,15 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #a0a5b0;
-    /* Muted default */
+    color: #000000;
+    /* Black */
     padding: 8px 0;
     position: relative;
     transition: color 0.3s;
 }
 
 .link:hover {
-    color: white;
+    color: var(--primary-color);
 }
 
 .link::after {
@@ -98,8 +85,7 @@
     color: var(--primary-color);
     padding: 10px 22px;
     border: 1px solid var(--primary-color);
-    border-radius: 0;
-    /* Match industrial base */
+    border-radius: 4px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 13px;
@@ -112,7 +98,7 @@
 
 .ctaButton:hover {
     background-color: var(--primary-color);
-    color: #0f1115;
+    color: white;
 }
 
 /* Mobile Menu Styles */
@@ -133,7 +119,7 @@
 .bar {
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: #000000;
     transition: all 0.3s ease;
 }
 
