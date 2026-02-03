@@ -5,8 +5,8 @@
 }
 
 .card {
-    background: #0c0f16;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
@@ -18,20 +18,22 @@
 
 .card:hover {
     transform: translateY(-8px);
-    border-color: rgba(230, 132, 66, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    /* Softer light shadow */
 }
 
 .imagePlaceholder {
     height: 180px;
     /* Consistent horizontal photo area */
-    background-color: #08101a;
+    background-color: #f8fafc;
+    /* Very light grey */
     background-image:
-        radial-gradient(at 0% 0%, rgba(230, 132, 66, 0.03) 0%, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(143, 163, 184, 0.03) 0%, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(230, 132, 66, 0.05) 0%, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(143, 163, 184, 0.1) 0%, transparent 50%);
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid #f1f5f9;
 }
 
 /* Subtile glass reflection effect */
@@ -42,7 +44,7 @@
     left: 0;
     right: 0;
     height: 100%;
-    background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.01) 50%, transparent 60%);
+    background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
     transition: transform 0.8s ease;
 }
 
@@ -70,7 +72,8 @@
 .title {
     font-size: 18px;
     line-height: 1.4;
-    color: #f1f5f9;
+    color: #0f1115;
+    /* Dark text */
     font-weight: 600;
     margin: 0 0 16px 0;
     letter-spacing: -0.01em;
@@ -79,7 +82,7 @@
 .specs {
     margin-top: auto;
     padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid #f1f5f9;
     display: flex;
     gap: 20px;
 }
@@ -100,7 +103,8 @@
 
 .specValue {
     font-size: 12px;
-    color: #94a3b8;
+    color: #334155;
+    /* Darker for readability */
 }
 
 @media (max-width: 768px) {

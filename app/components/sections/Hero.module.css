@@ -21,14 +21,11 @@
     width: 110%;
     height: 110%;
     /* Rich Gradient: Vignette style (Focus in center, dark edges) */
-    background-image:
-        radial-gradient(circle at center, rgba(5, 10, 20, 0.8) 0%, #030508 95%),
-        url('/HeroBackground.png');
+    background-image: url('/HeroNovoeFoto.png');
     background-size: cover;
     background-position: center;
     z-index: 0;
-    animation: zoomBreath 40s infinite alternate ease-in-out;
-    filter: blur(2px);
+    /* Clean photo */
     /* Depth of field effect */
 }
 

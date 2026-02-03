@@ -33,7 +33,7 @@ export default function KeyProjects() {
         <section className={`section-alt`} id="projects">
             <div className={`container`}>
                 <h2 style={{ marginBottom: '10px' }}>Проекты</h2>
-                <p style={{ marginBottom: '40px', fontSize: '18px', color: '#ccc' }}>Примеры выполненных работ по модульным решениям и монтажным проектам.</p>
+                <p style={{ marginBottom: '40px', fontSize: '18px', color: '#4b5563' }}>Примеры выполненных работ по модульным решениям и монтажным проектам.</p>
 
                 <div className={styles.grid}>
                     {projects.map((project, index) => (
