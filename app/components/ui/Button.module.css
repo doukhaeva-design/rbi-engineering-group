@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     padding: 16px 32px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -19,11 +19,11 @@
 
 .primary {
     /* Modern, clean */
-    background: #F2A621;
-    /* Yellow/Orange */
+    background: #F47C2B;
+    /* User Requested Orange 3 */
     color: #ffffff;
     border: none;
-    box-shadow: 0 4px 20px rgba(242, 166, 33, 0.4);
+    box-shadow: 0 4px 20px rgba(244, 124, 43, 0.25);
     /* Soft outer glow only */
     font-weight: 700;
     /* Slightly lighter weight for modern look */
@@ -46,7 +46,7 @@
 .primary:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 8px 25px rgba(242, 166, 33, 0.6),
+        0 8px 25px rgba(244, 124, 43, 0.4),
         inset 0 1px 1px rgba(255, 255, 255, 0.4);
     filter: brightness(1.05);
 }

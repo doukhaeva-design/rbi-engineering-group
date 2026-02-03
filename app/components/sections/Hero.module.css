@@ -9,7 +9,7 @@
     position: relative;
     overflow: hidden;
     text-align: left;
-    color: #1F2937;
+    color: var(--text-main);
     padding-top: 0;
 }
 
@@ -153,7 +153,7 @@
     white-space: nowrap;
     letter-spacing: -0.02em;
     margin-bottom: 32px;
-    color: #1F2937;
+    color: var(--text-main);
     /* Dark text */
     text-shadow: none;
     /* Remove shadow */
@@ -164,7 +164,7 @@
 .description {
     font-size: 18px;
     line-height: 1.8;
-    color: #4B5563;
+    color: var(--text-secondary);
     /* Secondary dark text */
     max-width: 800px;
     margin-bottom: 56px;
@@ -240,7 +240,7 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #4B5563;
+    color: var(--text-secondary);
     font-weight: 600;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 24px;

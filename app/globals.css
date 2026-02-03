@@ -26,7 +26,7 @@
   /* Premium Light Palette (Construction & Engineering) */
   --background: #F6F8FB;
   /* Clean, professional light grey-blue */
-  --foreground: #1F2937;
+  --foreground: #111827;
   /* Deep charcoal for main text */
   --secondary-color: #FFFFFF;
   /* Pure white for cards/sections */
@@ -35,12 +35,14 @@
   --border-color: #D9E2EC;
   /* Soft cold grey for borders */
 
-  --primary-color: #E68442;
+  --primary-color: #F47C2B;
   /* Keep Safety Orange accent */
   --steel-color: #64748b;
   /* Steel blue-grey for secondary elements */
-  --text-main: #1F2937;
-  --text-secondary: #4B5563;
+  --text-main: #111827;
+  /* Almost Black */
+  --text-secondary: #374151;
+  /* Dark Grey */
   --text-inverse: #FFFFFF;
   /* For buttons/dark areas */
 

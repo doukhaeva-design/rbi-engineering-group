@@ -1,5 +1,5 @@
 .section {
-    background-color: var(--background);
+    background-color: #FFFFFF;
     padding: 80px 0;
     /* Reduced from 120px */
     position: relative;
@@ -43,8 +43,8 @@
     font-size: 20px;
     /* Reduced from 32px for professionalism */
     line-height: 1.6;
-    color: #ffffff;
-    font-weight: 300;
+    color: var(--text-main);
+    font-weight: 400;
 }
 
 .description p {
@@ -56,7 +56,7 @@
 }
 
 .subDescription {
-    color: #a0a5b0;
+    color: var(--text-secondary);
     font-size: 18px;
 }
 
@@ -67,58 +67,78 @@
 
 /* Stats: Technical Grid */
 .statsGrid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    /* No gap, dividers handle spacing */
     background: transparent;
     border: none;
+    margin-top: 40px;
+    border-top: 1px solid #E5E7EB;
+    /* Top border line */
+    padding-top: 40px;
 }
 
 .statCard {
-    background-color: var(--background);
-    padding: 30px 24px;
+    background-color: transparent;
+    padding: 0 32px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 140px;
-    transition: all 0.4s ease;
+    justify-content: flex-start;
+    min-height: auto;
+    position: relative;
+    flex: 1;
+}
+
+/* Vertical Dividers */
+.statCard:not(:last-child) {
+    border-right: 1px solid #E5E7EB;
+}
+
+.statCard:first-child {
+    padding-left: 0;
+}
+
+.statCard:last-child {
+    padding-right: 0;
 }
 
 .dominant {
-    grid-column: span 1;
-    /* Removed span 2 for more compact look */
+    /* No special grid layout needed for flex */
 }
 
 .valueWrapper {
     display: flex;
     align-items: baseline;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .number {
-    font-size: 42px;
-    /* Reduced from 72px */
-    font-weight: 300;
+    font-size: 48px;
+    font-weight: 700;
     line-height: 1;
-    background: linear-gradient(135deg, #F2D5B5 0%, #DFA076 50%, #C67D53 100%);
+    background: linear-gradient(135deg, #C2410C 0%, #F47C2B 50%, #FF9D1C 100%);
+    /* Deep Copper to Vibrant Orange */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
     letter-spacing: -0.02em;
 }
 
 .suffix {
-    font-size: 20px;
-    font-weight: 200;
-    color: #DFA076;
+    font-size: 24px;
+    font-weight: 400;
+    color: #F47C2B;
     margin-left: 4px;
+    opacity: 1;
 }
 
 .label {
     font-size: 10px;
     /* Smaller labels */
     line-height: 1.4;
-    color: #888e96;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
@@ -126,7 +146,18 @@
 
 @media (max-width: 1200px) {
     .statsGrid {
-        grid-template-columns: repeat(3, 1fr);
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .statCard {
+        min-width: 30%;
+        border-right: none !important;
+        /* Remove vertical borders on wrap */
+        border-bottom: 1px solid #E5E7EB;
+        padding-bottom: 24px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
 
