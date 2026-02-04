@@ -1,3 +1,8 @@
+/* 
+  Стили для раздела превью модульных зданий (ModularPreview).
+  Используется темный фон с акцентными карточками и иконками.
+*/
+
 .section {
     position: relative;
     background-color: #111827;
@@ -26,16 +31,13 @@
     margin-bottom: 50px;
     line-height: 1.6;
     color: #FFFFFF;
-    /* Brighter intro text */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    /* Lighter weight for elegance */
     opacity: 0.9;
 }
 
-/* content styles kept */
-
+/* --- Блок преимуществ --- */
 .benefitsBlock {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -62,7 +64,15 @@
     background-color: var(--primary-color);
 }
 
+.detailText {
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
 
+/* --- Сетка карточек --- */
 .cardsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -81,14 +91,13 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    /* Glass feel */
     backdrop-filter: blur(10px);
 }
 
 .card:hover {
     transform: translateY(-8px);
     background: rgba(36, 75, 130, 0.15);
-    /* Deep blue tint */
+    /* Синий оттенок при наведении */
     border-color: rgba(47, 93, 159, 0.5);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
@@ -113,20 +122,11 @@
     box-shadow: 0 0 20px rgba(47, 93, 159, 0.4);
 }
 
-.cardDecor {
-    width: 40px;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin-bottom: 16px;
-    border-radius: 2px;
-}
-
 .cardTitle {
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
-    /* Slightly reduced */
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -146,15 +146,7 @@
     text-align: center;
 }
 
-.detailText {
-    font-size: 16px;
-    color: #FFFFFF;
-    line-height: 1.8;
-    /* More breath */
-    margin-bottom: 24px;
-    font-weight: 400;
-}
-
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .section {
         padding-top: 60px;
@@ -164,16 +156,13 @@
     .cardsGrid {
         grid-template-columns: 1fr;
         gap: 12px;
-        /* Tighter gap */
     }
 
     .card {
         padding: 20px 16px;
-        /* Reduced padding */
         flex-direction: row;
-        /* Horizontal layout for compactness */
+        /* На мобильных карточки становятся горизонтальными */
         text-align: left;
-        /* Align text left */
         align-items: center;
     }
 
@@ -182,7 +171,6 @@
         height: 40px;
         margin-bottom: 0;
         margin-right: 16px;
-        /* Space between icon and text */
         flex-shrink: 0;
     }
 

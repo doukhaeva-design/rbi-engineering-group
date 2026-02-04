@@ -1,7 +1,13 @@
+/* 
+  Стили для раздела "Ключевые показатели" (KeyFigures).
+  Включает крупные счетчики/числа с медным градиентом.
+*/
+
 .figuresSection {
     padding: 80px 0;
 }
 
+/* --- Сетка показателей --- */
 .grid {
     display: flex;
     justify-content: space-between;
@@ -16,25 +22,25 @@
     flex: 1;
     position: relative;
     border-right: 1px solid var(--border-color);
+    /* Вертикальный разделитель */
 }
 
 .item:last-child {
     border-right: none;
 }
 
+/* --- Числа и Текст --- */
 .number {
     font-size: 72px;
     font-weight: 300;
     margin-bottom: 8px;
     font-variant-numeric: tabular-nums;
     line-height: 1;
-
-    /* Vibrant Copper Gradient (Matches Buttons) */
+    /* Медный градиент для акцента */
     background: linear-gradient(135deg, #FCF0D8 0%, #EAA52F 50%, #C67D53 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
     display: inline-flex;
     align-items: baseline;
 }
@@ -44,30 +50,28 @@
     margin-left: 4px;
     font-weight: 200;
     -webkit-text-fill-color: #EAA52F;
-    /* Match middle of gradient */
+    /* Цвет суффикса (напр. "+") */
     opacity: 0.9;
 }
 
 .label {
     font-size: 14px;
-    /* Increased readability */
     text-transform: uppercase;
     color: #111827;
-    /* Black/Dark text */
     max-width: 150px;
     line-height: 1.5;
     letter-spacing: 0.08em;
-    /* Premium spacing */
     font-weight: 500;
 }
 
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .figuresSection {
         padding: 40px 0;
     }
 
+    /* Мобильный вид: вертикальный список "архитектурного" типа */
     .grid {
-        display: flex;
         flex-direction: column;
         gap: 0;
         padding: 0;
@@ -75,12 +79,12 @@
 
     .item {
         flex: none;
-        display: flex;
         flex-direction: row;
         align-items: center;
         padding: 24px 0;
         border-right: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        /* Нижний разделитель */
         width: 100%;
         gap: 24px;
         text-align: left;

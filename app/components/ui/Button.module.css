@@ -1,3 +1,8 @@
+/* 
+  Стили для универсального компонента кнопки (Button).
+  Включает основной, контурный и адаптивный варианты.
+*/
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -8,7 +13,7 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     border-radius: 4px;
-    /* Sharp industrial aesthetic */
+    /* Строгая индустриальная форма */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     text-align: center;
@@ -17,18 +22,15 @@
     overflow: hidden;
 }
 
+/* --- Основная кнопка (Оранжевая) --- */
 .primary {
-    /* Modern, clean */
     background: #D98F18;
-    /* User Requested Orange 3 */
     color: #ffffff;
     border: none;
     box-shadow: 0 4px 20px rgba(217, 143, 24, 0.25);
-    /* Soft outer glow only */
-    font-weight: 700;
-    /* Slightly lighter weight for modern look */
 }
 
+/* Эффект блика при наведении */
 .primary::before {
     content: "";
     position: absolute;
@@ -45,9 +47,7 @@
 
 .primary:hover {
     transform: translateY(-2px);
-    box-shadow:
-        0 8px 25px rgba(217, 143, 24, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(217, 143, 24, 0.4);
     filter: brightness(1.05);
 }
 
@@ -59,27 +59,24 @@
     transform: translateY(0);
 }
 
+/* --- Контурная кнопка (Синяя) --- */
 .outline {
     background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    /* Subtle border */
-    box-shadow: none;
 }
 
 .outline:hover {
     background: var(--primary-color);
     color: #ffffff;
-    /* White text on hover */
-    box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
+    box-shadow: 0 4px 20px rgba(47, 93, 159, 0.25);
 }
 
-/* Responsive Button: Outline on Desktop, Solid on Mobile */
+/* --- Адаптивная кнопка (Контурная на десктопе, залитая на мобильных) --- */
 .filled {
     background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    box-shadow: none;
 }
 
 .filled:hover {
@@ -89,11 +86,13 @@
     box-shadow: 0 8px 25px rgba(47, 93, 159, 0.4);
 }
 
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .button {
         padding: 14px 24px;
         font-size: 14px;
         width: 100%;
+        /* Кнопки на мобильных на всю ширину */
         letter-spacing: 0.1em;
     }
 

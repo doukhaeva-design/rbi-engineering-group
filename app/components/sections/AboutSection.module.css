@@ -1,7 +1,11 @@
+/* 
+  Стили для раздела "О компании" (AboutSection).
+  Включает текстовый манифест и сетку с ключевыми показателями (статистика).
+*/
+
 .section {
     background-color: #FFFFFF;
     padding: 80px 0;
-    /* Reduced from 120px */
     position: relative;
     overflow: hidden;
 }
@@ -10,26 +14,18 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
-    /* Reduced gap */
 }
 
-/* Profiles / Manifesto */
+/* --- Профиль / Текстовый блок --- */
 .profile {
     display: grid;
     grid-template-columns: 250px 1fr;
-    /* Split layout: Label | Content */
+    /* Сетка: Заголовок | Контент */
     gap: 80px;
     align-items: start;
     padding: 0;
     max-width: 100%;
     position: relative;
-    border-left: none;
-    /* Remove old border */
-}
-
-/* Remove old decorative line */
-.profile::before {
-    display: none;
 }
 
 .tagline {
@@ -46,10 +42,8 @@
 
 .description {
     font-size: 22px;
-    /* Standardized */
     line-height: 1.6;
     color: #1F2937;
-    /* Dark Grey */
     font-weight: 500;
     max-width: 700px;
 }
@@ -62,32 +56,27 @@
     margin-bottom: 0;
 }
 
-.subDescription {
+.secondaryText {
     color: #4B5563;
-    /* Mid Grey */
     font-size: 22px;
-    /* Standardized */
     line-height: 1.6;
     font-weight: 400;
 }
 
 .accent {
     color: #EAA52F;
-    /* Darker orange for better text contrast */
     font-weight: 700;
 }
 
-/* Stats: Technical Grid */
+/* --- Сетка статистики --- */
 .statsGrid {
     display: flex;
     justify-content: space-between;
     gap: 0;
-    /* No gap, dividers handle spacing */
     background: transparent;
     border: none;
     margin-top: 40px;
     border-top: 1px solid #E5E7EB;
-    /* Top border line */
     padding-top: 40px;
 }
 
@@ -102,7 +91,7 @@
     flex: 1;
 }
 
-/* Vertical Dividers */
+/* Вертикальные разделители между карточками */
 .statCard:not(:last-child) {
     border-right: 1px solid #E5E7EB;
 }
@@ -115,10 +104,6 @@
     padding-right: 0;
 }
 
-.dominant {
-    /* No special grid layout needed for flex */
-}
-
 .valueWrapper {
     display: flex;
     align-items: baseline;
@@ -129,8 +114,8 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 1;
+    /* Медный градиент для чисел */
     background: linear-gradient(135deg, #C2410C 0%, #EAA52F 50%, #FF9D1C 100%);
-    /* Deep Copper to Vibrant Orange */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -143,12 +128,10 @@
     font-weight: 400;
     color: #EAA52F;
     margin-left: 4px;
-    opacity: 1;
 }
 
 .label {
     font-size: 10px;
-    /* Smaller labels */
     line-height: 1.4;
     color: var(--text-secondary);
     text-transform: uppercase;
@@ -156,6 +139,7 @@
     font-weight: 600;
 }
 
+/* --- Адаптивность --- */
 @media (max-width: 1200px) {
     .statsGrid {
         flex-wrap: wrap;
@@ -165,7 +149,6 @@
     .statCard {
         min-width: 30%;
         border-right: none !important;
-        /* Remove vertical borders on wrap */
         border-bottom: 1px solid #E5E7EB;
         padding-bottom: 24px;
         padding-left: 0 !important;
@@ -180,7 +163,6 @@
 
     .layout {
         gap: 24px;
-        /* Tightened overall vertical layout */
     }
 
     .profile {
@@ -192,17 +174,12 @@
         font-size: 18px;
     }
 
-    .description p {
-        margin-bottom: 0;
-        /* Remove margin as it's the only visible paragraph */
-    }
-
+    /* Мобильная сетка статистики 2x2 */
     .statsGrid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
         margin-top: 12px;
-        /* Small gap instead of 32px */
         padding-top: 0;
         border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
@@ -210,11 +187,6 @@
     .statCard {
         padding: 20px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        min-height: auto;
     }
 
     .statCard:nth-child(odd) {
@@ -226,6 +198,7 @@
         padding-left: 16px;
     }
 
+    /* Последняя карточка на всю ширину */
     .statCard:nth-child(5) {
         grid-column: span 2;
         border-bottom: none;
@@ -235,7 +208,6 @@
 
     .number {
         font-size: 32px;
-        margin-bottom: 2px;
     }
 
     .suffix {
@@ -244,8 +216,6 @@
 
     .label {
         font-size: 9px;
-        letter-spacing: 0.1em;
-        opacity: 0.8;
     }
 
     .secondaryText {
@@ -254,10 +224,6 @@
 }
 
 @media (max-width: 480px) {
-    .statsGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .number {
         font-size: 28px;
     }

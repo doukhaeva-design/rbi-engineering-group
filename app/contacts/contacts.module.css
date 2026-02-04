@@ -1,8 +1,11 @@
+/* 
+  Стили для страницы "Контакты" (Contacts Page).
+  Включает заголовок и форму обратной связи.
+*/
+
 .hero {
     padding-top: 130px;
-    /* 80px header + 50px space */
     padding-bottom: 50px;
-    /* 50px space */
     background-color: var(--secondary-color);
     text-align: center;
 }
@@ -18,6 +21,7 @@
     color: var(--text-secondary);
 }
 
+/* --- Контейнер формы --- */
 .formContainer {
     max-width: 600px;
     margin: 0 auto;
@@ -52,6 +56,7 @@
     color: var(--text-secondary);
 }
 
+/* --- Поля ввода --- */
 .input,
 .textarea,
 .select {
@@ -82,12 +87,11 @@
     margin-top: 10px;
 }
 
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .hero {
         padding-top: 110px;
-        /* 80px header + 30px space */
         padding-bottom: 30px;
-        /* 30px space */
     }
 
     .heroTitle {

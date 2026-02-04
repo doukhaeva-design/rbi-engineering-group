@@ -1,18 +1,27 @@
+/* 
+  Глобальные стили проекта RBI Engineering Group.
+  Здесь определены переменные (дизайн-токены), базовые стили тегов и общие классы (сетка, секции).
+*/
+
 :root {
+  /* --- Размеры и отступы --- */
   --max-width: 1280px;
   --padding-x: 32px;
   --vertical-gap: 100px;
 
+  /* --- Типографика (Десктоп) --- */
   --font-h1: 72px;
   --font-h2: 32px;
   --font-h3: 20px;
   --font-text: 18px;
-  /* Standardize desktop body text to 18px */
+  /* Основной текст */
   --font-small: 14px;
 
+  /* --- Межбуквенное расстояние --- */
   --spacing-tight: -0.02em;
   --spacing-wide: 0.05em;
 
+  /* --- Адаптивные настройки (Планшеты/Телефоны) --- */
   @media (max-width: 768px) {
     --padding-x: 24px;
     --vertical-gap: 60px;
@@ -20,41 +29,50 @@
     --font-h2: 28px;
     --font-h3: 20px;
     --font-text: 16px;
-    /* Keep 16px for mobile */
   }
 
-  /* Premium Light Palette (Construction & Engineering) */
+  /* --- Основная цветовая палитра (Светлая тема) --- */
   --background: #F6F8FB;
-  /* Clean, professional light grey-blue */
+  /* Светлый серо-голубой фон */
   --foreground: #111827;
-  /* Deep charcoal for main text */
+  /* Насыщенный угольный для текста */
   --secondary-color: #FFFFFF;
-  /* Pure white for cards/sections */
+  /* Чисто белый для карточек */
   --background-offset: #EEF2F6;
-  /* Slightly darker for alternating sections */
+  /* Фон для чередующихся секций */
   --border-color: #D9E2EC;
-  /* Soft cold grey for borders */
+  /* Мягкий холодный серый для границ */
 
+  /* --- Акценты и спеццвета --- */
   --primary-color: #2F5D9F;
-  /* Calm Engineering Blue */
+  /* Благородный инженерный синий */
   --premium-copper: linear-gradient(135deg, #C67D53 0%, #EAA52F 100%);
-  /* Luxury Accent */
-
+  /* Медный градиент */
   --steel-color: #64748b;
-  /* Steel blue-grey for secondary elements */
-  --text-main: #111827;
-  /* Almost Black */
-  --text-secondary: #374151;
-  /* Dark Grey */
-  --text-inverse: #FFFFFF;
-  /* For buttons/dark areas */
+  /* Цвет стали для второстепенных элементов */
 
+  /* --- Текстовые цвета --- */
+  --text-main: #111827;
+  /* Почти черный */
+  --text-secondary: #374151;
+  /* Темно-серый */
+  --text-inverse: #FFFFFF;
+  /* Белый (для кнопок на темном фоне) */
+
+  /* --- Шрифт --- */
   --font-family: var(--font-inter),
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
   Roboto,
   sans-serif;
+}
+
+/* --- Сброс стилей и базовые настройки --- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -64,20 +82,12 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-text);
   line-height: 1.6;
-  /* Improved readability */
   color: var(--text-main);
   background-color: var(--background);
-  margin: 0;
-  padding: 0;
   -webkit-font-smoothing: antialiased;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
+/* --- Заголовки --- */
 h1,
 h2,
 h3,
@@ -85,7 +95,6 @@ h4,
 h5,
 h6 {
   color: var(--text-main);
-  /* Dark titles */
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
@@ -98,9 +107,7 @@ h1 {
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  /* Wider stance */
   font-weight: 800;
-  /* Impact */
 }
 
 h2 {
@@ -121,14 +128,12 @@ h3 {
   font-weight: 600;
 }
 
+/* --- Текст и ссылки --- */
 p {
   font-size: var(--font-text);
   margin-bottom: 24px;
   line-height: 1.7;
-  /* Luxury spacing */
   color: var(--text-secondary);
-  /* Premium dark grey */
-  font-weight: 400;
 }
 
 small {
@@ -140,6 +145,7 @@ a {
   text-decoration: none;
 }
 
+/* --- Общие компоненты разметки --- */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -147,21 +153,7 @@ a {
   width: 100%;
 }
 
-/* Ensure container doesn't overflow */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--padding-x);
-  }
-
-  /* Remove decorative stripes and corners on mobile for a cleaner look */
-  .section::before,
-  .section::after,
-  .section-alt::before,
-  .section-alt::after {
-    display: none !important;
-  }
-}
-
+/* --- Секции (Обычные и чередующиеся) --- */
 .section {
   padding: 120px 0;
   background-color: var(--background);
@@ -175,10 +167,17 @@ a {
   position: relative;
   overflow: hidden;
   border-top: 1px solid var(--border-color);
+  /* Легкий акцентный градиент для глубины */
   background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.03), transparent 40%);
 }
 
-/* Architectural Marker for Section Transitions */
+.section-alt>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Архитектурные элементы (Маркеры и углы) --- */
+/* Вертикальная линия-маркер между секциями */
 .section::before,
 .section-alt::after {
   content: "";
@@ -194,7 +193,7 @@ a {
   z-index: 10;
 }
 
-/* Structural Corner Accent */
+/* Декоративный уголок (архитектурный стиль) */
 .section::after {
   content: "";
   position: absolute;
@@ -207,16 +206,19 @@ a {
   pointer-events: none;
 }
 
-.section-alt>* {
-  position: relative;
-  z-index: 1;
-}
-
-/* Global Section Padding Override for Mobile */
+/* --- Адаптивность для секций --- */
 @media (max-width: 768px) {
 
   .section,
   .section-alt {
     padding: 60px 0;
+  }
+
+  /* Убираем декоративные элементы на маленьких экранах */
+  .section::before,
+  .section::after,
+  .section-alt::before,
+  .section-alt::after {
+    display: none !important;
   }
 }

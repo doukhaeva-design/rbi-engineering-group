@@ -1,3 +1,8 @@
+/* 
+  Стили для кнопки возврата назад (BackButton).
+  Используется на внутренних страницах для навигации в корень.
+*/
+
 .backBtn {
     background: none;
     border: none;
@@ -8,17 +13,20 @@
     align-items: center;
     gap: 8px;
     padding: 10px 0;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
     z-index: 10;
-
-    /* Flow based positioning */
     position: absolute;
     top: 100px;
     left: 20px;
-    margin: 0;
 }
 
-/* If inside a container */
+/* Эффект при наведении (смещение влево) */
+.backBtn:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+/* --- Контейнер-обертка для позиционирования --- */
 .containerWrapper {
     position: relative;
     max-width: 1280px;
@@ -26,11 +34,7 @@
     padding: 0 20px;
 }
 
-.backBtn:hover {
-    color: var(--primary-color);
-    transform: translateX(-5px);
-}
-
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .backBtn {
         font-size: 13px;

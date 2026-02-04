@@ -1,3 +1,7 @@
+/* 
+  Стили для анимации появления элементов при скролле (RevealOnScroll).
+*/
+
 .revealContainer {
     opacity: 0;
     transform: translateY(30px);
@@ -5,6 +9,7 @@
     will-change: opacity, transform;
 }
 
+/* Состояние, когда элемент попадает во вьюпорт */
 .visible {
     opacity: 1;
     transform: translateY(0);

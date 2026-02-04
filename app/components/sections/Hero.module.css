@@ -1,3 +1,8 @@
+/* 
+  Стили для главного экрана (Hero).
+  Включает фоновое изображение, "стеклянную" панель и анимации появления контента.
+*/
+
 .hero {
     height: 100vh;
     min-height: 600px;
@@ -11,6 +16,7 @@
     color: var(--text-main);
 }
 
+/* Фоновое изображение с эффектом панорамы */
 .hero::before {
     content: "";
     position: absolute;
@@ -24,20 +30,7 @@
     z-index: 0;
 }
 
-.heroContent {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 24px;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-}
-
+/* Стеклянная панель контента (Glassmorphism) */
 .glassPanel {
     position: absolute;
     top: 0;
@@ -53,7 +46,22 @@
     z-index: 1;
 }
 
-/* Animations */
+/* Основной контейнер контента */
+.heroContent {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Анимации появления --- */
 @keyframes architecturalReveal {
     0% {
         opacity: 0;
@@ -103,13 +111,12 @@
     animation-delay: 0.5s;
 }
 
-/* Desktop Styles */
+/* --- Элементы типографики --- */
 .subtitle {
     order: -1;
     font-size: 14px;
     font-weight: 800;
     color: #D98F18;
-    /* Slightly darker/richer than original #EAA52F */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-bottom: 20px;
@@ -120,9 +127,7 @@
     line-height: 1.1;
     font-weight: 700;
     white-space: normal;
-    /* Allow wrapping to stay in glass */
     max-width: 60vw;
-    /* Keep within the 66vw glass panel */
     letter-spacing: -0.02em;
     margin-bottom: 24px;
 }
@@ -141,6 +146,7 @@
     gap: 20px;
 }
 
+/* Линия доверия */
 .trustLine {
     margin-top: 64px;
     font-size: 13px;
@@ -154,52 +160,36 @@
     max-width: 600px;
 }
 
-.mobileBreak {
-    display: none;
-}
-
-/* Locked Eye Flow Optimization (Mobile) */
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
-    .mobileBreak {
-        display: block;
-    }
-
     .hero {
         height: auto;
         min-height: 500px;
-        /* Reduced height as requested */
         padding-top: 100px;
-        /* Slightly reduce top padding further */
         padding-bottom: 40px;
         align-items: flex-start;
-        /* Align content to top */
     }
 
     .hero::before {
         background-position: 65% center;
-        /* Shift image slightly to show more relevant parts */
     }
 
     .glassPanel {
         width: 100%;
         background: rgba(255, 255, 255, 0.8);
-        /* 80% Opacity to make difference visible */
         backdrop-filter: blur(6px);
     }
 
     .heroContent {
         justify-content: flex-start;
-        /* Start from top */
         padding-top: 20px;
     }
 
     .title {
         order: 0;
         font-size: 36px;
-        /* Larger for impact */
         line-height: 1.1;
         font-weight: 800;
-        white-space: normal;
         margin-bottom: 12px;
         color: var(--primary-color);
         max-width: 100%;
@@ -209,26 +199,17 @@
     .subtitle {
         order: 1;
         font-size: 11px;
-        /* Increased from 9px */
         letter-spacing: 0.1em;
         margin-bottom: 20px;
-        font-weight: 700;
         color: #D98F18;
-        text-transform: uppercase;
-        display: block;
-        line-height: 1.4;
-        max-width: 100%;
-        /* Removed constraint */
     }
 
     .description {
         order: 2;
         font-size: 16px;
-        /* Slightly larger */
         line-height: 1.5;
         margin-bottom: 32px;
         color: var(--text-main);
-        opacity: 0.9;
         max-width: 100%;
     }
 
@@ -238,11 +219,8 @@
         margin-bottom: 32px;
         padding-top: 16px;
         font-size: 12px;
-        /* Increased size */
         color: var(--primary-color);
-        font-weight: 600;
         border-top: 1px solid rgba(0, 0, 0, 0.08);
-        width: 100%;
     }
 
     .trustBreak {
@@ -255,9 +233,5 @@
         flex-direction: column;
         width: 100%;
         gap: 12px;
-    }
-
-    .scrollIndicator {
-        display: none !important;
     }
 }

@@ -1,3 +1,8 @@
+/* 
+  Стили для страницы "Модульные здания" (Modular Page).
+  Включает преимущества и подробную информацию о типах модулей.
+*/
+
 .hero {
     padding-top: 150px;
     padding-bottom: 80px;
@@ -26,6 +31,7 @@
     color: var(--text-main);
 }
 
+/* --- Список преимуществ --- */
 .advantagesList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -54,13 +60,7 @@
     flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
-    .advantagesList {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-}
-
+/* --- Информационная сетка --- */
 .infoGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -87,6 +87,7 @@
     line-height: 1.8;
 }
 
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .hero {
         padding-top: 120px;
@@ -108,5 +109,12 @@
     .infoGrid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .advantagesList {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }

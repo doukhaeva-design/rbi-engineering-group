@@ -1,5 +1,10 @@
+/* 
+  Стили для раздела "Где применяется" (WhereUsed).
+  Сетка с иконками и кратким описанием сфер применения.
+*/
+
 .section {
-    /* Base styles if needed, but primarily for override */
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -14,13 +19,13 @@
     margin-bottom: 40px;
 }
 
+/* --- Сетка сфер применения --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 Columns for list view */
+    /* 2 колонки на десктопе */
     column-gap: 80px;
     row-gap: 0;
-    /* Spacing handled by padding */
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -30,26 +35,20 @@
     padding: 24px 0;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Тонкая линия разделения */
     text-align: left;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     min-height: auto;
     position: relative;
-    padding-left: 0;
     gap: 20px;
 }
 
-/* 
-.card::before {
-    content: ""; // Removed in favor of Icons
-} 
-*/
-
+/* Убираем нижнюю границу у последних элементов в сетке */
 .card:last-child,
 .card:nth-last-child(2) {
     border-bottom: none;
-    /* Remove border for last row */
 }
 
 .iconWrapper {
@@ -61,39 +60,34 @@
     height: 56px;
     border-radius: 8px;
     background: transparent;
-    /* Very light orange tint */
 }
 
 .icon {
     width: 32px;
     height: 32px;
-    /* color: #EAA52F; - Removed to allow SVG own colors */
 }
 
 .text {
     font-size: 18px;
     font-weight: 500;
     margin: 0;
-    text-transform: none;
-    /* Normal case for elegance */
-    letter-spacing: normal;
     color: var(--text-main);
 }
 
+/* --- Адаптивность --- */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
-        /* Single column for mobile */
+        /* 1 колонка на мобильных */
         gap: 0;
     }
 
     .card {
         padding: 16px 0;
-        min-height: auto;
         gap: 16px;
     }
 
-    /* Restore border for the second to last item on mobile (since it's a single column) */
+    /* Возвращаем линию для предпоследнего элемента, так как на мобильном он больше не в последнем ряду */
     .card:nth-last-child(2) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
