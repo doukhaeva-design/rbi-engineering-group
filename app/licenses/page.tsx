@@ -16,14 +16,13 @@ export default function LicensesPage() {
             <section className="section">
                 <div className="container">
                     <div className={styles.licenseList}>
-                        <div className={styles.item}>
+                        <a href="/docs/licenziya.pdf" target="_blank" rel="noopener noreferrer" className={styles.item}>
                             <div className={styles.icon}>📄</div>
-                            <h3 className={styles.itemTitle}>Лицензия на строительно-монтажные работы 1 категории</h3>
-                        </div>
-                        <div className={styles.item}>
-                            <div className={styles.icon}>📄</div>
-                            <h3 className={styles.itemTitle}>Приложения к лицензии (перечень работ)</h3>
-                        </div>
+                            <div className={styles.textWrapper}>
+                                <h3 className={styles.itemTitle}>Государственная лицензия на строительно-монтажные работы (I категория)</h3>
+                                <span className={styles.openLink}>Открыть PDF &rarr;</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>

@@ -22,7 +22,8 @@ export default function Footer() {
                         <div className={styles.navColumn}>
                             <Link href="/about" className={styles.link}>О компании</Link>
                             <Link href="/licenses" className={styles.link}>Лицензии</Link>
-                            <Link href="/#contacts" className={styles.link}>Контакты</Link>
+                            <Link href="/policy" className={styles.link}>Политика конфиденциальности</Link>
+                            <Link href="/#contacts" className={styles.link} style={{ textDecoration: 'underline' }}>Контакты</Link>
                         </div>
                     </div>
 
@@ -31,6 +32,7 @@ export default function Footer() {
                             <span className={styles.contactItem}>+7 702 555 51 69</span>
                             <span className={styles.contactItem}>info@rbi.asia</span>
                             <span>г. Астана, ул. Проезд 69, зд. 1А</span>
+                            <span className={styles.bin}>БИН: [вставь БИН]</span>
                         </div>
                     </div>
                 </div>

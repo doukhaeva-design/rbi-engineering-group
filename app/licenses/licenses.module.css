@@ -24,16 +24,44 @@
     align-items: center;
     gap: 20px;
     border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .icon {
     font-size: 32px;
 }
 
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
 .itemTitle {
     margin: 0;
     font-size: 18px;
     font-weight: 500;
+}
+
+.openLink {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.item:hover .openLink {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -51,5 +79,9 @@
         text-align: center;
         padding: 24px;
         gap: 16px;
+    }
+
+    .textWrapper {
+        align-items: center;
     }
 }

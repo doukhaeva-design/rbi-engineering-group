@@ -4,6 +4,12 @@ import styles from "./contacts.module.css";
 import Button from "../components/ui/Button";
 import BackButton from "../components/ui/BackButton";
 import Footer from "../components/layout/Footer";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Контакты RBI Engineering Group: адрес, телефон, email | Астана',
+    description: 'Свяжитесь с нами для расчета стоимости проекта. Адрес: г. Астана, ул. Проезд 69, зд. 1А. Телефон: +7 702 555 51 69.',
+};
 
 export default function ContactsPage() {
     return (
@@ -54,7 +60,9 @@ export default function ContactsPage() {
                             <textarea placeholder="Опишите ваш запрос" className={styles.textarea} rows={5}></textarea>
                         </div>
                         <Button type="submit" variant="primary">Отправить запрос</Button>
-                        <p className={styles.disclaimer}>Нажимая «Отправить запрос», вы соглашаетесь на обработку персональных данных.</p>
+                        <p className={styles.disclaimer}>
+                            Нажимая «Отправить запрос», вы соглашаетесь на обработку персональных данных в соответствии с <a href="/policy" style={{ textDecoration: 'underline', color: 'inherit' }}>Политикой конфиденциальности</a>.
+                        </p>
                     </form>
                 </div>
             </section>

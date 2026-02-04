@@ -4,6 +4,12 @@ import styles from "./services.module.css";
 import Button from "../components/ui/Button";
 import BackButton from "../components/ui/BackButton";
 import Footer from "../components/layout/Footer";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Услуги строительной компании: СМР, монтаж, проектирование | RBI Engineering Group',
+    description: 'Оказываем услуги по строительству, монтажу инженерных сетей, отделочным работам и возведению модульных зданий. Лицензия I категории.',
+};
 
 export default function ServicesPage() {
     const services = [
