@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './KeyCompetencies.module.css';
+import RevealOnScroll from '../ui/RevealOnScroll';
 
 export default function KeyCompetencies({ limited = false }: { limited?: boolean }) {
     const fullCompetencies = [
@@ -82,31 +83,35 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
     return (
         <section className={`section ${styles.section}`}>
             <div className={`container`}>
-                <h2 className={styles.title}>{limited ? 'Почему выбирают нас' : 'Ключевые компетенции'}</h2>
+                <RevealOnScroll>
+                    <h2 className={styles.title}>{limited ? 'Почему выбирают нас' : 'Ключевые компетенции'}</h2>
+                </RevealOnScroll>
 
                 <div className={limited ? styles.splitLayout : ''}>
                     {limited && (
-                        <div className={styles.imageWrapper}>
+                        <RevealOnScroll className={styles.imageWrapper}>
                             <Image
                                 src="/PochemuNasVibirayut.png"
                                 alt="Почему выбирают RBI Engineering Group"
                                 fill
                                 className={styles.image}
                             />
-                        </div>
+                        </RevealOnScroll>
                     )}
 
                     <div className={styles.grid}>
                         {competencies.map((comp, index) => (
-                            <div key={index} className={styles.item}>
-                                <div className={styles.iconWrapper}>
-                                    {comp.icon}
+                            <RevealOnScroll key={index} delay={index * 0.1}>
+                                <div className={styles.item}>
+                                    <div className={styles.iconWrapper}>
+                                        {comp.icon}
+                                    </div>
+                                    <div className={styles.content}>
+                                        <h3 className={styles.compTitle}>{comp.title}</h3>
+                                        <p className={styles.compDesc}>{comp.desc}</p>
+                                    </div>
                                 </div>
-                                <div className={styles.content}>
-                                    <h3 className={styles.compTitle}>{comp.title}</h3>
-                                    <p className={styles.compDesc}>{comp.desc}</p>
-                                </div>
-                            </div>
+                            </RevealOnScroll>
                         ))}
                     </div>
                 </div>

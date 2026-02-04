@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import styles from './AboutSection.module.css';
+import RevealOnScroll from '../ui/RevealOnScroll';
 
 interface StatItem {
     label: string;
@@ -72,34 +73,38 @@ export default function AboutSection() {
             <div className={`container`}>
                 <div className={styles.layout}>
                     {/* Header: Manifesto */}
-                    <div className={styles.profile}>
-                        <h2 className={styles.tagline}>Профиль компании</h2>
-                        <div className={styles.description}>
-                            <p>
-                                <span className={styles.accent}>RBI Engineering Group</span> — строительная организация полного цикла,
-                                специализирующаяся на сложных строительно-монтажных работах и проектировании высокотехнологичных модульных сооружений.
-                            </p>
-                            <p className={styles.secondaryText}>
-                                Мы реализуем индустриальные и инфраструктурные проекты по всему Казахстану,
-                                обеспечивая высокую культуру инжиниринга и соблюдение строгих технологических стандартов.
-                            </p>
+                    <RevealOnScroll>
+                        <div className={styles.profile}>
+                            <h2 className={styles.tagline}>Профиль компании</h2>
+                            <div className={styles.description}>
+                                <p>
+                                    <span className={styles.accent}>RBI Engineering Group</span> — строительная организация полного цикла,
+                                    специализирующаяся на сложных строительно-монтажных работах и проектировании высокотехнологичных модульных сооружений.
+                                </p>
+                                <p className={styles.secondaryText}>
+                                    Мы реализуем индустриальные и инфраструктурные проекты по всему Казахстану,
+                                    обеспечивая высокую культуру инжиниринга и соблюдение строгих технологических стандартов.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </RevealOnScroll>
 
                     {/* Stats: Proof through facts */}
-                    <div className={styles.statsGrid}>
-                        {stats.map((stat, index) => (
-                            <div key={index} className={`${styles.statCard} ${stat.isDominant ? styles.dominant : ''}`}>
-                                <div className={styles.valueWrapper}>
-                                    <span className={styles.number}>
-                                        {stat.textValue ? stat.textValue : counts[index]}
-                                    </span>
-                                    <span className={styles.suffix}>{stat.suffix}</span>
+                    <RevealOnScroll delay={0.2}>
+                        <div className={styles.statsGrid}>
+                            {stats.map((stat, index) => (
+                                <div key={index} className={`${styles.statCard} ${stat.isDominant ? styles.dominant : ''}`}>
+                                    <div className={styles.valueWrapper}>
+                                        <span className={styles.number}>
+                                            {stat.textValue ? stat.textValue : counts[index]}
+                                        </span>
+                                        <span className={styles.suffix}>{stat.suffix}</span>
+                                    </div>
+                                    <p className={styles.label}>{stat.label}</p>
                                 </div>
-                                <p className={styles.label}>{stat.label}</p>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    </RevealOnScroll>
                 </div>
             </div>
         </section>

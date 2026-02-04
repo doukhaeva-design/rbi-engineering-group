@@ -4,6 +4,11 @@
     gap: 32px;
 }
 
+.projectWrapper {
+    height: 100%;
+    display: block;
+}
+
 .card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -114,7 +119,7 @@
     }
 
     /* Show only first 3 cards on mobile */
-    .card:nth-child(n+4) {
+    .projectWrapper:nth-child(n+4) {
         display: none;
     }
 

@@ -1,5 +1,6 @@
 
 import styles from './WhereUsed.module.css';
+import RevealOnScroll from '../ui/RevealOnScroll';
 
 export default function WhereUsed() {
     const items = [
@@ -89,15 +90,19 @@ export default function WhereUsed() {
     return (
         <section className={`section-alt ${styles.section}`}>
             <div className={`container`}>
-                <h2 className={styles.title}>Сферы применения</h2>
+                <RevealOnScroll>
+                    <h2 className={styles.title}>Сферы применения</h2>
+                </RevealOnScroll>
                 <div className={styles.grid}>
                     {items.map((item, index) => (
-                        <div key={index} className={styles.card}>
-                            <div className={styles.iconWrapper}>
-                                {item.icon}
+                        <RevealOnScroll key={index} delay={index * 0.1}>
+                            <div className={styles.card}>
+                                <div className={styles.iconWrapper}>
+                                    {item.icon}
+                                </div>
+                                <p className={styles.text}>{item.text}</p>
                             </div>
-                            <p className={styles.text}>{item.text}</p>
-                        </div>
+                        </RevealOnScroll>
                     ))}
                 </div>
             </div>

@@ -1,16 +1,36 @@
 "use client";
 
+import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
 import Button from '../ui/Button';
 
 export default function Hero() {
+    const [isVisible, setIsVisible] = useState(false);
+    const heroRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { threshold: 0.5 }
+        );
+
+        if (heroRef.current) {
+            observer.observe(heroRef.current);
+        }
+
+        return () => {
+            if (heroRef.current) observer.disconnect();
+        };
+    }, []);
     return (
-        <section className={styles.hero}>
+        <section className={styles.hero} ref={heroRef}>
             {/* Glass Background Panel - Absolute */}
             <div className={styles.glassPanel}></div>
 
             {/* Content Container - Aligned with Global Layout */}
-            <div className={styles.heroContent}>
+            <div className={`${styles.heroContent} ${isVisible ? styles.visible : ''}`}>
                 <h1 className={styles.title}>
                     RBI Engineering<br /> Group
                 </h1>

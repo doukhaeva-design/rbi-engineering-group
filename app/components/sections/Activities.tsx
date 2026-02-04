@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './Activities.module.css';
 import Button from '../ui/Button';
+import RevealOnScroll from '../ui/RevealOnScroll';
 
 export default function Activities() {
     const items = [
@@ -39,33 +40,39 @@ export default function Activities() {
     return (
         <section className={`section ${styles.activitiesSection}`} id="services">
             <div className={`container`}>
-                <h2 className={styles.sectionTitle}>Комплексные инженерные решения</h2>
-                <p className={styles.sectionDescription}>Обеспечиваем безупречное качество исполнения на каждом этапе проекта.</p>
+                <RevealOnScroll>
+                    <h2 className={styles.sectionTitle}>Комплексные инженерные решения</h2>
+                    <p className={styles.sectionDescription}>Обеспечиваем безупречное качество исполнения на каждом этапе проекта.</p>
+                </RevealOnScroll>
                 <div className={styles.gridContainer}>
                     <div className={styles.grid}>
                         {items.map((item, index) => (
-                            <div key={index} className={styles.card}>
-                                <div className={styles.cardContent}>
-                                    <span className={styles.cardNumber}>0{index + 1}</span>
-                                    <h3 className={styles.cardTitle}>{item.title}</h3>
-                                    <p className={styles.cardDesc}>{item.desc}</p>
+                            <RevealOnScroll key={index} delay={index * 0.1} className={styles.cardWrapper}>
+                                <div className={styles.card}>
+                                    <div className={styles.cardContent}>
+                                        <span className={styles.cardNumber}>0{index + 1}</span>
+                                        <h3 className={styles.cardTitle}>{item.title}</h3>
+                                        <p className={styles.cardDesc}>{item.desc}</p>
+                                    </div>
+                                    <div className={styles.imageWrapper}>
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            className={styles.sketchImage}
+                                        />
+                                    </div>
                                 </div>
-                                <div className={styles.imageWrapper}>
-                                    <Image
-                                        src={item.image}
-                                        alt={item.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 33vw"
-                                        className={styles.sketchImage}
-                                    />
-                                </div>
-                            </div>
+                            </RevealOnScroll>
                         ))}
                     </div>
                 </div>
-                <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                    <Button href="/services" variant="filled">Все услуги</Button>
-                </div>
+                <RevealOnScroll delay={0.4}>
+                    <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
+                        <Button href="/services" variant="filled">Все услуги</Button>
+                    </div>
+                </RevealOnScroll>
             </div>
         </section>
     );

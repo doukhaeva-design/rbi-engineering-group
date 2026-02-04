@@ -128,20 +128,20 @@
 }
 
 /* Remove Grid-Specific Logic (Resetting nth-child) */
-.card:nth-child(1),
-.card:nth-child(2) {
+.cardWrapper:nth-child(1) .card,
+.cardWrapper:nth-child(2) .card {
     grid-column: auto;
     padding: 40px;
 }
 
-.card:nth-child(1) .cardContent,
-.card:nth-child(2) .cardContent {
+.cardWrapper:nth-child(1) .cardContent,
+.cardWrapper:nth-child(2) .cardContent {
     max-width: none;
     width: 60%;
 }
 
-.card:nth-child(1) .imageWrapper,
-.card:nth-child(2) .imageWrapper {
+.cardWrapper:nth-child(1) .imageWrapper,
+.cardWrapper:nth-child(2) .imageWrapper {
     width: 45%;
     height: 110%;
     position: absolute;
@@ -150,8 +150,8 @@
 }
 
 
-.card:nth-child(1) .sketchImage,
-.card:nth-child(2) .sketchImage {
+.cardWrapper:nth-child(1) .sketchImage,
+.cardWrapper:nth-child(2) .sketchImage {
     object-position: right center;
     opacity: 1;
 }
@@ -174,8 +174,8 @@
 }
 
 /* Large Cards Desc */
-.card:nth-child(1) .cardDesc,
-.card:nth-child(2) .cardDesc {
+.cardWrapper:nth-child(1) .cardDesc,
+.cardWrapper:nth-child(2) .cardDesc {
     font-size: 16px;
     max-width: 100%;
     /* Wrapper handles width */
@@ -274,7 +274,7 @@
     }
 
     /* Only show first 3 cards on mobile */
-    .card:nth-child(n+4) {
+    .cardWrapper:nth-child(n+4) {
         display: none;
     }
 }
