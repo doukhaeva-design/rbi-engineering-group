@@ -100,7 +100,8 @@
     order: -1;
     font-size: 14px;
     font-weight: 800;
-    color: #EAA52F;
+    color: #D98F18;
+    /* Slightly darker/richer than original #EAA52F */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-bottom: 20px;
@@ -157,87 +158,92 @@
 
     .hero {
         height: auto;
-        min-height: auto;
-        padding-top: 124px;
-        /* Reduced by 16px as requested */
-        padding-bottom: 70px;
-        /* Reduced by 10px as requested */
+        min-height: 500px;
+        /* Reduced height as requested */
+        padding-top: 100px;
+        /* Slightly reduce top padding further */
+        padding-bottom: 40px;
+        align-items: flex-start;
+        /* Align content to top */
     }
 
     .hero::before {
-        background-position: right 35% center;
+        background-position: 65% center;
+        /* Shift image slightly to show more relevant parts */
     }
 
     .glassPanel {
         width: 100%;
-        background: rgba(255, 255, 255, 0.88);
+        background: rgba(255, 255, 255, 0.8);
+        /* 80% Opacity to make difference visible */
+        backdrop-filter: blur(6px);
+    }
+
+    .heroContent {
+        justify-content: flex-start;
+        /* Start from top */
+        padding-top: 20px;
     }
 
     .title {
         order: 0;
-        font-size: 32px;
+        font-size: 36px;
+        /* Larger for impact */
         line-height: 1.1;
-        font-weight: 900;
+        font-weight: 800;
         white-space: normal;
-        margin-bottom: 6px;
+        margin-bottom: 12px;
         color: var(--primary-color);
         max-width: 100%;
+        letter-spacing: -0.03em;
     }
 
     .subtitle {
         order: 1;
-        /* Sequential order */
-        font-size: 9px;
-        letter-spacing: 0.15em;
-        margin-bottom: 24px;
-        /* Group separator */
-        font-weight: 600;
-        color: #EAA52F;
-        /* Vibrant Orange accent for mobile */
+        font-size: 11px;
+        /* Increased from 9px */
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: #D98F18;
         text-transform: uppercase;
         display: block;
         line-height: 1.4;
-        max-width: 220px;
-        /* Constrained for two-line wrap */
+        max-width: 100%;
+        /* Removed constraint */
     }
 
     .description {
         order: 2;
-        /* Sequential order */
-        font-size: 15px;
+        font-size: 16px;
+        /* Slightly larger */
         line-height: 1.5;
-        margin-bottom: 12px;
-        /* Close to supporting evidence */
+        margin-bottom: 32px;
         color: var(--text-main);
-        opacity: 1;
-        /* Pure text clarity */
-        max-width: 92%;
-        /* Balanced width */
+        opacity: 0.9;
+        max-width: 100%;
     }
 
     .trustLine {
         order: 3;
-        /* Sequential order */
         margin-top: 0;
-        margin-bottom: 40px;
-        /* Strong separation before CTA */
-        padding-top: 12px;
-        font-size: 11px;
+        margin-bottom: 32px;
+        padding-top: 16px;
+        font-size: 12px;
+        /* Increased size */
         color: var(--primary-color);
-        /* Changed to blue on mobile as requested */
         font-weight: 600;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
         width: 100%;
     }
 
     .trustBreak {
         display: block;
-        margin-top: 4px;
+        margin-top: 6px;
     }
 
     .buttonGroup {
         order: 4;
-        /* Final element in sequence */
         flex-direction: column;
         width: 100%;
         gap: 12px;

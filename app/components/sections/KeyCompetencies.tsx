@@ -82,7 +82,7 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
     return (
         <section className={`section ${styles.section}`}>
             <div className={`container`}>
-                {!limited && <h2 className={styles.title}>Ключевые компетенции</h2>}
+                <h2 className={styles.title}>{limited ? 'Почему выбирают нас' : 'Ключевые компетенции'}</h2>
 
                 <div className={limited ? styles.splitLayout : ''}>
                     {limited && (
@@ -96,22 +96,18 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
                         </div>
                     )}
 
-                    <div className={limited ? styles.contentSide : styles.grid}>
-                        {limited && <h2 className={styles.leftTitle}>Почему выбирают нас</h2>}
-
-                        <div className={limited ? styles.listGrid : styles.grid}>
-                            {competencies.map((comp, index) => (
-                                <div key={index} className={styles.item}>
-                                    <div className={styles.iconWrapper}>
-                                        {comp.icon}
-                                    </div>
-                                    <div className={styles.content}>
-                                        <h3 className={styles.compTitle}>{comp.title}</h3>
-                                        <p className={styles.compDesc}>{comp.desc}</p>
-                                    </div>
+                    <div className={styles.grid}>
+                        {competencies.map((comp, index) => (
+                            <div key={index} className={styles.item}>
+                                <div className={styles.iconWrapper}>
+                                    {comp.icon}
                                 </div>
-                            ))}
-                        </div>
+                                <div className={styles.content}>
+                                    <h3 className={styles.compTitle}>{comp.title}</h3>
+                                    <p className={styles.compDesc}>{comp.desc}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -211,3 +211,12 @@ a {
   position: relative;
   z-index: 1;
 }
+
+/* Global Section Padding Override for Mobile */
+@media (max-width: 768px) {
+
+  .section,
+  .section-alt {
+    padding: 60px 0;
+  }
+}

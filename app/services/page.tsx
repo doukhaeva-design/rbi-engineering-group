@@ -78,7 +78,7 @@ export default function ServicesPage() {
             <section className={styles.hero}>
                 <div className="container">
                     <BackButton />
-                    <h1 className={styles.heroTitle}>Услуги RBI Engineering Group</h1>
+                    <h1 className={styles.heroTitle}>Наши услуги</h1>
                     <p className={styles.heroText}>
                         Мы выполняем строительные и инженерные работы, а также строим модульные сооружения под разные задачи.
                     </p>

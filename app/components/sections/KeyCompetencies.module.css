@@ -18,92 +18,33 @@
 .splitLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
     align-items: center;
 }
 
-.contentSide {
+.splitLayout .grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-right: 20px;
-}
-
-.leftTitle {
-    font-size: 36px;
-    /* Similar to section title */
-    margin-bottom: 40px;
-    font-weight: 700;
-    color: var(--text-main);
-}
-
-.listGrid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    gap: 40px;
+    padding-left: 0;
 }
 
 .imageWrapper {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 500px;
-    border-radius: 20px;
+    min-height: 400px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    /* Premium shadow */
 }
-
-.splitLayout .imageWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 550px;
-    /* Slightly reduced */
-    border-radius: 24px;
-    /* Symmetric rounding */
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* Removed the bleed media query to keep image contained */
-
 
 .image {
     object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.imageWrapper:hover .image {
-    transform: scale(1.03);
 }
 
 .item {
     display: flex;
-    gap: 24px;
-    position: relative;
-}
-
-/* Specific styles for the List Layout in Split View */
-.splitLayout .item {
-    padding: 30px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: padding 0.3s ease;
-}
-
-.splitLayout .item:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    padding-top: 0;
-}
-
-.splitLayout .item:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.splitLayout .item:hover {
-    padding-left: 10px;
-    /* Subtle movement */
+    gap: 20px;
 }
 
 .iconWrapper {

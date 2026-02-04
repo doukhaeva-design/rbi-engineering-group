@@ -215,82 +215,125 @@
 }
 
 @media (max-width: 768px) {
-    .sectionTitle {
-        font-size: 28px;
-        line-height: 1.2;
-        margin-bottom: 12px;
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
-    .sectionDescription {
-        font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 20px;
+    .heroTitle {
+        font-size: 32px;
+        /* Adapted title size */
+        margin-bottom: 16px;
+    }
+
+    .heroText {
+        font-size: 16px;
     }
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 24px;
+        padding: 0;
     }
 
     .card {
         display: grid;
-        grid-template-columns: 1fr 110px;
-        /* Text left, Image right */
-        padding: 32px 24px;
+        grid-template-columns: 80px 1fr;
+        /* Image | Content */
+        grid-template-rows: auto auto auto;
+        padding: 32px 0;
         min-height: auto;
-        border-radius: 20px;
-        background: #FFFFFF;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        gap: 16px;
         align-items: center;
-        gap: 0;
+        /* Vert-align Title to Image */
+    }
+
+    .card:last-child {
+        border-bottom: none;
     }
 
     .cardContent {
         display: contents;
+        /* Unwrap to let children sit in grid */
     }
 
-    .cardNumber {
-        grid-column: 1 / -1;
-        font-size: 11px;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin-bottom: 8px;
-        opacity: 0.6;
-    }
-
-    .cardTitle {
-        grid-column: 1 / -1;
-        font-size: 20px;
-        margin-bottom: 14px;
-        line-height: 1.3;
-        color: var(--text-main);
-    }
-
-    .cardDesc {
-        grid-column: 1 / 2;
-        font-size: 14px;
-        line-height: 1.5;
-        color: var(--text-secondary);
-        margin: 0;
-        padding-right: 15px;
-    }
-
+    /* Image First (Left) */
     .imageWrapper {
-        grid-column: 2 / 3;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         position: relative !important;
-        width: 100px !important;
-        height: 100px !important;
+        width: 80px !important;
+        height: 80px !important;
+        aspect-ratio: 1 / 1;
         right: auto !important;
         bottom: auto !important;
         margin: 0 !important;
         display: flex;
         align-items: center;
         justify-content: center;
+        background: #F9FAFB;
+        border-radius: 12px;
+        overflow: hidden;
+        order: 0;
+        /* Irrelevant with grid area but good practice */
     }
 
+    /* Sketch adjustments for small icon */
     .sketchImage {
         object-fit: contain !important;
-        object-position: center right !important;
-        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.06));
+        object-position: center !important;
+        width: 80% !important;
+        height: 80% !important;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+    }
+
+    .cardNumber {
+        display: none;
+        /* Hide number to simplify header */
+    }
+
+    .cardTitle {
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+        font-size: 18px;
+        /* Slightly compact for list view */
+        margin-bottom: 0;
+        line-height: 1.3;
+        color: var(--text-main);
+        align-self: center;
+    }
+
+    .cardDesc {
+        grid-column: 1 / -1;
+        /* Full width below */
+        grid-row: 2 / 3;
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        margin-top: 8px;
+        margin-bottom: 0px;
+        padding-right: 0;
+    }
+
+    .detailsList {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        margin-top: 12px;
+        gap: 8px;
+    }
+
+    /* Remove nth-child visual overrides */
+    .card:nth-child(1) .imageWrapper,
+    .card:nth-child(2) .imageWrapper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0 !important;
     }
 }

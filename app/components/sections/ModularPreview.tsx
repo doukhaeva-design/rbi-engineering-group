@@ -28,8 +28,10 @@ export default function ModularPreview() {
                                         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
                                     </svg>
                                 </div>
-                                <h4 className={styles.cardTitle}>Быстро</h4>
-                                <p className={styles.cardText}>Сборка за несколько дней</p>
+                                <div className={styles.cardTextWrapper}>
+                                    <h4 className={styles.cardTitle}>Быстро</h4>
+                                    <p className={styles.cardText}>Сборка за несколько дней</p>
+                                </div>
                             </div>
                             <div className={styles.card}>
                                 <div className={styles.iconWrapper}>
@@ -38,8 +40,10 @@ export default function ModularPreview() {
                                         <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
-                                <h4 className={styles.cardTitle}>Надежно</h4>
-                                <p className={styles.cardText}>Работает в любых погодных условиях</p>
+                                <div className={styles.cardTextWrapper}>
+                                    <h4 className={styles.cardTitle}>Надежно</h4>
+                                    <p className={styles.cardText}>Работает в любых погодных условиях</p>
+                                </div>
                             </div>
                             <div className={styles.card}>
                                 <div className={styles.iconWrapper}>
@@ -49,8 +53,10 @@ export default function ModularPreview() {
                                         <path d="M7 5V3H17V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
-                                <h4 className={styles.cardTitle}>Мобильно</h4>
-                                <p className={styles.cardText}>Легко перевезти на новое место</p>
+                                <div className={styles.cardTextWrapper}>
+                                    <h4 className={styles.cardTitle}>Мобильно</h4>
+                                    <p className={styles.cardText}>Легко перевезти на новое место</p>
+                                </div>
                             </div>
                         </div>
                     </div>

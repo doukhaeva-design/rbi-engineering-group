@@ -1,10 +1,9 @@
 "use client";
 import styles from './Header.module.css';
-
-
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import NewRBILogo from '../ui/NewRBILogo';
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -28,7 +27,7 @@ export default function Header() {
             }
           }}
         >
-          RBI Engineering Group
+          <NewRBILogo style={{ height: '40px', width: 'auto' }} />
         </Link>
 
         <button
@@ -43,6 +42,7 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
+          <Link href="/" className={`${styles.link} ${pathname === '/' ? styles.active : ''}`} onClick={handleLinkClick}>Главная</Link>
           <Link href="/services" className={`${styles.link} ${pathname === '/services' ? styles.active : ''}`} onClick={handleLinkClick}>Услуги</Link>
           <Link href="/modular" className={`${styles.link} ${pathname === '/modular' ? styles.active : ''}`} onClick={handleLinkClick}>Модульные</Link>
           <Link href="/projects" className={`${styles.link} ${pathname === '/projects' ? styles.active : ''}`} onClick={handleLinkClick}>Проекты</Link>

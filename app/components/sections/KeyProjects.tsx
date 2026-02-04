@@ -26,6 +26,16 @@ export default function KeyProjects() {
             title: "Монтаж конструкции ТРЦ «Хан Шатыр»",
             category: "Монтаж / металлоконструкции",
             specs: { label: "Объект", value: "Хан Шатыр" }
+        },
+        {
+            title: "Штаб строительства",
+            category: "Модульные сооружения",
+            specs: { label: "Площадь", value: "850 м²" }
+        },
+        {
+            title: "Вахтовый поселок",
+            category: "Модульные сооружения",
+            specs: { label: "Вместимость", value: "300 чел" }
         }
     ];
 

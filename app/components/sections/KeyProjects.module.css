@@ -113,6 +113,11 @@
         gap: 24px;
     }
 
+    /* Show only first 3 cards on mobile */
+    .card:nth-child(n+4) {
+        display: none;
+    }
+
     .imagePlaceholder {
         height: 160px;
     }
