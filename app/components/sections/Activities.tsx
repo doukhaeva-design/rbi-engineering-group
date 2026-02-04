@@ -64,7 +64,7 @@ export default function Activities() {
                     </div>
                 </div>
                 <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                    <Button href="/services" variant="filled">Подробнее</Button>
+                    <Button href="/services" variant="filled">Все услуги</Button>
                 </div>
             </div>
         </section>

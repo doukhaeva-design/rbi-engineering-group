@@ -30,17 +30,9 @@ export default function ContactsPage() {
                     </p>
                     <form className={styles.form}>
                         <div className={styles.inputGroup}>
-                            <input type="text" placeholder="Имя и компания" className={styles.input} required />
-                        </div>
-                        <div className={styles.inputGroup}>
-                            <input type="tel" placeholder="Телефон" className={styles.input} required />
-                        </div>
-                        <div className={styles.inputGroup}>
-                            <input type="email" placeholder="Email" className={styles.input} required />
-                        </div>
-                        <div className={styles.inputGroup}>
+                            <label className={styles.label}>Что вам нужно?</label>
                             <select className={styles.select} defaultValue="">
-                                <option value="" disabled>Что вам нужно?</option>
+                                <option value="" disabled hidden>Выберите вариант</option>
                                 <option value="modular">Модульные сооружения</option>
                                 <option value="smr">СМР</option>
                                 <option value="engineering">Инженерные сети</option>
@@ -50,7 +42,16 @@ export default function ContactsPage() {
                             </select>
                         </div>
                         <div className={styles.inputGroup}>
-                            <textarea placeholder="Комментарий" className={styles.textarea} rows={5}></textarea>
+                            <input type="text" placeholder="Имя и компания" className={styles.input} required />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <input type="tel" placeholder="Телефон" className={styles.input} required />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <input type="email" placeholder="Email" className={styles.input} required />
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <textarea placeholder="Опишите ваш запрос" className={styles.textarea} rows={5}></textarea>
                         </div>
                         <Button type="submit" variant="primary">Отправить запрос</Button>
                         <p className={styles.disclaimer}>Нажимая «Отправить запрос», вы соглашаетесь на обработку персональных данных.</p>

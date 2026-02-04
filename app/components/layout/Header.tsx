@@ -4,9 +4,11 @@ import styles from './Header.module.css';
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
 
   // Close menu when clicking a link
   const handleLinkClick = () => {
@@ -41,12 +43,12 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
-          <Link href="/#services" className={styles.link} onClick={handleLinkClick}>Услуги</Link>
-          <Link href="/#modular" className={styles.link} onClick={handleLinkClick}>Модульные</Link>
-          <Link href="/#projects" className={styles.link} onClick={handleLinkClick}>Проекты</Link>
-          <Link href="/about" className={styles.link} onClick={handleLinkClick}>О компании</Link>
-          <Link href="/licenses" className={styles.link} onClick={handleLinkClick}>Лицензии</Link>
-          <Link href="/#contacts" className={styles.link} onClick={handleLinkClick}>Контакты</Link>
+          <Link href="/services" className={`${styles.link} ${pathname === '/services' ? styles.active : ''}`} onClick={handleLinkClick}>Услуги</Link>
+          <Link href="/modular" className={`${styles.link} ${pathname === '/modular' ? styles.active : ''}`} onClick={handleLinkClick}>Модульные</Link>
+          <Link href="/projects" className={`${styles.link} ${pathname === '/projects' ? styles.active : ''}`} onClick={handleLinkClick}>Проекты</Link>
+          <Link href="/about" className={`${styles.link} ${pathname === '/about' ? styles.active : ''}`} onClick={handleLinkClick}>О компании</Link>
+          <Link href="/licenses" className={`${styles.link} ${pathname === '/licenses' ? styles.active : ''}`} onClick={handleLinkClick}>Лицензии</Link>
+          <Link href="/contacts" className={`${styles.link} ${pathname === '/contacts' ? styles.active : ''}`} onClick={handleLinkClick}>Контакты</Link>
 
           {/* Mobile only CTA */}
           <div className={styles.mobileCta}>

@@ -1,19 +1,21 @@
 .hero {
-    padding-top: 150px;
-    padding-bottom: 80px;
+    padding-top: 130px;
+    /* 80px header + 50px space */
+    padding-bottom: 50px;
+    /* 50px space */
     background-color: var(--secondary-color);
     text-align: center;
 }
 
 .heroTitle {
-    font-size: 48px;
-    margin-bottom: 40px;
+    font-size: 42px;
+    margin-bottom: 25px;
 }
 
 .info {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #ddd;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
 }
 
 .formContainer {
@@ -28,7 +30,7 @@
 
 .formDesc {
     margin-bottom: 40px;
-    color: #ccc;
+    color: var(--text-secondary);
     font-size: 16px;
 }
 
@@ -38,6 +40,18 @@
     gap: 20px;
 }
 
+.inputGroup {
+    text-align: left;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
 .input,
 .textarea,
 .select {
@@ -45,9 +59,14 @@
     padding: 15px;
     background: var(--background);
     border: 1px solid var(--border-color);
-    color: white;
+    color: var(--text-secondary);
     font-size: 16px;
     border-radius: 4px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #9CA3AF;
 }
 
 .input:focus,
@@ -65,8 +84,10 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 120px;
-        padding-bottom: 60px;
+        padding-top: 110px;
+        /* 80px header + 30px space */
+        padding-bottom: 30px;
+        /* 30px space */
     }
 
     .heroTitle {
@@ -75,7 +96,7 @@
     }
 
     .info {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .formContainer {

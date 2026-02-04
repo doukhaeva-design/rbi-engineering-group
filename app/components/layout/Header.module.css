@@ -78,8 +78,13 @@
     transition: width 0.3s ease;
 }
 
-.link:hover::after {
+.link:hover::after,
+.link.active::after {
     width: 100%;
+}
+
+.link.active {
+    color: var(--primary-color);
 }
 
 .ctaButton {
