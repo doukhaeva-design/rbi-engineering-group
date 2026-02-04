@@ -4,8 +4,8 @@
 */
 
 .activitiesSection {
-    padding-top: 60px !important;
-    padding-bottom: 50px !important;
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
 }
 
 .sectionTitle {
@@ -27,6 +27,12 @@
     position: relative;
     padding: 20px 0;
     width: 100%;
+    align-items: stretch;
+    /* Убедимся, что элементы растягиваются */
+}
+
+.cardWrapper {
+    height: 100%;
 }
 
 .card {
@@ -43,6 +49,8 @@
     align-items: center;
     justify-content: space-between;
     min-height: 240px;
+    height: 100%;
+    /* Карточка занимает всю высоту */
 }
 
 .card:hover {
@@ -95,7 +103,7 @@
 
 .cardTitle {
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     font-weight: 700;
     color: var(--text-main);
     letter-spacing: -0.01em;
