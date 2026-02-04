@@ -24,3 +24,17 @@
     color: var(--text-secondary);
     font-weight: 400;
 }
+
+.mobileText {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktopText {
+        display: none;
+    }
+
+    .mobileText {
+        display: inline;
+    }
+}

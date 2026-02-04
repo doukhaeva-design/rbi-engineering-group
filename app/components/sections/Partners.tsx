@@ -7,8 +7,8 @@ export default function Partners() {
         <section className={`section ${styles.partnersSection}`}>
             <div className={`container`}>
                 <RevealOnScroll>
-                    <h2 style={{ marginBottom: '10px' }}>Партнёры и заказчики</h2>
-                    <p style={{ marginBottom: '40px', fontSize: '18px' }}>Сотрудничаем с крупными партнёрами и выполняем проекты для организаций на постоянной основе.</p>
+                    <h2 className={styles.mainTitle}>Партнёры и заказчики</h2>
+                    <p className={styles.mainDesc}>Сотрудничаем с ведущими компаниями и выполняем сложные инженерные проекты по всему Казахстану.</p>
                 </RevealOnScroll>
 
                 <RevealOnScroll delay={0.2}>
@@ -36,11 +36,18 @@ export default function Partners() {
                 </RevealOnScroll>
 
                 <RevealOnScroll delay={0.4}>
-                    <h3 className={styles.subheading} style={{ marginTop: '40px' }}>Постоянные заказчики</h3>
-                    <div className={styles.logos}>
-                        <div className={styles.logoItem}>Национальный ЖД оператор РК</div>
-                        <div className={styles.logoItem}>Медицинские страховые организации РК</div>
-                        <div className={styles.logoItem}>Акимат города Нур-Султан</div>
+                    <h3 className={styles.subheading} style={{ marginTop: '60px' }}>Постоянные заказчики</h3>
+                    <div className={styles.customerGrid}>
+                        {[
+                            'Национальный ЖД оператор РК',
+                            'Медицинские страховые организации РК',
+                            'Акимат города Нур-Султан'
+                        ].map((customer, index) => (
+                            <div key={index} className={styles.customerCard}>
+                                <div className={styles.customerDecoration}></div>
+                                <span className={styles.customerName}>{customer}</span>
+                            </div>
+                        ))}
                     </div>
                 </RevealOnScroll>
             </div>

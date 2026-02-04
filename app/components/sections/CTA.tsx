@@ -11,7 +11,10 @@ export default function CTA() {
                         Опишите задачу и сроки, и мы свяжемся с вами для уточнения деталей и подготовки предложения.
                     </p>
                     <div style={{ marginTop: '30px' }}>
-                        <Button href="/contacts" variant="primary">Запросить коммерческое предложение</Button>
+                        <Button href="/contacts" variant="primary">
+                            <span className={styles.desktopText}>Запросить коммерческое предложение</span>
+                            <span className={styles.mobileText}>Запросить предложение</span>
+                        </Button>
                     </div>
                 </div>
             </div>
