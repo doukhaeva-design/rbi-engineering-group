@@ -23,7 +23,8 @@
 
 /* --- Контейнер формы --- */
 .formContainer {
-    max-width: 600px;
+    max-width: 640px;
+    /* Оптимизировали ширину для лучшего баланса */
     margin: 0 auto;
     text-align: center;
 }

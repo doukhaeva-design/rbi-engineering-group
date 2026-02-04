@@ -98,7 +98,8 @@ h6 {
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
-  font-family: var(--font-family);
+  font-family: var(--font-inter), var(--font-family);
+  /* Явно указываем Inter для заголовков */
 }
 
 h1 {

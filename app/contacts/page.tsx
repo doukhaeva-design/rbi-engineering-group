@@ -57,7 +57,7 @@ export default function ContactsPage() {
                             <input type="email" placeholder="Email" className={styles.input} required />
                         </div>
                         <div className={styles.inputGroup}>
-                            <textarea placeholder="Опишите ваш запрос" className={styles.textarea} rows={5}></textarea>
+                            <textarea placeholder="Опишите ваш запрос" className={styles.textarea} rows={6}></textarea>
                         </div>
                         <Button type="submit" variant="primary">Отправить запрос</Button>
                         <p className={styles.disclaimer}>

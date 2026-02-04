@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Правила проекта (стадия завершения)
 
-## Getting Started
+Эти правила нужны для защиты текущего результата и спокойного завершения проекта.
+Они не требуют переписывать существующий код и применяются только к будущим изменениям.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 1. Не переписывать работающий код без осознанного решения
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Если код работает корректно и результат меня устраивает,
+он не переписывается автоматически «для улучшения» или «на всякий случай».
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Переписывание допустимо в двух случаях:
+1. Есть конкретная проблема (баг, визуальная ошибка, сложность внесения правок).
+2. Я осознанно принимаю решение переписать код, понимая, зачем и ради чего это делаю.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Если причины нет или есть сомнения, код не трогается.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 2. Один компонент — одна понятная задача
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Каждый компонент отвечает за одну логическую часть интерфейса.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Цель — чтобы было понятно, зачем компонент существует и что за него отвечает,
+а не добиться идеальной архитектурной формы.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 3. Комментарии пишутся по необходимости
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Комментарии добавляются только там, где без них сложно понять,
+почему решение сделано именно так.
+
+Комментарии объясняют смысл и причины,
+а не дублируют очевидное поведение кода.
+
+---
+
+## 4. Одно изменение — один файл
+
+Любая правка или улучшение на этой стадии должны укладываться в один файл.
+
+Если изменение требует правок в нескольких файлах,
+оно считается рефакторингом и откладывается.
+
+---
+
+## 5. Визуальный результат имеет приоритет
+
+Если правило или архитектурное решение ухудшает визуальный результат,
+композицию или ощущение экрана, правило отменяется.
+
+Качество дизайна важнее архитектурной чистоты.
+
+---
+
+## 6. Все изменения должны быть обратимыми
+
+Перед внесением изменения должно быть понятно,
+как быстро вернуть всё в исходное состояние.
+
+Если изменение сложно откатить,
+его не следует делать на стадии завершения проекта.
+
+---
+
+## 7. Готовые экраны считаются стабильными
+
+После того как экран признан готовым,
+в нём допускаются только точечные правки.
+
+Крупные структурные изменения и перестройка логики на этом этапе не выполняются.
+
+---
+
+Эти правила не являются жёсткими запретами.
+Их цель — избежать бессознательных правок и сохранить цельность проекта.

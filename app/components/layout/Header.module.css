@@ -60,6 +60,8 @@
     padding: 8px 0;
     position: relative;
     transition: color 0.3s;
+    font-family: var(--font-inter), sans-serif;
+    /* Явно указываем Inter для ссылок в шапке */
 }
 
 .link:hover {
