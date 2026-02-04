@@ -56,7 +56,13 @@ export default function KeyProjects() {
                                 className={styles.card}
                                 data-category={project.category === "Модульные сооружения" ? "modular" : "metal"}
                             >
-                                <div className={styles.imagePlaceholder}></div>
+                                <div className={styles.imagePlaceholder}>
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.2, color: '#4B5563' }}>
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
                                 <div className={styles.content}>
                                     <div className={styles.header}>
                                         <p className={styles.type}>{project.category}</p>
