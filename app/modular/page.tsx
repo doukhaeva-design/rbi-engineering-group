@@ -11,8 +11,10 @@ export default function ModularPage() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
                     <BackButton />
+                </div>
+                <div className="container">
                     <h1 className={styles.heroTitle}>Модульные сооружения</h1>
                     <p className={styles.heroText}>
                         Это быстрый способ построить нужное помещение: офис, КПП, медпункт и другие форматы.

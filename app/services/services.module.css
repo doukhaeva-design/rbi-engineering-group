@@ -216,10 +216,8 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 100px;
+        padding-top: 110px;
         padding-bottom: 40px;
-        padding-left: 24px;
-        padding-right: 24px;
     }
 
     .heroTitle {

@@ -9,10 +9,12 @@ export default function PrivacyPolicyPage() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
                     <div style={{ marginBottom: '20px' }}>
                         <BackButton />
                     </div>
+                </div>
+                <div className="container">
                     <h1 className={styles.title}>Политика конфиденциальности</h1>
                     <p className={styles.subtitle}>
                         Настоящая политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта RBI Engineering Group.

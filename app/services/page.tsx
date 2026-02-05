@@ -82,8 +82,10 @@ export default function ServicesPage() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
                     <BackButton />
+                </div>
+                <div className="container">
                     <h1 className={styles.heroTitle}>Наши услуги</h1>
                     <p className={styles.heroText}>
                         Мы выполняем строительные и инженерные работы, а также строим модульные сооружения под разные задачи.

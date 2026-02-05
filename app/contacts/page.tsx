@@ -16,8 +16,10 @@ export default function ContactsPage() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
                     <BackButton />
+                </div>
+                <div className="container">
                     <h1 className={styles.heroTitle}>Контакты</h1>
                     <div className={styles.info}>
                         <p><strong>Адрес:</strong> Казахстан, г. Астана, ул. Проезд 69, зд. 1А</p>

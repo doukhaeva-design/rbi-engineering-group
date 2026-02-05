@@ -131,8 +131,10 @@ function ProjectsContent() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
                     <BackButton />
+                </div>
+                <div className="container">
                     <h1 className={styles.heroTitle}>Проекты</h1>
                     <p className={styles.heroText}>
                         Примеры выполненных работ: модульные сооружения и монтажные проекты.

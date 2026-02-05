@@ -11,8 +11,10 @@ export default function AboutPage() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
                     <BackButton />
+                </div>
+                <div className="container">
                     <h1 className={styles.heroTitle}>О компании</h1>
                     <p className={styles.heroText}>
                         RBI Engineering Group работает в Казахстане и выполняет строительство, СМР и модульные решения.
