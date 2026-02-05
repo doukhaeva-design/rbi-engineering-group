@@ -131,36 +131,9 @@
     justify-content: center;
     width: 480px;
     height: 480px;
-    background-color: #F8FAFC;
-    /* Subtle engineering grey */
-    padding: 40px;
 }
 
-/* Архитектурные "размерные" линии (Dimension Lines) */
-.mainCardInner .imageWrapper::before {
-    content: 'SPEC-480 / LOD-400';
-    position: absolute;
-    top: -24px;
-    right: 0;
-    font-size: 9px;
-    font-weight: 700;
-    color: #EAA52F;
-    letter-spacing: 0.1em;
-    border-bottom: 1px solid #EAA52F;
-    padding-bottom: 4px;
-    width: 100px;
-    text-align: right;
-}
 
-.mainCardInner .imageWrapper::after {
-    content: '';
-    position: absolute;
-    top: -12px;
-    right: 0;
-    width: 1px;
-    height: 12px;
-    background: #EAA52F;
-}
 
 .sketchImage {
     object-fit: contain;
@@ -174,22 +147,7 @@
     transform: scale(1.05) rotate(-0.5deg) translateY(-10px);
 }
 
-.stamp {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 8px;
-    font-weight: 800;
-    color: #1F2937;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    opacity: 0.3;
-    writing-mode: vertical-rl;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 /* --- Сетка (Сопутствующие) --- */
 .grid {
@@ -235,12 +193,10 @@
 .card .imageWrapper {
     width: 140px;
     height: 140px;
-    background-color: #F8FAFC;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 15px;
 }
 
 .card .sketchImage {
@@ -364,8 +320,6 @@
     .mainCardInner .imageWrapper {
         width: 140px;
         height: 140px;
-        padding: 15px;
-        background-color: #F8FAFC;
         margin-bottom: 0;
         flex-shrink: 0;
         /* Изображение не должно сжиматься */
@@ -378,13 +332,7 @@
         font-size: 13px !important;
     }
 
-    /* Мобильные размерные линии */
-    .mainCardInner .imageWrapper::before {
-        content: 'SPEC-M';
-        width: 40px;
-        top: -12px;
-        font-size: 7px;
-    }
+
 
     .grid {
         gap: 40px;
@@ -402,8 +350,6 @@
     .card .imageWrapper {
         width: 100px;
         height: 100px;
-        background-color: #F8FAFC;
-        padding: 10px;
         flex-shrink: 0;
     }
 

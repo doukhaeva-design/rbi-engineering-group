@@ -9,37 +9,31 @@ export default function Activities() {
             title: "МОДУЛЬНЫЕ СООРУЖЕНИЯ",
             desc: "Оперативное возведение высокотехнологичных объектов «под ключ».",
             detail: "Для промышленных, инфраструктурных и удалённых объектов.",
-            stamp: "RBI / MODULAR SYSTEM",
             image: "/assets/drawings/modular_3d.png"
         },
         {
             title: "Строительно-монтажные работы",
             desc: "Профессиональная реализация масштабных инфраструктурных и промышленных проектов.",
-            stamp: "СМР / I КАТЕГОРИЯ",
             image: "/assets/drawings/construction_3d.png"
         },
         {
             title: "Инженерные сети",
             desc: "Проектирование и инсталляция сложных внутренних и внешних коммуникационных систем.",
-            stamp: "СЕТИ / ГЕНПЛАН",
             image: "/assets/drawings/networks_3d.png"
         },
         {
             title: "Отделочные работы",
             desc: "Финальная отделка премиального уровня с использованием износостойких материалов.",
-            stamp: "ОТДЕЛКА / ПРЕМИУМ",
             image: "/assets/drawings/finishing_3d.png"
         },
         {
             title: "Проектирование и планирование",
             desc: "Разработка высокоточной проектной документации и генеральное планирование.",
-            stamp: "ПРОЕКТ / BIM",
             image: "/assets/drawings/planning_3d.png"
         },
         {
             title: "Монтаж / демонтаж",
             desc: "Сложный монтаж технологического оборудования и металлоконструкций любого масштаба.",
-            stamp: "ТЕХ / МОНТАЖ",
             image: "/assets/drawings/mounting_3d.png"
         }
     ];
@@ -69,7 +63,6 @@ export default function Activities() {
                                     </div>
                                 </div>
                                 <div className={styles.imageWrapper}>
-                                    <div className={styles.stamp}>{items[0].stamp}</div>
                                     <Image
                                         src={items[0].image}
                                         alt={items[0].title}
@@ -95,7 +88,6 @@ export default function Activities() {
                                             <p className={styles.cardDesc}>{item.desc}</p>
                                         </div>
                                         <div className={styles.imageWrapper}>
-                                            <div className={styles.stamp}>{item.stamp}</div>
                                             <Image
                                                 src={item.image}
                                                 alt={item.title}
