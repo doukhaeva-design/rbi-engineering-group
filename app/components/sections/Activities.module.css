@@ -1,220 +1,417 @@
 /* 
-  Стили для раздела "Направления деятельности" (Activities).
-  Используется сетка карточек с горизонтальным расположением текста и иллюстраций.
+  Архитектурный стиль для раздела "Услуги" (Activities).
+  Акцент на чистоте, линиях и типографике. 
 */
 
 .activitiesSection {
-    padding-top: 120px !important;
-    padding-bottom: 120px !important;
+    padding: 120px 0;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
 }
 
+/* --- Заголовок раздела --- */
 .sectionTitle {
-    color: var(--text-main);
-    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #1F2937;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
 }
 
 .sectionDescription {
-    margin-bottom: 40px;
-    font-size: 18px;
-    color: var(--text-secondary);
+    margin-bottom: 100px;
+    font-size: 17px;
+    color: #6B7280;
+    max-width: 520px;
+    line-height: 1.6;
 }
 
-/* --- Сетка карточек --- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    position: relative;
-    padding: 20px 0;
-    width: 100%;
-    align-items: stretch;
-    /* Убедимся, что элементы растягиваются */
-}
-
-.cardWrapper {
-    height: 100%;
-}
-
-.card {
-    background: #FFFFFF;
-    padding: 24px 24px 36px 24px;
-    /* Уменьшаем вертикальные отступы для компактности */
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: grid;
-    grid-template-columns: 65% 35%;
-    /* Левая колонка для текста, правая для картинки */
-    padding: 0;
-    /* Убираем общий паддинг, чтобы картинка касалась краев */
-    align-items: stretch;
-    /* Растягиваем на всю высоту */
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-    border-color: var(--primary-color);
-}
-
-.cardContent {
-    position: relative;
-    z-index: 2;
+/* --- Раскладка контента --- */
+.contentLayout {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    /* Ставим по верху */
-    padding: 24px 0 36px 24px;
-    /* Паддинг только для текстовой части */
-    width: 100%;
-    /* Занимает всю ширину своей колонки */
-    height: 100%;
+    gap: 120px;
 }
 
-/* Обертка для иллюстрации (чертежа) */
-.imageWrapper {
-    position: relative;
-    /* Теперь это обычный элемент сетки */
-    width: 100%;
-    height: 100%;
-    top: auto;
-    right: auto;
-    transform: none;
-    padding: 0;
-    /* Убираем паддинг, фото на всю область */
-    overflow: hidden;
-    /* Обрезаем лишнее, если есть */
-    background: transparent;
-    /* Прозрачный фон */
+.groupWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.groupTitle {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: #EAA52F;
+    font-weight: 700;
+    margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 1;
-    transition: all 0.4s ease;
+    gap: 32px;
+    opacity: 0.9;
 }
 
-.sketchImage {
-    object-fit: cover;
-    /* Запускаем режим "заполнить всё", обрезая края, если надо */
-    object-position: center;
-    /* Центр остается центром */
-    /* Центрируем */
-    transition: all 0.5s ease;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+.groupTitle::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #F3F4F6;
 }
 
-.card:hover .sketchImage {
-    transform: scale(1.08) translateX(-10px);
+/* --- Главная карточка (Featured) --- */
+.mainCard {
+    width: 100%;
 }
 
-/* --- Типографика карточек --- */
+.mainCardInner {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+}
+
+.mainCardInner .cardContent {
+    display: flex;
+    flex-direction: column;
+}
+
 .cardNumber {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 12px;
-    display: block;
-    opacity: 0.8;
+    font-size: 12px;
+    font-family: var(--font-mono, monospace);
+    font-weight: 600;
+    color: #9CA3AF;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cardNumber::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: #EAA52F;
 }
 
 .cardTitle {
-    font-size: 24px;
-    margin-bottom: 22px;
-    font-weight: 700;
-    color: var(--text-main);
-    letter-spacing: -0.01em;
+    font-size: 36px;
+    font-weight: 800;
+    color: #1F2937;
+    margin-bottom: 28px;
     line-height: 1.1;
-    /* Чуть плотнее строки заголовка */
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
 .cardDesc {
-    font-size: 16px;
-    color: var(--text-secondary);
+    font-size: 18px;
+    color: #4B5563;
     line-height: 1.6;
-    font-weight: 400;
-    opacity: 0.9;
-    max-width: 90%;
+    margin-bottom: 16px;
+    max-width: 440px;
+}
+
+.cardDetail {
+    font-size: 14px;
+    color: #9CA3AF;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+.mainCardInner .imageWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 480px;
+    height: 480px;
+    background-color: #F8FAFC;
+    /* Subtle engineering grey */
+    padding: 40px;
+}
+
+/* Архитектурные "размерные" линии (Dimension Lines) */
+.mainCardInner .imageWrapper::before {
+    content: 'SPEC-480 / LOD-400';
+    position: absolute;
+    top: -24px;
+    right: 0;
+    font-size: 9px;
+    font-weight: 700;
+    color: #EAA52F;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #EAA52F;
+    padding-bottom: 4px;
+    width: 100px;
+    text-align: right;
+}
+
+.mainCardInner .imageWrapper::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: 0;
+    width: 1px;
+    height: 12px;
+    background: #EAA52F;
+}
+
+.sketchImage {
+    object-fit: contain;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.08));
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.mainCardInner:hover .sketchImage {
+    transform: scale(1.05) rotate(-0.5deg) translateY(-10px);
+}
+
+.stamp {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 8px;
+    font-weight: 800;
+    color: #1F2937;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.3;
+    writing-mode: vertical-rl;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Сетка (Сопутствующие) --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 80px;
+    row-gap: 80px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Flip to create asymmetry */
+    align-items: center;
+    gap: 40px;
+    border-top: 1px solid #F3F4F6;
+    padding-top: 40px;
+}
+
+.card .cardContent {
+    flex: 1;
+}
+
+.card .cardNumber {
+    font-size: 10px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.card .cardTitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.card .cardDesc {
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #6B7280;
+    line-height: 1.5;
+}
+
+.card .imageWrapper {
+    width: 140px;
+    height: 140px;
+    background-color: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px;
+}
+
+.card .sketchImage {
+    width: 100% !important;
+    height: 100% !important;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.04));
+}
+
+.card:hover .sketchImage {
+    transform: scale(1.1);
 }
 
 /* --- Адаптивность --- */
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: 1fr;
+@media (min-width: 1025px) {
+    .cardWrapper:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mainCardInner {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
     }
 
-    .card {
-        padding: 30px;
+    .mainCardInner .imageWrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sectionTitle {
+        font-size: 32px;
+    }
+
+    .mainCardInner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mainCardInner .imageWrapper {
+        order: -1;
+        width: 100%;
+        height: 360px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
     }
 }
 
 @media (max-width: 768px) {
     .activitiesSection {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
+        padding: 80px 0;
     }
 
     .sectionTitle {
-        font-size: 28px;
-        line-height: 1.2;
-        margin-bottom: 12px;
+        font-size: 24px;
     }
 
     .sectionDescription {
-        font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 20px;
+        margin-bottom: 48px;
+        font-size: 14px;
+        max-width: 100%;
     }
 
-    .grid {
-        gap: 16px;
+    .contentLayout {
+        gap: 64px;
     }
 
-    /* Мобильный вид карточки (Bento-стиль) */
-    .card {
+    .groupWrapper {
+        gap: 24px;
+    }
+
+    .groupTitle {
+        font-size: 8px;
+        gap: 12px;
+    }
+
+    /* Главная карточка на мобильном - исправление "съезда" */
+    .mainCardInner {
         display: grid;
-        grid-template-columns: 1fr 110px;
-        padding: 24px 20px;
-        /* Компактнее на мобильных */
-        min-height: auto;
-        border-radius: 20px;
-        gap: 0;
+        grid-template-columns: 1fr 140px;
+        /* Побольше, как договорились */
+        gap: 24px;
+        align-items: center;
+        /* Центрируем по вертикали для баланса */
+        padding-bottom: 32px;
+        border-bottom: 1px solid #F3F4F6;
+        width: 100%;
     }
 
-    .cardContent {
-        display: contents;
-    }
-
-    .cardNumber {
-        grid-column: 1 / -1;
-        font-size: 11px;
-        margin-bottom: 8px;
+    .mainCardInner .cardContent {
+        min-width: 0;
+        /* Предотвращаем расширение колонки */
+        padding: 0;
     }
 
     .cardTitle {
-        grid-column: 1 / -1;
-        font-size: 20px;
-        margin-bottom: 14px;
+        font-size: 22px;
+        margin-bottom: 12px;
+        line-height: 1.2;
     }
 
     .cardDesc {
-        grid-column: 1 / 2;
-        font-size: 14px;
-        padding-right: 15px;
+        font-size: 15px;
+        margin-bottom: 12px;
+        opacity: 0.9;
     }
 
-    .imageWrapper {
-        grid-column: 2 / 3;
-        position: relative !important;
-        width: 100px !important;
-        height: 100px !important;
-        right: auto !important;
-        top: auto !important;
+    .cardDetail {
+        font-size: 13px;
+        margin-bottom: 24px;
+        display: block;
+        /* Убеждаемся что не мешает кнопке */
     }
 
-    /* Скрываем лишние карточки на мобильных (по запросу дизайна) */
+    .mainCardInner .imageWrapper {
+        width: 140px;
+        height: 140px;
+        padding: 15px;
+        background-color: #F8FAFC;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        /* Изображение не должно сжиматься */
+    }
+
+    /* Кнопка на мобильном */
+    .cardCta {
+        width: 100%;
+        padding: 10px 16px !important;
+        font-size: 13px !important;
+    }
+
+    /* Мобильные размерные линии */
+    .mainCardInner .imageWrapper::before {
+        content: 'SPEC-M';
+        width: 40px;
+        top: -12px;
+        font-size: 7px;
+    }
+
+    .grid {
+        gap: 40px;
+    }
+
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        align-items: center;
+        gap: 20px;
+        padding-top: 24px;
+        border-top: 1px solid #F3F4F6;
+    }
+
+    .card .imageWrapper {
+        width: 100px;
+        height: 100px;
+        background-color: #F8FAFC;
+        padding: 10px;
+        flex-shrink: 0;
+    }
+
+    .card .cardTitle {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
     .cardWrapper:nth-child(n+4) {
         display: none;
     }

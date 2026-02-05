@@ -14,7 +14,7 @@ interface StatItem {
 
 const stats: StatItem[] = [
     { label: "ЛЕТ НА РЫНКЕ", value: 13, suffix: "+", isDominant: true },
-    { label: "РЕАЛИЗОВАННЫХ ОБЪЕКТОВ", value: 50, suffix: "+", isDominant: true },
+    { label: "РЕАЛИЗОВАННЫХ ОБЪЕКТОВ", value: 62, suffix: "+", isDominant: true },
     { label: "СОТРУДНИКОВ", value: 50, suffix: "+" },
     { label: "ЕДИНИЦЫ ТЕХНИКИ", value: 53, suffix: "" },
     { label: "ЛИЦЕНЗИЯ НА СМР", value: 1, suffix: " КАТ." }

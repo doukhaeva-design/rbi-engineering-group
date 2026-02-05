@@ -198,6 +198,23 @@
         padding-left: 16px;
     }
 
+    /* Anchor blocks: First two stats larger */
+    .statCard:nth-child(1) .number,
+    .statCard:nth-child(2) .number {
+        font-size: 52px;
+        margin-bottom: 8px;
+    }
+
+    .statCard:nth-child(1) .label,
+    .statCard:nth-child(2) .label {
+        font-size: 11px;
+    }
+
+    .statCard:nth-child(1) .suffix,
+    .statCard:nth-child(2) .suffix {
+        font-size: 26px;
+    }
+
     /* Последняя карточка на всю ширину */
     .statCard:nth-child(5) {
         grid-column: span 2;
