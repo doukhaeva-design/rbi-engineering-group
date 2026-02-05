@@ -240,22 +240,20 @@
     .card {
         display: grid;
         grid-template-columns: 80px 1fr;
-        /* Image | Content */
         grid-template-rows: auto auto auto;
-        padding: 32px 0;
+        padding: 20px;
         min-height: auto;
-        border-radius: 0;
-        background: transparent;
-        box-shadow: none;
-        border: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        background: #FFFFFF;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        border: 1px solid var(--border-color);
         gap: 16px;
-        align-items: center;
-        /* Vert-align Title to Image */
+        align-items: start;
+        margin-bottom: 0;
     }
 
     .card:last-child {
-        border-bottom: none;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .cardContent {
@@ -286,11 +284,16 @@
 
     /* Sketch adjustments for small icon */
     .sketchImage {
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center !important;
-        width: 80% !important;
-        height: 80% !important;
+        width: 100% !important;
+        height: 100% !important;
         filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+    }
+
+    /* Prevent gap on hover by removing horizontal shift */
+    .card:hover .sketchImage {
+        transform: scale(1.05);
     }
 
     .cardNumber {
