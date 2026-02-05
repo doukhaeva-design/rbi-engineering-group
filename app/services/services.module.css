@@ -154,10 +154,11 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 100px;
+        padding-top: 80px;
+        /* Adjusted to fit back button + header tight */
         padding-bottom: 40px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .heroTitle {

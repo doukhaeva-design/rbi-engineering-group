@@ -11,11 +11,14 @@ export default function AboutPage() {
         <main>
             <Header />
             <section className={styles.hero}>
+                <div>
+                    {/* BackButton removed */}
+                </div>
+
                 <div className="container">
-                    <BackButton />
                     <h1 className={styles.heroTitle}>О компании</h1>
                     <p className={styles.heroText}>
-                        RBI Engineering Group работает в Казахстане и выполняет строительство, СМР и модульные решения.
+                        RBI Engineering Group работает в Казахстане и реализует строительные, инженерные и модульные проекты для промышленных и инфраструктурных объектов.
                     </p>
                 </div>
             </section>

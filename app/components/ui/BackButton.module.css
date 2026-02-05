@@ -3,42 +3,55 @@
   Используется на внутренних страницах для навигации в корень.
 */
 
+/* --- По умолчанию (Десктоп) --- */
 .backBtn {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 0;
-    transition: all 0.3s ease;
-    z-index: 10;
-    position: absolute;
-    top: 100px;
-    left: 20px;
-}
-
-/* Эффект при наведении (смещение влево) */
-.backBtn:hover {
-    color: var(--primary-color);
-    transform: translateX(-5px);
+    display: none;
+    /* Скрыта на десктопе по требованию */
 }
 
 /* --- Контейнер-обертка для позиционирования --- */
+/* Wrapper for positioning functionality */
 .containerWrapper {
-    position: relative;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    display: none;
+    /* Скрыт контейнер тоже */
 }
 
-/* --- Адаптивность --- */
+/* --- Адаптивность (Мобилка) --- */
 @media (max-width: 768px) {
+    .containerWrapper {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 20px;
+        /* Reduced gap from Header */
+        padding-left: 20px;
+    }
+
     .backBtn {
-        font-size: 13px;
-        top: 80px;
-        left: 20px;
+        display: inline-flex;
+        font-size: 14px;
+        position: relative;
+        top: auto;
+        left: auto;
+
+        /* Increased touch target */
+        padding: 16px 20px;
+
+        /* Adjusted negative margin to align text (-20px because 20px padding) */
+        margin-left: -20px;
+
+        color: #111827;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        backdrop-filter: blur(4px);
+
+        margin-top: 0;
+        margin-bottom: 20px;
+        /* Reduced gap before Title */
+
+        border: none;
+        cursor: pointer;
+        align-items: center;
+        gap: 8px;
     }
 }

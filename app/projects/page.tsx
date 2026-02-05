@@ -131,12 +131,17 @@ function ProjectsContent() {
         <main>
             <Header />
             <section className={styles.hero}>
-                <div className="container">
+                <div>
                     <BackButton />
-                    <h1 className={styles.heroTitle}>Проекты</h1>
-                    <p className={styles.heroText}>
-                        Примеры выполненных работ: модульные сооружения и монтажные проекты.
-                    </p>
+                </div>
+
+                <div className="container">
+                    <div className={styles.heroContent}>
+                        <h1 className={styles.heroTitle}>Проекты</h1>
+                        <p className={styles.heroText}>
+                            Реализованные проекты в сфере модульного строительства и строительно-монтажных работ.
+                        </p>
+                    </div>
                 </div>
             </section>
 

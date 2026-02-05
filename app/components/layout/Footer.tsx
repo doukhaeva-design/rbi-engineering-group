@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className={styles.column}>
                         <Link href="/" className={styles.logo}>RBI Engineering Group</Link>
                         <p className={styles.desc}>
-                            RBI Engineering Group работает в Казахстане и выполняет строительство, СМР и модульные решения.
+                            RBI Engineering Group работает в Казахстане и реализует строительные, инженерные и модульные проекты для промышленных и инфраструктурных объектов.
                         </p>
                     </div>
 

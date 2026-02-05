@@ -17,7 +17,7 @@ export default function ContactsPage() {
             <Header />
             <section className={styles.hero}>
                 <div className="container">
-                    <BackButton />
+                    {/* BackButton removed */}
                     <h1 className={styles.heroTitle}>Контакты</h1>
                     <div className={styles.info}>
                         <p><strong>Адрес:</strong> Казахстан, г. Астана, ул. Проезд 69, зд. 1А</p>

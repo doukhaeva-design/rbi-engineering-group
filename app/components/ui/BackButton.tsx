@@ -12,12 +12,14 @@ export default function BackButton({ label = "Назад", style }: BackButtonPr
     const router = useRouter();
 
     return (
-        <button
-            onClick={() => router.back()}
-            className={styles.backBtn}
-            style={style}
-        >
-            ← {label}
-        </button>
+        <div className={styles.containerWrapper}>
+            <button
+                onClick={() => router.back()}
+                className={styles.backBtn}
+                style={style}
+            >
+                ← {label}
+            </button>
+        </div>
     );
 }
