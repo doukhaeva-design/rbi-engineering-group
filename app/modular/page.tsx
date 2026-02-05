@@ -31,7 +31,7 @@ export default function ModularPage() {
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Быстро строится</span>
+                            <span>Быстрое строительство</span>
                         </li>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
@@ -61,7 +61,7 @@ export default function ModularPage() {
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Можно строить в удалённых локациях</span>
+                            <span>Возможность строительства в удалённых локациях</span>
                         </li>
                     </ul>
                 </div>
@@ -71,20 +71,20 @@ export default function ModularPage() {
                 <div className="container">
                     <h2 className={styles.sectionTitle}>Конструкция и комплектация</h2>
                     <div className={styles.infoGrid}>
-                        <div>
+                        <div className={styles.infoCard}>
                             <h3 className={styles.subTitle}>Конструкция модуля</h3>
                             <ul className={styles.list}>
                                 <li>Профлист</li>
                                 <li>Сэндвич-панели</li>
-                                <li>Рамы, утепление</li>
-                                <li>Плиты, ЛДСП и линолеум</li>
+                                <li>Рамы и утепление</li>
+                                <li>Плиты, ЛДСП, линолеум</li>
                             </ul>
                         </div>
-                        <div>
+                        <div className={styles.infoCard}>
                             <h3 className={styles.subTitle}>Комплектация</h3>
                             <ul className={styles.list}>
                                 <li>Кровля</li>
-                                <li>Крыльцо, лестница</li>
+                                <li>Крыльцо и лестница</li>
                                 <li>Металлоконструкции</li>
                                 <li>Инженерные сети</li>
                             </ul>
@@ -98,8 +98,8 @@ export default function ModularPage() {
                     <h2 className={styles.sectionTitle}>Дизайн</h2>
                     <div className={styles.textBlock}>
                         <p><strong>Типы панелей:</strong> гладкая / волна / трапеция</p>
-                        <p><strong>Цвета:</strong> RAL 9003 (белый), по RAL-карте. Можно “под дерево”</p>
-                        <p><strong>Каркас:</strong> RAL 7004 (серый) или варианты</p>
+                        <p><strong>Цвета:</strong> RAL 9003 (белый), другие цвета по RAL-карте, возможна отделка «под дерево»</p>
+                        <p><strong>Каркас:</strong> RAL 7004 (серый) или другие варианты</p>
                     </div>
                 </div>
             </section>
