@@ -1,12 +1,16 @@
+"use client";
+
 import Image from 'next/image';
 import styles from './KeyCompetencies.module.css';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function KeyCompetencies({ limited = false }: { limited?: boolean }) {
+    const { t } = useLanguage();
     const fullCompetencies = [
         {
-            title: "Опыт и масштаб",
-            desc: "13+ лет на рынке Казахстана, 62+ реализованных проектов.",
+            title: t("competencies.c1.title"),
+            desc: t("competencies.c1.desc"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-8a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v8" stroke="#2F5D9F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -15,8 +19,8 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
             )
         },
         {
-            title: "Профессиональная команда",
-            desc: "50+ сотрудников, регулярная аттестация и повышение квалификации.",
+            title: t("competencies.c2.title"),
+            desc: t("competencies.c2.desc"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="7" r="4" stroke="#2F5D9F" strokeWidth="2" />
@@ -26,8 +30,8 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
             )
         },
         {
-            title: "Техническая база",
-            desc: "Собственный парк 53+ единиц строительной техники и сервисная служба.",
+            title: t("competencies.c3.title"),
+            desc: t("competencies.c3.desc"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M15 6h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" stroke="#2F5D9F" strokeWidth="2" />
@@ -37,8 +41,8 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
             )
         },
         {
-            title: "Специализация на модулях",
-            desc: "Знаем особенности модульных сооружений и комплектаций.",
+            title: t("competencies.c4.title"),
+            desc: t("competencies.c4.desc"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="#2F5D9F" strokeWidth="2" strokeLinejoin="round" />
@@ -48,8 +52,8 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
             )
         },
         {
-            title: "Партнёрская сеть",
-            desc: "Сотрудничество с крупными производителями и компаниями (DoorHan, Power China и др.).",
+            title: t("competencies.c5.title"),
+            desc: t("competencies.c5.desc"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <circle cx="18" cy="5" r="3" stroke="#2F5D9F" strokeWidth="2" />
@@ -61,8 +65,8 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
             )
         },
         {
-            title: "Документы и подтверждения",
-            desc: "Лицензия 1 категории и 68+ рекомендательных писем.",
+            title: t("competencies.c6.title"),
+            desc: t("competencies.c6.desc"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#2F5D9F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -84,7 +88,7 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
         <section className={`section ${styles.section}`}>
             <div className={`container`}>
                 <RevealOnScroll>
-                    <h2 className={styles.title}>{limited ? 'Почему выбирают нас' : 'Ключевые компетенции'}</h2>
+                    <h2 className={styles.title}>{limited ? t('competencies.title_alt') : t('competencies.title')}</h2>
                 </RevealOnScroll>
 
                 <div className={limited ? styles.splitLayout : ''}>

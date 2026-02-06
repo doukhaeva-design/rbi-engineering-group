@@ -1,27 +1,28 @@
 
+"use client";
+
 import styles from './ModularPreview.module.css';
 import Button from '../ui/Button';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function ModularPreview() {
+    const { t } = useLanguage();
     return (
         <section className={`section ${styles.section}`} id="modular">
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
                     <RevealOnScroll>
-                        <h2 className={styles.title}>Модульные сооружения</h2>
-                        <p className={styles.text}>
-                            Модульные сооружения — это быстрый и практичный способ получить готовое помещение.<br />
-                            Подходит для удалённых локаций и разных типов объектов.
-                        </p>
+                        <h2 className={styles.title}>{t('modular.title')}</h2>
+                        <p className={styles.text} dangerouslySetInnerHTML={{ __html: t('modular.text').replace(/\. /g, '.<br />') }}></p>
                     </RevealOnScroll>
 
                     {/* Simplified for Home Page to reduce redundancy */}
                     <div className={styles.benefitsBlock}>
                         <RevealOnScroll delay={0.2}>
-                            <h3 className={styles.subtitle}>Почему это выгодно?</h3>
+                            <h3 className={styles.subtitle}>{t('modular.subtitle')}</h3>
                             <p className={styles.detailText}>
-                                Экономия времени и бюджета: здания собираются как конструктор прямо на объекте. Полная заводская готовность, включая отделку и инженерные системы.
+                                {t('modular.detail')}
                             </p>
                         </RevealOnScroll>
 
@@ -35,8 +36,8 @@ export default function ModularPreview() {
                                         </svg>
                                     </div>
                                     <div className={styles.cardTextWrapper}>
-                                        <h4 className={styles.cardTitle}>Быстро</h4>
-                                        <p className={styles.cardText}>Сборка за несколько дней</p>
+                                        <h4 className={styles.cardTitle}>{t('modular.benefit1.title')}</h4>
+                                        <p className={styles.cardText}>{t('modular.benefit1.desc')}</p>
                                     </div>
                                 </div>
                                 <div className={styles.card}>
@@ -47,8 +48,8 @@ export default function ModularPreview() {
                                         </svg>
                                     </div>
                                     <div className={styles.cardTextWrapper}>
-                                        <h4 className={styles.cardTitle}>Надежно</h4>
-                                        <p className={styles.cardText}>Работает в любых погодных условиях</p>
+                                        <h4 className={styles.cardTitle}>{t('modular.benefit2.title')}</h4>
+                                        <p className={styles.cardText}>{t('modular.benefit2.desc')}</p>
                                     </div>
                                 </div>
                                 <div className={styles.card}>
@@ -60,8 +61,8 @@ export default function ModularPreview() {
                                         </svg>
                                     </div>
                                     <div className={styles.cardTextWrapper}>
-                                        <h4 className={styles.cardTitle}>Мобильно</h4>
-                                        <p className={styles.cardText}>Легко перевезти на новое место</p>
+                                        <h4 className={styles.cardTitle}>{t('modular.benefit3.title')}</h4>
+                                        <p className={styles.cardText}>{t('modular.benefit3.desc')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +71,7 @@ export default function ModularPreview() {
 
                     <RevealOnScroll delay={0.4}>
                         <div style={{ marginTop: '40px' }}>
-                            <Button href="/modular" variant="filled">Подробнее о модульных решениях</Button>
+                            <Button href="/modular" variant="filled">{t('modular.button')}</Button>
                         </div>
                     </RevealOnScroll>
                 </div>

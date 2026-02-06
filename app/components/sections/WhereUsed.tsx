@@ -1,11 +1,15 @@
 
+"use client";
+
 import styles from './WhereUsed.module.css';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function WhereUsed() {
+    const { t } = useLanguage();
     const items = [
         {
-            text: "Посты охраны / КПП",
+            text: t("where.i1"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M12 2L3 7V12C3 17.52 6.84 22.74 12 24C17.16 22.74 21 17.52 21 12V7L12 2Z" fill="#2F5D9F" />
@@ -14,7 +18,7 @@ export default function WhereUsed() {
             )
         },
         {
-            text: "Диспетчерские и технические помещения",
+            text: t("where.i2"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <rect x="2" y="4" width="20" height="15" rx="2" fill="#2F5D9F" />
@@ -27,7 +31,7 @@ export default function WhereUsed() {
             )
         },
         {
-            text: "Заводы",
+            text: t("where.i3"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M22 21H2V8L8 12V8L14 12V4L22 9V21Z" fill="#2F5D9F" />
@@ -40,7 +44,7 @@ export default function WhereUsed() {
             )
         },
         {
-            text: "Ветровые электростанции",
+            text: t("where.i4"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <rect x="11" y="9" width="2" height="13" fill="#2F5D9F" />
@@ -52,7 +56,7 @@ export default function WhereUsed() {
             )
         },
         {
-            text: "Мобильные офисы и школы",
+            text: t("where.i5"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <rect x="2" y="6" width="20" height="14" rx="2" fill="#2F5D9F" />
@@ -65,7 +69,7 @@ export default function WhereUsed() {
             )
         },
         {
-            text: "Военное строительство",
+            text: t("where.i6"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M19 5L5 5L2 9L5 20H19L22 9L19 5Z" fill="#2F5D9F" />
@@ -75,7 +79,7 @@ export default function WhereUsed() {
             )
         },
         {
-            text: "Жилые и медицинские объекты",
+            text: t("where.i7"),
             icon: (
                 <svg viewBox="0 0 24 24" fill="none">
                     <path d="M12 3L2 12H5V21H19V12H22L12 3Z" fill="#2F5D9F" />
@@ -91,7 +95,7 @@ export default function WhereUsed() {
         <section className={`section-alt ${styles.section}`}>
             <div className={`container`}>
                 <RevealOnScroll>
-                    <h2 className={styles.title}>Сферы применения</h2>
+                    <h2 className={styles.title}>{t('where.title')}</h2>
                 </RevealOnScroll>
                 <div className={styles.grid}>
                     {items.map((item, index) => (

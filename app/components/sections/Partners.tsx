@@ -1,18 +1,22 @@
+"use client";
+
 import styles from './Partners.module.css';
 import RevealOnScroll from '../ui/RevealOnScroll';
 import Image from 'next/image';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Partners() {
+    const { t } = useLanguage();
     return (
         <section className={`section ${styles.partnersSection}`}>
             <div className={`container`}>
                 <RevealOnScroll>
-                    <h2 className={styles.mainTitle}>Партнёры и заказчики</h2>
-                    <p className={styles.mainDesc}>Сотрудничаем с ведущими компаниями и выполняем сложные инженерные проекты по всему Казахстану.</p>
+                    <h2 className={styles.mainTitle}>{t('partners.title')}</h2>
+                    <p className={styles.mainDesc}>{t('partners.desc')}</p>
                 </RevealOnScroll>
 
                 <RevealOnScroll delay={0.2}>
-                    <h3 className={styles.subheading}>Партнёры</h3>
+                    <h3 className={styles.subheading}>{t('partners.subtitle1')}</h3>
                     <div className={styles.logos}>
                         {[
                             { name: 'DoorHan', src: '/partners/doorhan.png?v=2' },
@@ -36,12 +40,12 @@ export default function Partners() {
                 </RevealOnScroll>
 
                 <RevealOnScroll delay={0.4}>
-                    <h3 className={styles.subheading} style={{ marginTop: '60px' }}>Постоянные заказчики</h3>
+                    <h3 className={styles.subheading} style={{ marginTop: '60px' }}>{t('partners.subtitle2')}</h3>
                     <div className={styles.customerGrid}>
                         {[
-                            'Национальный ЖД оператор РК',
-                            'Медицинские страховые организации РК',
-                            'Акимат города Нур-Султан'
+                            t('partners.c1'),
+                            t('partners.c2'),
+                            t('partners.c3')
                         ].map((customer, index) => (
                             <div key={index} className={styles.customerCard}>
                                 <div className={styles.customerDecoration}></div>

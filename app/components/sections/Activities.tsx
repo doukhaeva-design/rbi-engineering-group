@@ -1,38 +1,43 @@
+"use client";
+
 import Image from 'next/image';
 import styles from './Activities.module.css';
 import Button from '../ui/Button';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Activities() {
+    const { t } = useLanguage();
+
     const items = [
         {
-            title: "Модульные сооружения",
-            desc: "Оперативное возведение высокотехнологичных объектов «под ключ».",
+            title: t("activities.modular.title"),
+            desc: t("activities.modular.desc"),
             image: "/assets/drawings/modular_3d.png"
         },
         {
-            title: "Строительно-монтажные работы",
-            desc: "Профессиональная реализация масштабных инфраструктурных и промышленных проектов.",
+            title: t("activities.construction.title"),
+            desc: t("activities.construction.desc"),
             image: "/assets/drawings/construction_3d.png"
         },
         {
-            title: "Инженерные сети",
-            desc: "Проектирование и инсталляция сложных внутренних и внешних коммуникационных систем.",
+            title: t("activities.networks.title"),
+            desc: t("activities.networks.desc"),
             image: "/assets/drawings/networks_3d.png"
         },
         {
-            title: "Отделочные работы",
-            desc: "Финальная отделка премиального уровня с использованием износостойких материалов.",
+            title: t("activities.finishing.title"),
+            desc: t("activities.finishing.desc"),
             image: "/assets/drawings/finishing_3d.png"
         },
         {
-            title: "Проектирование и планирование",
-            desc: "Разработка высокоточной проектной документации и генеральное планирование.",
+            title: t("activities.planning.title"),
+            desc: t("activities.planning.desc"),
             image: "/assets/drawings/planning_3d.png"
         },
         {
-            title: "Монтаж / демонтаж",
-            desc: "Сложный монтаж технологического оборудования и металлоконструкций любого масштаба.",
+            title: t("activities.mounting.title"),
+            desc: t("activities.mounting.desc"),
             image: "/assets/drawings/mounting_3d.png"
         }
     ];
@@ -41,8 +46,8 @@ export default function Activities() {
         <section className={`section ${styles.activitiesSection}`} id="services">
             <div className={`container`}>
                 <RevealOnScroll>
-                    <h2 className={styles.sectionTitle}>Комплексные инженерные решения</h2>
-                    <p className={styles.sectionDescription}>Обеспечиваем безупречное качество исполнения на каждом этапе проекта.</p>
+                    <h2 className={styles.sectionTitle}>{t('activities.title')}</h2>
+                    <p className={styles.sectionDescription}>{t('activities.desc')}</p>
                 </RevealOnScroll>
                 <div className={styles.gridContainer}>
                     <div className={styles.grid}>
@@ -70,7 +75,7 @@ export default function Activities() {
                 </div>
                 <RevealOnScroll delay={0.4}>
                     <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                        <Button href="/services" variant="filled">Все услуги</Button>
+                        <Button href="/services" variant="filled">{t('activities.button')}</Button>
                     </div>
                 </RevealOnScroll>
             </div>

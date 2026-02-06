@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './AboutSection.module.css';
 import RevealOnScroll from '../ui/RevealOnScroll';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface StatItem {
     label: string;
@@ -12,15 +13,17 @@ interface StatItem {
     isDominant?: boolean;
 }
 
-const stats: StatItem[] = [
-    { label: "ЛЕТ НА РЫНКЕ", value: 13, suffix: "+", isDominant: true },
-    { label: "РЕАЛИЗОВАННЫХ ОБЪЕКТОВ", value: 50, suffix: "+", isDominant: true },
-    { label: "СОТРУДНИКОВ", value: 50, suffix: "+" },
-    { label: "ЕДИНИЦЫ ТЕХНИКИ", value: 53, suffix: "" },
-    { label: "ЛИЦЕНЗИЯ НА СМР", value: 1, suffix: " КАТ." }
-];
-
 export default function AboutSection() {
+    const { t } = useLanguage();
+
+    const stats: StatItem[] = [
+        { label: t("about.stat.years"), value: 13, suffix: "+", isDominant: true },
+        { label: t("about.stat.projects"), value: 50, suffix: "+", isDominant: true },
+        { label: t("about.stat.employees"), value: 50, suffix: "+" },
+        { label: t("about.stat.machinery"), value: 53, suffix: "" },
+        { label: t("about.stat.license"), value: 1, suffix: t("about.stat.license.suffix") }
+    ];
+
     const [counts, setCounts] = useState(stats.map(() => 0));
     const sectionRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -75,15 +78,13 @@ export default function AboutSection() {
                     {/* Header: Manifesto */}
                     <RevealOnScroll>
                         <div className={styles.profile}>
-                            <h2 className={styles.tagline}>Профиль компании</h2>
+                            <h2 className={styles.tagline}>{t('about.title')}</h2>
                             <div className={styles.description}>
                                 <p>
-                                    <span className={styles.accent}>RBI Engineering Group</span> — строительная организация полного цикла,
-                                    специализирующаяся на сложных строительно-монтажных работах и проектировании высокотехнологичных модульных сооружений.
+                                    <span className={styles.accent}>RBI Engineering Group</span> — {t('about.desc').replace("RBI Engineering Group — ", "")}
                                 </p>
                                 <p className={styles.secondaryText}>
-                                    Мы реализуем индустриальные и инфраструктурные проекты по всему Казахстану,
-                                    обеспечивая высокую культуру инжиниринга и соблюдение строгих технологических стандартов.
+                                    {t('about.subdesc')}
                                 </p>
                             </div>
                         </div>
