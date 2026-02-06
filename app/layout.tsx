@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import React from "react";
 import "./globals.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.variable} suppressHydrationWarning={true}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

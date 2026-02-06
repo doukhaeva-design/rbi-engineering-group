@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
 import Button from '../ui/Button';
 
+import { useLanguage } from '../../context/LanguageContext';
+
 export default function Hero() {
+    const { t } = useLanguage();
     const [isVisible, setIsVisible] = useState(false);
     const heroRef = useRef<HTMLElement>(null);
 
@@ -35,18 +38,18 @@ export default function Hero() {
                     RBI Engineering<br /> Group
                 </h1>
                 <p className={styles.subtitle}>
-                    Строительство и модульные сооружения в&nbsp;Казахстане
+                    {t('hero.subtitle')}
                 </p>
                 <p className={styles.description}>
-                    Выполняем строительно-монтажные работы любой сложности и строим мобильные модульные сооружения. Ставим на технологии, качество и оперативность.
+                    {t('hero.description')}
                 </p>
                 <div className={styles.buttonGroup}>
-                    <Button href="/contacts" variant="primary">Запросить предложение</Button>
-                    <Button href="/projects" variant="outline">Смотреть проекты</Button>
+                    <Button href="/contacts" variant="primary">{t('hero.request')}</Button>
+                    <Button href="/projects" variant="outline">{t('hero.projects')}</Button>
                 </div>
                 <div className={styles.trustLine}>
-                    <span>• 13+ лет • 62+ проекта </span>
-                    <span className={styles.trustBreak}>• Лицензия 1 категории</span>
+                    <span>{t('hero.trust')}</span>
+                    <span className={styles.trustBreak}>{t('hero.license')}</span>
                 </div>
             </div>
         </section>
