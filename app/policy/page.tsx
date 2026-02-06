@@ -1,10 +1,14 @@
+"use client";
 
 import Header from "../components/layout/Header";
 import styles from "./policy.module.css";
 import Footer from "../components/layout/Footer";
 import BackButton from "../components/ui/BackButton";
+import { useLanguage } from '../context/LanguageContext';
 
 export default function PrivacyPolicyPage() {
+    const { t } = useLanguage();
+
     return (
         <main>
             <Header />
@@ -15,9 +19,9 @@ export default function PrivacyPolicyPage() {
                     </div>
                 </div>
                 <div className="container">
-                    <h1 className={styles.title}>Политика конфиденциальности</h1>
+                    <h1 className={styles.title}>{t('policy.title')}</h1>
                     <p className={styles.subtitle}>
-                        Настоящая политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта RBI Engineering Group.
+                        {t('policy.subtitle')}
                     </p>
                 </div>
             </section>
@@ -26,55 +30,51 @@ export default function PrivacyPolicyPage() {
                 <div className="container">
                     <div className={styles.content}>
                         <div className={styles.block}>
-                            <h2 className={styles.heading}>1. Оператор персональных данных</h2>
-                            <p>
-                                Оператором персональных данных является<br />
-                                Товарищество с ограниченной ответственностью «RBI Engineering Group»,<br />
-                                БИН: [вставь БИН из лицензии],<br />
-                                Республика Казахстан.
+                            <h2 className={styles.heading}>{t('policy.1.title')}</h2>
+                            <p style={{ whiteSpace: 'pre-line' }}>
+                                {t('policy.1.text')}
                             </p>
                         </div>
 
                         <div className={styles.block}>
-                            <h2 className={styles.heading}>2. Какие персональные данные собираются</h2>
-                            <p>При использовании форм обратной связи на сайте компания может собирать следующие персональные данные:</p>
+                            <h2 className={styles.heading}>{t('policy.2.title')}</h2>
+                            <p>{t('policy.2.text')}</p>
                             <ul>
-                                <li>имя;</li>
-                                <li>номер телефона;</li>
-                                <li>адрес электронной почты;</li>
-                                <li>информация, указанная пользователем в тексте обращения.</li>
+                                <li>{t('policy.2.l1')}</li>
+                                <li>{t('policy.2.l2')}</li>
+                                <li>{t('policy.2.l3')}</li>
+                                <li>{t('policy.2.l4')}</li>
                             </ul>
                         </div>
 
                         <div className={styles.block}>
-                            <h2 className={styles.heading}>3. Цели обработки персональных данных</h2>
-                            <p>Персональные данные используются исключительно для:</p>
+                            <h2 className={styles.heading}>{t('policy.3.title')}</h2>
+                            <p>{t('policy.3.text')}</p>
                             <ul>
-                                <li>обработки входящих запросов;</li>
-                                <li>обратной связи с пользователем;</li>
-                                <li>предоставления информации о услугах компании.</li>
+                                <li>{t('policy.3.l1')}</li>
+                                <li>{t('policy.3.l2')}</li>
+                                <li>{t('policy.3.l3')}</li>
                             </ul>
                         </div>
 
                         <div className={styles.block}>
-                            <h2 className={styles.heading}>4. Передача персональных данных третьим лицам</h2>
+                            <h2 className={styles.heading}>{t('policy.4.title')}</h2>
                             <p>
-                                Персональные данные пользователей не передаются третьим лицам, за исключением случаев, предусмотренных законодательством Республики Казахстан.
+                                {t('policy.4.text')}
                             </p>
                         </div>
 
                         <div className={styles.block}>
-                            <h2 className={styles.heading}>5. Хранение и защита персональных данных</h2>
+                            <h2 className={styles.heading}>{t('policy.5.title')}</h2>
                             <p>
-                                Персональные данные хранятся в течение времени, необходимого для обработки запроса.
-                                Компания принимает необходимые организационные и технические меры для защиты персональных данных от несанкционированного доступа, утраты или раскрытия.
+                                {t('policy.5.text')}
                             </p>
                         </div>
 
                         <div className={styles.block}>
-                            <h2 className={styles.heading}>6. Контактная информация</h2>
+                            <h2 className={styles.heading}>{t('policy.6.title')}</h2>
                             <p>
-                                По вопросам, связанным с обработкой персональных данных, вы можете обратиться через форму обратной связи на сайте или по контактным данным, указанным в разделе <a href="/contacts" className={styles.link}>«Контакты»</a>.
+                                {t('policy.6.text')}<a href="/contacts" className={styles.link}>{t('policy.6.link')}</a>.
                             </p>
                         </div>
                     </div>

@@ -1,78 +1,77 @@
+"use client";
+
 import Image from 'next/image';
 import Header from "../components/layout/Header";
 import styles from "./services.module.css";
 import Button from "../components/ui/Button";
 import BackButton from "../components/ui/BackButton";
 import Footer from "../components/layout/Footer";
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: 'Услуги строительной компании: СМР, монтаж, проектирование | RBI Engineering Group',
-    description: 'Оказываем услуги по строительству, монтажу инженерных сетей, отделочным работам и возведению модульных зданий. Лицензия I категории.',
-};
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ServicesPage() {
+    const { t } = useLanguage();
+
     const services = [
         {
-            title: "Модульные сооружения",
-            desc: "Оперативное возведение высокотехнологичных объектов «под ключ».",
+            title: t("services.card.modular.title"),
+            desc: t("activities.modular.desc"),
             details: [
-                "Сборно-разборные конструкции",
-                "Полная внутренняя отделка и коммуникации",
-                "Адаптация под климатические условия",
-                "Дополнительная кровля, крыльцо и лестницы",
-                "Инженерные системы: отопление, вентиляция, электрика"
+                t("services.card.modular.d.1"),
+                t("services.card.modular.d.2"),
+                t("services.card.modular.d.3"),
+                t("services.card.modular.d.4"),
+                t("services.card.modular.d.5")
             ],
             image: "/assets/drawings/modular_3d.png"
         },
         {
-            title: "Строительно-монтажные работы",
-            desc: "Профессиональная реализация масштабных инфраструктурных и промышленных проектов.",
+            title: t("services.card.construction.title"),
+            desc: t("activities.construction.desc"),
             details: [
-                "Монтаж каркасов зданий и сооружений",
-                "Устройство фундаментов любой сложности",
-                "Кровельные и фасадные работы",
-                "Монтаж сэндвич-панелей"
+                t("services.card.construction.d.1"),
+                t("services.card.construction.d.2"),
+                t("services.card.construction.d.3"),
+                t("services.card.construction.d.4")
             ],
             image: "/assets/drawings/construction_3d.png"
         },
         {
-            title: "Инженерные сети",
-            desc: "Проектирование и инсталляция сложных внутренних и внешних коммуникационных систем.",
+            title: t("services.card.networks.title"),
+            desc: t("activities.networks.desc"),
             details: [
-                "Прокладка сетей водоснабжения и канализации",
-                "Монтаж систем отопления и теплоснабжения",
-                "Электромонтажные работы"
+                t("services.card.networks.d.1"),
+                t("services.card.networks.d.2"),
+                t("services.card.networks.d.3")
             ],
             image: "/assets/drawings/networks_3d.png"
         },
         {
-            title: "Отделочные работы",
-            desc: "Финальная отделка премиального уровня с использованием износостойких материалов.",
+            title: t("services.card.finishing.title"),
+            desc: t("activities.finishing.desc"),
             details: [
-                "Внутренняя отделка помещений",
-                "Фасадные решения",
-                "Укладка напольных покрытий"
+                t("services.card.finishing.d.1"),
+                t("services.card.finishing.d.2"),
+                t("services.card.finishing.d.3")
             ],
             image: "/assets/drawings/finishing_3d.png"
         },
         {
-            title: "Проектирование и планирование",
-            desc: "Разработка высокоточной проектной документации и генеральное планирование.",
+            title: t("services.card.planning.title"),
+            desc: t("activities.planning.desc"),
             details: [
-                "Разработка эскизных и рабочих проектов",
-                "Генеральное планирование территории",
-                "Авторский надзор"
+                t("services.card.planning.d.1"),
+                t("services.card.planning.d.2"),
+                t("services.card.planning.d.3")
             ],
             image: "/assets/drawings/planning_3d.png"
         },
         {
-            title: "Монтаж / демонтаж",
-            desc: "Сложный монтаж технологического оборудования и металлоконструкций любого масштаба.",
+            title: t("services.card.mounting.title"),
+            desc: t("activities.mounting.desc"),
             details: [
-                "Монтаж технологического оборудования",
-                "Демонтаж зданий и сооружений",
-                "Передислокация объектов"
+                t("services.card.mounting.d.1"),
+                t("services.card.mounting.d.2"),
+                t("services.card.mounting.d.3")
             ],
             image: "/assets/drawings/mounting_3d.png"
         }
@@ -86,9 +85,9 @@ export default function ServicesPage() {
                     <BackButton />
                 </div>
                 <div className="container">
-                    <h1 className={styles.heroTitle}>Наши услуги</h1>
+                    <h1 className={styles.heroTitle}>{t("services.title")}</h1>
                     <p className={styles.heroText}>
-                        Мы выполняем строительные и инженерные работы, а также строим модульные сооружения под разные задачи.
+                        {t("services.subtitle")}
                     </p>
                 </div>
             </section>
@@ -126,7 +125,7 @@ export default function ServicesPage() {
                     </div>
 
                     <div style={{ marginTop: '60px', textAlign: 'center' }}>
-                        <Button href="/contacts" variant="primary">Запросить расчёт стоимости</Button>
+                        <Button href="/contacts" variant="primary">{t("services.button")}</Button>
                     </div>
                 </div>
             </section>

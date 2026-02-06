@@ -1,3 +1,4 @@
+"use client";
 
 import Header from "../components/layout/Header";
 import styles from "./modular.module.css";
@@ -5,8 +6,11 @@ import Button from "../components/ui/Button";
 import BackButton from "../components/ui/BackButton";
 import WhereUsed from "../components/sections/WhereUsed";
 import Footer from "../components/layout/Footer";
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ModularPage() {
+    const { t } = useLanguage();
+
     return (
         <main>
             <Header />
@@ -15,53 +19,53 @@ export default function ModularPage() {
                     <BackButton />
                 </div>
                 <div className="container">
-                    <h1 className={styles.heroTitle}>Модульные сооружения</h1>
+                    <h1 className={styles.heroTitle}>{t("modular_page.title")}</h1>
                     <p className={styles.heroText}>
-                        Это быстрый способ построить нужное помещение: офис, КПП, медпункт и другие форматы.
+                        {t("modular_page.subtitle")}
                     </p>
-                    <Button href="/contacts" variant="primary">Рассчитать стоимость модуля</Button>
+                    <Button href="/contacts" variant="primary">{t("modular_page.button")}</Button>
                 </div>
             </section>
 
             <section className="section">
                 <div className="container">
-                    <h2 className={styles.sectionTitle}>Преимущества</h2>
+                    <h2 className={styles.sectionTitle}>{t("modular_page.advantages.title")}</h2>
                     <ul className={styles.advantagesList}>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Быстрое строительство</span>
+                            <span>{t("modular_page.advantages.1")}</span>
                         </li>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Меньше затрат</span>
+                            <span>{t("modular_page.advantages.2")}</span>
                         </li>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Огнестойкость</span>
+                            <span>{t("modular_page.advantages.3")}</span>
                         </li>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Долговечность и простота сборки</span>
+                            <span>{t("modular_page.advantages.4")}</span>
                         </li>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Энергоэффективность</span>
+                            <span>{t("modular_page.advantages.5")}</span>
                         </li>
                         <li className={styles.advantageItem}>
                             <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <span>Возможность строительства в удалённых локациях</span>
+                            <span>{t("modular_page.advantages.6")}</span>
                         </li>
                     </ul>
                 </div>
@@ -69,24 +73,24 @@ export default function ModularPage() {
 
             <section className="section" style={{ backgroundColor: 'var(--secondary-color)' }}>
                 <div className="container">
-                    <h2 className={styles.sectionTitle}>Конструкция и комплектация</h2>
+                    <h2 className={styles.sectionTitle}>{t("modular_page.structure.title")}</h2>
                     <div className={styles.infoGrid}>
                         <div className={styles.infoCard}>
-                            <h3 className={styles.subTitle}>Конструкция модуля</h3>
+                            <h3 className={styles.subTitle}>{t("modular_page.structure.col1.title")}</h3>
                             <ul className={styles.list}>
-                                <li>Профлист</li>
-                                <li>Сэндвич-панели</li>
-                                <li>Рамы и утепление</li>
-                                <li>Плиты, ЛДСП, линолеум</li>
+                                <li>{t("modular_page.structure.col1.1")}</li>
+                                <li>{t("modular_page.structure.col1.2")}</li>
+                                <li>{t("modular_page.structure.col1.3")}</li>
+                                <li>{t("modular_page.structure.col1.4")}</li>
                             </ul>
                         </div>
                         <div className={styles.infoCard}>
-                            <h3 className={styles.subTitle}>Комплектация</h3>
+                            <h3 className={styles.subTitle}>{t("modular_page.structure.col2.title")}</h3>
                             <ul className={styles.list}>
-                                <li>Кровля</li>
-                                <li>Крыльцо и лестница</li>
-                                <li>Металлоконструкции</li>
-                                <li>Инженерные сети</li>
+                                <li>{t("modular_page.structure.col2.1")}</li>
+                                <li>{t("modular_page.structure.col2.2")}</li>
+                                <li>{t("modular_page.structure.col2.3")}</li>
+                                <li>{t("modular_page.structure.col2.4")}</li>
                             </ul>
                         </div>
                     </div>
@@ -95,11 +99,11 @@ export default function ModularPage() {
 
             <section className="section">
                 <div className="container">
-                    <h2 className={styles.sectionTitle}>Дизайн</h2>
+                    <h2 className={styles.sectionTitle}>{t("modular_page.design.title")}</h2>
                     <div className={styles.textBlock}>
-                        <p><strong>Типы панелей:</strong> гладкая / волна / трапеция</p>
-                        <p><strong>Цвета:</strong> RAL 9003 (белый), другие цвета по RAL-карте, возможна отделка «под дерево»</p>
-                        <p><strong>Каркас:</strong> RAL 7004 (серый) или другие варианты</p>
+                        <p><strong>{t("modular_page.design.panels")}</strong> {t("modular_page.design.panels.val")}</p>
+                        <p><strong>{t("modular_page.design.colors")}</strong> {t("modular_page.design.colors.val")}</p>
+                        <p><strong>{t("modular_page.design.frame")}</strong> {t("modular_page.design.frame.val")}</p>
                     </div>
                 </div>
             </section>
