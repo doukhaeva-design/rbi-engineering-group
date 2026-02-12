@@ -6,12 +6,12 @@
   --font-h1: 72px;
   --font-h2: 32px;
   --font-h3: 20px;
-  --font-text: 16px;
+  --font-text: 18px;
+  /* Standardize desktop body text to 18px */
   --font-small: 14px;
 
   --spacing-tight: -0.02em;
   --spacing-wide: 0.05em;
-  --font-small: 14px;
 
   @media (max-width: 768px) {
     --padding-x: 24px;
@@ -20,34 +20,40 @@
     --font-h2: 28px;
     --font-h3: 20px;
     --font-text: 16px;
+    /* Keep 16px for mobile */
   }
 
-  /* Premium Construction Palette ("Luxury Graphite") */
-  --background: #121212;
-  /* True black/dark graphite */
-  --foreground: #F5F5F7;
-  --background: #0f1115;
-  /* slightly lighter deep dark */
-  --secondary-color: #16191f;
-  /* distinct card background */
-  --background-offset: #1c2026;
-  /* lighter accent for variation */
+  /* Premium Light Palette (Construction & Engineering) */
+  --background: #F6F8FB;
+  /* Clean, professional light grey-blue */
+  --foreground: #111827;
+  /* Deep charcoal for main text */
+  --secondary-color: #FFFFFF;
+  /* Pure white for cards/sections */
+  --background-offset: #EEF2F6;
+  /* Slightly darker for alternating sections */
+  --border-color: #D9E2EC;
+  /* Soft cold grey for borders */
 
-  --primary-color: #C68E68;
-  /* Bronze/Copper */
-  --text-main: #f0f0f0;
-  /* Brighter white for better reading */
-  --text-secondary: #a0a5b0;
-  /* Muted gray-blue for less distraction */
-  --border-color: #2a2e36;
-  /* Subtle border */
+  --primary-color: #2F5D9F;
+  /* Calm Engineering Blue */
+  --premium-copper: linear-gradient(135deg, #C67D53 0%, #EAA52F 100%);
+  /* Luxury Accent */
 
-  --font-family: -apple-system,
+  --steel-color: #64748b;
+  /* Steel blue-grey for secondary elements */
+  --text-main: #111827;
+  /* Almost Black */
+  --text-secondary: #374151;
+  /* Dark Grey */
+  --text-inverse: #FFFFFF;
+  /* For buttons/dark areas */
+
+  --font-family: var(--font-inter),
+  -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
   Roboto,
-  "Helvetica Neue",
-  Arial,
   sans-serif;
 }
 
@@ -78,11 +84,12 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff;
-  /* Crisp white titles */
+  color: var(--text-main);
+  /* Dark titles */
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
+  font-family: var(--font-family);
 }
 
 h1 {
@@ -90,8 +97,10 @@ h1 {
   line-height: 1.1;
   margin-bottom: 24px;
   text-transform: uppercase;
-  letter-spacing: var(--spacing-wide);
-  font-weight: 700;
+  letter-spacing: 0.08em;
+  /* Wider stance */
+  font-weight: 800;
+  /* Impact */
 }
 
 h2 {
@@ -114,7 +123,12 @@ h3 {
 
 p {
   font-size: var(--font-text);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  /* Luxury spacing */
+  color: var(--text-secondary);
+  /* Premium dark grey */
+  font-weight: 400;
 }
 
 small {
@@ -138,8 +152,71 @@ a {
   .container {
     padding: 0 var(--padding-x);
   }
+
+  /* Remove decorative stripes and corners on mobile for a cleaner look */
+  .section::before,
+  .section::after,
+  .section-alt::before,
+  .section-alt::after {
+    display: none !important;
+  }
 }
 
 .section {
-  padding: var(--vertical-gap) 0;
+  padding: 120px 0;
+  background-color: var(--background);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.section-alt {
+  padding: 120px 0;
+  background-color: var(--background-offset);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.03), transparent 40%);
+}
+
+/* Architectural Marker for Section Transitions */
+.section::before,
+.section-alt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--primary-color), transparent);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Structural Corner Accent */
+.section::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 30px;
+  height: 30px;
+  border-top: 1px solid rgba(230, 132, 66, 0.15);
+  border-left: 1px solid rgba(230, 132, 66, 0.15);
+  pointer-events: none;
+}
+
+.section-alt>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* Global Section Padding Override for Mobile */
+@media (max-width: 768px) {
+
+  .section,
+  .section-alt {
+    padding: 60px 0;
+  }
 }

@@ -1,8 +1,5 @@
 .figuresSection {
-    background-color: var(--secondary-color);
     padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
 }
 
 .grid {
@@ -27,14 +24,13 @@
 
 .number {
     font-size: 72px;
-    /* Increased size */
     font-weight: 300;
     margin-bottom: 8px;
     font-variant-numeric: tabular-nums;
     line-height: 1;
 
-    /* Metallic Copper Gradient */
-    background: linear-gradient(135deg, #E8C39E 0%, #C68E68 50%, #8B5E3C 100%);
+    /* Vibrant Copper Gradient (Matches Buttons) */
+    background: linear-gradient(135deg, #FCF0D8 0%, #EAA52F 50%, #C67D53 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -45,36 +41,49 @@
 
 .suffix {
     font-size: 40px;
-    /* Smaller suffix for elegance */
     margin-left: 4px;
     font-weight: 200;
-    -webkit-text-fill-color: #C68E68;
-    /* Solid color for suffix or keep gradient */
-    opacity: 0.8;
+    -webkit-text-fill-color: #EAA52F;
+    /* Match middle of gradient */
+    opacity: 0.9;
 }
 
 .label {
-    font-size: 13px;
+    font-size: 14px;
+    /* Increased readability */
     text-transform: uppercase;
-    color: #888;
+    color: #111827;
+    /* Black/Dark text */
     max-width: 150px;
-    line-height: 1.4;
-    letter-spacing: 0.05em;
-    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    /* Premium spacing */
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
+    .figuresSection {
+        padding: 40px 0;
+    }
+
     .grid {
         display: flex;
         flex-direction: column;
         gap: 0;
+        padding: 0;
     }
 
     .item {
+        flex: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 24px 0;
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 32px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         width: 100%;
+        gap: 24px;
+        text-align: left;
     }
 
     .item:last-child {
@@ -82,6 +91,22 @@
     }
 
     .number {
-        font-size: 56px;
+        font-size: 48px;
+        margin-bottom: 0;
+        min-width: 110px;
+        justify-content: flex-start;
+    }
+
+    .suffix {
+        font-size: 26px;
+    }
+
+    .label {
+        font-size: 12px;
+        max-width: none;
+        text-align: left;
+        color: var(--text-secondary);
+        letter-spacing: 0.05em;
+        line-height: 1.4;
     }
 }

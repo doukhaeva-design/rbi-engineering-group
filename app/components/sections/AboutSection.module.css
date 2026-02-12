@@ -1,0 +1,264 @@
+.section {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+    /* Reduced from 120px */
+    position: relative;
+    overflow: hidden;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Reduced gap */
+}
+
+/* Profiles / Manifesto */
+.profile {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* Split layout: Label | Content */
+    gap: 80px;
+    align-items: start;
+    padding: 0;
+    max-width: 100%;
+    position: relative;
+    border-left: none;
+    /* Remove old border */
+}
+
+/* Remove old decorative line */
+.profile::before {
+    display: none;
+}
+
+.tagline {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #EAA52F;
+    font-weight: 700;
+    margin: 0;
+    padding-top: 24px;
+    border-top: 2px solid #EAA52F;
+    display: inline-block;
+}
+
+.description {
+    font-size: 22px;
+    /* Standardized */
+    line-height: 1.6;
+    color: #1F2937;
+    /* Dark Grey */
+    font-weight: 500;
+    max-width: 700px;
+}
+
+.description p {
+    margin-bottom: 24px;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.subDescription {
+    color: #4B5563;
+    /* Mid Grey */
+    font-size: 22px;
+    /* Standardized */
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.accent {
+    color: #EAA52F;
+    /* Darker orange for better text contrast */
+    font-weight: 700;
+}
+
+/* Stats: Technical Grid */
+.statsGrid {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    /* No gap, dividers handle spacing */
+    background: transparent;
+    border: none;
+    margin-top: 40px;
+    border-top: 1px solid #E5E7EB;
+    /* Top border line */
+    padding-top: 40px;
+}
+
+.statCard {
+    background-color: transparent;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto;
+    position: relative;
+    flex: 1;
+}
+
+/* Vertical Dividers */
+.statCard:not(:last-child) {
+    border-right: 1px solid #E5E7EB;
+}
+
+.statCard:first-child {
+    padding-left: 0;
+}
+
+.statCard:last-child {
+    padding-right: 0;
+}
+
+.dominant {
+    /* No special grid layout needed for flex */
+}
+
+.valueWrapper {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.number {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, #C2410C 0%, #EAA52F 50%, #FF9D1C 100%);
+    /* Deep Copper to Vibrant Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.suffix {
+    font-size: 24px;
+    font-weight: 400;
+    color: #EAA52F;
+    margin-left: 4px;
+    opacity: 1;
+}
+
+.label {
+    font-size: 10px;
+    /* Smaller labels */
+    line-height: 1.4;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .statsGrid {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .statCard {
+        min-width: 30%;
+        border-right: none !important;
+        /* Remove vertical borders on wrap */
+        border-bottom: 1px solid #E5E7EB;
+        padding-bottom: 24px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .layout {
+        gap: 24px;
+        /* Tightened overall vertical layout */
+    }
+
+    .profile {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .description p {
+        margin-bottom: 0;
+        /* Remove margin as it's the only visible paragraph */
+    }
+
+    .statsGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        margin-top: 12px;
+        /* Small gap instead of 32px */
+        padding-top: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .statCard {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: auto;
+    }
+
+    .statCard:nth-child(odd) {
+        padding-right: 16px;
+        border-right: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .statCard:nth-child(even) {
+        padding-left: 16px;
+    }
+
+    .statCard:nth-child(5) {
+        grid-column: span 2;
+        border-bottom: none;
+        padding-bottom: 0;
+        padding-top: 24px;
+    }
+
+    .number {
+        font-size: 32px;
+        margin-bottom: 2px;
+    }
+
+    .suffix {
+        font-size: 16px;
+    }
+
+    .label {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        opacity: 0.8;
+    }
+
+    .secondaryText {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .number {
+        font-size: 28px;
+    }
+}

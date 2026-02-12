@@ -14,7 +14,7 @@
     font-size: 18px;
     max-width: 700px;
     margin: 0 auto;
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -32,7 +32,7 @@
 .text {
     font-size: 18px;
     line-height: 1.6;
-    color: #ddd;
+    color: var(--text-secondary);
 }
 
 .list {
@@ -44,4 +44,28 @@
 
 .list li {
     margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+    .heroTitle {
+        font-size: 32px;
+    }
+
+    .heroText {
+        font-size: 16px;
+    }
+
+    .blockTitle {
+        font-size: 24px;
+    }
+
+    .text,
+    .list {
+        font-size: 16px;
+    }
 }

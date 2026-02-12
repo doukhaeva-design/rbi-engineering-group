@@ -1,17 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google"; //
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import React from "react";
 import "./globals.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "cyrillic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -29,9 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning={true}>
-        {children}
+    <html lang="ru">
+      <body className={inter.variable} suppressHydrationWarning={true}>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

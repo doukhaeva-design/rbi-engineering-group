@@ -1,0 +1,150 @@
+.container {
+    position: relative;
+    margin-left: 20px;
+    z-index: 1002;
+}
+
+.switcher {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: #182850;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.switcher:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.switcher.active {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.arrow {
+    margin-left: 2px;
+    transition: transform 0.2s ease;
+}
+
+.switcher.active .arrow {
+    transform: rotate(180deg);
+}
+
+.flag {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 6px;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.option:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.option.selected {
+    background: rgba(24, 40, 80, 0.05);
+    font-weight: 600;
+}
+
+.optionText {
+    font-size: 14px;
+    color: #333;
+    /* Always dark for dropdown items */
+    font-family: inherit;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dropdown {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        min-width: 200px;
+        z-index: 1200;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    /* Force white text in mobile menu */
+    .container .switcher {
+        color: #FFFFFF;
+    }
+
+    .container .switcher:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}

@@ -1,26 +1,55 @@
+"use client";
+
+import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
 import Button from '../ui/Button';
 
+import { useLanguage } from '../../context/LanguageContext';
+
 export default function Hero() {
+    const { t } = useLanguage();
+    const [isVisible, setIsVisible] = useState(false);
+    const heroRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { threshold: 0.5 }
+        );
+
+        if (heroRef.current) {
+            observer.observe(heroRef.current);
+        }
+
+        return () => {
+            if (heroRef.current) observer.disconnect();
+        };
+    }, []);
     return (
-        <section className={styles.hero}>
-            <div className={`container ${styles.heroContainer}`}>
+        <section className={styles.hero} ref={heroRef}>
+            {/* Glass Background Panel - Absolute */}
+            <div className={styles.glassPanel}></div>
+
+            {/* Content Container - Aligned with Global Layout */}
+            <div className={`${styles.heroContent} ${isVisible ? styles.visible : ''}`}>
                 <h1 className={styles.title}>
-                    RBI Engineering Group
+                    RBI Engineering<br /> Group
                 </h1>
                 <p className={styles.subtitle}>
-                    Строительство и модульные сооружения в Казахстане
+                    {t('hero.subtitle')}
                 </p>
                 <p className={styles.description}>
-                    Выполняем строительно-монтажные работы любой сложности и строим мобильные модульные сооружения.<br />
-                    Ставим на технологии, качество и оперативность.
+                    {t('hero.description')}
                 </p>
                 <div className={styles.buttonGroup}>
-                    <Button href="/contacts" variant="primary">Запросить коммерческое предложение</Button>
-                    <Button href="/projects" variant="outline">Смотреть проекты</Button>
+                    <Button href="/contacts" variant="primary">{t('hero.request')}</Button>
+                    <Button href="/projects" variant="outline">{t('hero.projects')}</Button>
                 </div>
                 <div className={styles.trustLine}>
-                    13+ лет • 62+ проектов • лицензия 1 категории
+                    <span>{t('hero.trust')}</span>
+                    <span className={styles.trustBreak}>{t('hero.license')}</span>
                 </div>
             </div>
         </section>

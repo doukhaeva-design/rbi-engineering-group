@@ -1,9 +1,9 @@
 .footer {
-    background-color: var(--background);
-    border-top: 1px solid var(--border-color);
-    padding: 60px 0 30px;
+    background-color: #111827;
+    border-top: 1px solid #1F2937;
+    padding: 80px 0 40px;
     font-size: 14px;
-    color: #888;
+    color: #E5E7EB;
 }
 
 .top {
@@ -23,7 +23,7 @@
 .logo {
     font-size: 18px;
     font-weight: 700;
-    color: white;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -34,6 +34,7 @@
 .desc {
     max-width: 300px;
     line-height: 1.6;
+    color: #FFFFFF;
 }
 
 .nav {
@@ -49,13 +50,13 @@
 }
 
 .link {
-    color: #bbb;
+    color: #E5E7EB;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .link:hover {
-    color: var(--primary-color);
+    color: #EAA52F;
 }
 
 .contactRow {
@@ -65,8 +66,14 @@
 }
 
 .contactItem {
-    color: #ccc;
+    color: #F3F4F6;
     font-weight: 500;
+}
+
+.bin {
+    font-size: 12px;
+    color: #9CA3AF;
+    margin-top: 4px;
 }
 
 .bottom {
@@ -74,13 +81,13 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .copyright {
-    color: #555;
+    color: #9CA3AF;
 }
 
 @media (max-width: 768px) {

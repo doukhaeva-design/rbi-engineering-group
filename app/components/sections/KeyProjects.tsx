@@ -3,64 +3,89 @@
 import styles from './KeyProjects.module.css';
 import Button from '../ui/Button';
 import Link from 'next/link';
+import RevealOnScroll from '../ui/RevealOnScroll';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function KeyProjects() {
+    const { t } = useLanguage();
     // Top 4 curated projects for the homepage
     const projects = [
         {
-            title: "ВЭС «Хромтау»",
-            category: "Модульные сооружения",
-            specs: { label: "Партнеры", value: "Sinohydro / Power China" }
+            title: t("projects.p1.title"),
+            category: t("projects.cat.modular"),
+            specs: { label: t("projects.p1.label"), value: "Sinohydro / Power China" },
+            isModular: true
         },
         {
-            title: "Монтаж ветровых генераторов",
-            category: "Монтаж / металлоконструкции",
-            specs: { label: "Локация", value: "Петропавловск" }
+            title: t("projects.p2.title"),
+            category: t("projects.cat.metal"),
+            specs: { label: t("projects.p2.label"), value: t("projects.p2.value") },
+            isModular: false
         },
         {
-            title: "Столовая для военной базы",
-            category: "Модульные сооружения",
-            specs: { label: "Заказчик", value: "АО «Əскери Құрылыс»" }
+            title: t("projects.p3.title"),
+            category: t("projects.cat.modular"),
+            specs: { label: t("projects.p3.label"), value: t("projects.p3.value") },
+            isModular: true
         },
         {
-            title: "Монтаж конструкции ТРЦ «Хан Шатыр»",
-            category: "Монтаж / металлоконструкции",
-            specs: { label: "Объект", value: "Хан Шатыр" }
+            title: t("projects.p4.title"),
+            category: t("projects.cat.metal"),
+            specs: { label: t("projects.p4.label"), value: t("projects.p4.value") },
+            isModular: false
+        },
+        {
+            title: t("projects.p5.title"),
+            category: t("projects.cat.modular"),
+            specs: { label: t("projects.p5.label"), value: "850 м²" },
+            isModular: true
+        },
+        {
+            title: t("projects.p6.title"),
+            category: t("projects.cat.modular"),
+            specs: { label: t("projects.p6.label"), value: t("projects.p6.value") },
+            isModular: true
         }
     ];
 
     return (
-        <section className={`section`} id="projects">
+        <section className={`section-alt`} id="projects">
             <div className={`container`}>
-                <h2 style={{ marginBottom: '10px' }}>Проекты</h2>
-                <p style={{ marginBottom: '40px', fontSize: '18px', color: '#ccc' }}>Примеры выполненных работ по модульным решениям и монтажным проектам.</p>
+                <RevealOnScroll>
+                    <h2 style={{ marginBottom: '10px' }}>{t('projects.title')}</h2>
+                    <p style={{ marginBottom: '40px', fontSize: '18px', color: '#4b5563' }}>{t('projects.desc')}</p>
+                </RevealOnScroll>
 
                 <div className={styles.grid}>
                     {projects.map((project, index) => (
-                        <Link
-                            href={`/projects?filter=${project.category === "Модульные сооружения" ? 'modular' : 'metal'}`}
-                            key={index}
-                            className={styles.card}
-                        >
-                            <div className={styles.imagePlaceholder}></div>
-                            <div className={styles.content}>
-                                <div className={styles.header}>
-                                    <p className={styles.type}>{project.category}</p>
-                                    <h3 className={styles.title}>{project.title}</h3>
-                                </div>
-                                <div className={styles.specs}>
-                                    <div className={styles.specItem}>
-                                        <span className={styles.specLabel}>{project.specs.label}</span>
-                                        <span className={styles.specValue}>{project.specs.value}</span>
+                        <RevealOnScroll key={index} delay={index * 0.1} className={styles.projectWrapper}>
+                            <Link
+                                href={`/projects?filter=${project.isModular ? 'modular' : 'metal'}`}
+                                className={styles.card}
+                                data-category={project.isModular ? "modular" : "metal"}
+                            >
+                                <div className={styles.imagePlaceholder}></div>
+                                <div className={styles.content}>
+                                    <div className={styles.header}>
+                                        <p className={styles.type}>{project.category}</p>
+                                        <h3 className={styles.title}>{project.title}</h3>
+                                    </div>
+                                    <div className={styles.specs}>
+                                        <div className={styles.specItem}>
+                                            <span className={styles.specLabel}>{project.specs.label}</span>
+                                            <span className={styles.specValue}>{project.specs.value}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </RevealOnScroll>
                     ))}
                 </div>
-                <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
-                    <Button href="/projects" variant="outline">Смотреть все проекты</Button>
-                </div>
+                <RevealOnScroll delay={0.4}>
+                    <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center' }}>
+                        <Button href="/projects" variant="filled">{t('projects.button')}</Button>
+                    </div>
+                </RevealOnScroll>
             </div>
         </section>
     );

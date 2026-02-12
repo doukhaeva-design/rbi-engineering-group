@@ -1,8 +1,9 @@
 .section {
-    background-color: var(--background-offset);
-    /* Slightly lighter background to distinguish section */
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    background-color: #111827;
+    background: radial-gradient(circle at center top, #1F2937 0%, #111827 80%);
+    color: #FFFFFF;
+    overflow: hidden;
 }
 
 .container {
@@ -17,45 +18,197 @@
 
 .title {
     margin-bottom: 24px;
+    color: #FFFFFF;
 }
 
 .text {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 20px;
+    margin-bottom: 50px;
     line-height: 1.6;
-    color: #ccc;
+    color: #FFFFFF;
+    /* Brighter intro text */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    /* Lighter weight for elegance */
+    opacity: 0.9;
 }
 
-.detailsGrid {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    margin-bottom: 30px;
+/* content styles kept */
+
+.benefitsBlock {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
     margin-bottom: 16px;
     color: var(--primary-color);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.list {
-    padding-left: 20px;
-    color: #ddd;
-    line-height: 1.8;
+.subtitle::before,
+.subtitle::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 32px 24px;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Glass feel */
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(36, 75, 130, 0.15);
+    /* Deep blue tint */
+    border-color: rgba(47, 93, 159, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.iconWrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(47, 93, 159, 0.4);
+}
+
+.cardDecor {
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin-bottom: 16px;
+    border-radius: 2px;
+}
+
+.cardTitle {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    /* Slightly reduced */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cardText {
+    color: #9CA3AF;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+}
+
+.cardTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .detailText {
-    color: #ddd;
-    line-height: 1.6;
-    margin-bottom: 16px;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.8;
+    /* More breath */
+    margin-bottom: 24px;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {
-    .detailsGrid {
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .cardsGrid {
         grid-template-columns: 1fr;
+        gap: 12px;
+        /* Tighter gap */
+    }
+
+    .card {
+        padding: 20px 16px;
+        /* Reduced padding */
+        flex-direction: row;
+        /* Horizontal layout for compactness */
+        text-align: left;
+        /* Align text left */
+        align-items: center;
+    }
+
+    .iconWrapper {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0;
+        margin-right: 16px;
+        /* Space between icon and text */
+        flex-shrink: 0;
+    }
+
+    .iconWrapper svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cardTitle {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .cardText {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .cardTextWrapper {
+        align-items: flex-start;
+        text-align: left;
+        flex: 1;
+    }
+
+    .text {
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 }

@@ -1,7 +1,6 @@
 import Header from "./components/layout/Header";
 import Hero from "./components/sections/Hero";
-import AboutPreview from "./components/sections/AboutPreview";
-import KeyFigures from "./components/sections/KeyFigures";
+import AboutSection from "./components/sections/AboutSection";
 import Activities from "./components/sections/Activities";
 import ModularPreview from "./components/sections/ModularPreview";
 import KeyCompetencies from "./components/sections/KeyCompetencies";
@@ -11,14 +10,19 @@ import Partners from "./components/sections/Partners";
 import LicensesPreview from "./components/sections/LicensesPreview";
 import CTA from "./components/sections/CTA";
 import Footer from "./components/layout/Footer";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Строительная компания в Астане, Казахстан | RBI Engineering Group',
+  description: 'Генеральный подряд, строительно-монтажные работы (СМР), изготовление и монтаж металлоконструкций, модульные здания. Работаем с B2B и госсектором по всему Казахстану.',
+};
 
 export default function Home() {
   return (
     <main>
       <Header />
       <Hero />
-      <AboutPreview />
-      <KeyFigures />
+      <AboutSection />
       <Activities />
       <ModularPreview />
       <WhereUsed />

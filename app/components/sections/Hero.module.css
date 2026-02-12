@@ -3,48 +3,137 @@
     min-height: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #121212;
-    /* Placeholder background */
-    background-image: linear-gradient(rgba(10, 10, 12, 0.9), rgba(10, 10, 12, 0.8));
-    /* Darker graphite overlay for better contrast */
+    justify-content: flex-start;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    color: var(--text-main);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: url('/HeroNoviyFon.png');
     background-size: cover;
     background-position: center;
-    text-align: center;
-    color: white;
-    padding-top: 90px;
+    z-index: 0;
 }
 
-.heroContainer {
+.heroContent {
+    position: relative;
+    z-index: 2;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 800px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.title {
-    font-size: var(--font-h1);
-    margin-bottom: 24px;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+.glassPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66vw;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-right: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 0 24px 24px 0;
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes architecturalReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle,
+.title,
+.description,
+.trustLine,
+.buttonGroup {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.visible .subtitle,
+.visible .title,
+.visible .description,
+.visible .trustLine,
+.visible .buttonGroup {
+    animation: architecturalReveal 3.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .subtitle {
-    font-size: 24px;
-    margin-bottom: 16px;
-    line-height: 1.4;
-    opacity: 0.9;
-    max-width: 800px;
-    font-weight: 500;
+    animation-delay: 0.1s;
+}
+
+.title {
+    animation-delay: 0.2s;
+}
+
+.description {
+    animation-delay: 0.3s;
+}
+
+.trustLine {
+    animation-delay: 0.4s;
+}
+
+.buttonGroup {
+    animation-delay: 0.5s;
+}
+
+/* Desktop Styles */
+.subtitle {
+    order: -1;
+    font-size: 14px;
+    font-weight: 800;
+    color: #D98F18;
+    /* Slightly darker/richer than original #EAA52F */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.1;
+    font-weight: 700;
+    white-space: normal;
+    /* Allow wrapping to stay in glass */
+    max-width: 60vw;
+    /* Keep within the 66vw glass panel */
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
 }
 
 .description {
     font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 640px;
     margin-bottom: 48px;
-    line-height: 1.6;
-    opacity: 0.8;
-    max-width: 700px;
+    font-weight: 400;
 }
 
 .buttonGroup {
@@ -52,37 +141,123 @@
     gap: 20px;
 }
 
-/* Mobile Responsiveness for Hero */
+.trustLine {
+    margin-top: 64px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    font-weight: 600;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 24px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.mobileBreak {
+    display: none;
+}
+
+/* Locked Eye Flow Optimization (Mobile) */
 @media (max-width: 768px) {
+    .mobileBreak {
+        display: block;
+    }
+
     .hero {
         height: auto;
-        min-height: 100vh;
+        min-height: 500px;
+        /* Reduced height as requested */
         padding-top: 100px;
-        /* More space for header */
+        /* Slightly reduce top padding further */
+        padding-bottom: 40px;
+        align-items: flex-start;
+        /* Align content to top */
+    }
+
+    .hero::before {
+        background-position: 65% center;
+        /* Shift image slightly to show more relevant parts */
+    }
+
+    .glassPanel {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        /* 80% Opacity to make difference visible */
+        backdrop-filter: blur(6px);
+    }
+
+    .heroContent {
+        justify-content: flex-start;
+        /* Start from top */
+        padding-top: 20px;
     }
 
     .title {
-        margin-bottom: 16px;
+        order: 0;
+        font-size: 36px;
+        /* Larger for impact */
+        line-height: 1.1;
+        font-weight: 800;
+        white-space: normal;
+        margin-bottom: 12px;
+        color: var(--primary-color);
+        max-width: 100%;
+        letter-spacing: -0.03em;
     }
 
     .subtitle {
-        font-size: 18px;
+        order: 1;
+        font-size: 11px;
+        /* Increased from 9px */
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: #D98F18;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1.4;
+        max-width: 100%;
+        /* Removed constraint */
+    }
+
+    .description {
+        order: 2;
+        font-size: 16px;
+        /* Slightly larger */
+        line-height: 1.5;
         margin-bottom: 32px;
+        color: var(--text-main);
+        opacity: 0.9;
+        max-width: 100%;
+    }
+
+    .trustLine {
+        order: 3;
+        margin-top: 0;
+        margin-bottom: 32px;
+        padding-top: 16px;
+        font-size: 12px;
+        /* Increased size */
+        color: var(--primary-color);
+        font-weight: 600;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        width: 100%;
+    }
+
+    .trustBreak {
+        display: block;
+        margin-top: 6px;
     }
 
     .buttonGroup {
+        order: 4;
         flex-direction: column;
         width: 100%;
-        max-width: 320px;
-        gap: 16px;
+        gap: 12px;
     }
-}
 
-.trustLine {
-    margin-top: 40px;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    font-weight: 600;
+    .scrollIndicator {
+        display: none !important;
+    }
 }
