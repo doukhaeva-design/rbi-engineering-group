@@ -1,7 +1,5 @@
 import { Suspense } from 'react';
-import ProjectsContent from './ProjectsContent';
-
-export const dynamic = 'force-dynamic';
+import ProjectsClient from './ProjectsClient';
 
 export const metadata = {
     title: 'Наши проекты | RBI Engineering Group',
@@ -11,7 +9,7 @@ export const metadata = {
 export default function ProjectsPage() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <ProjectsContent />
+            <ProjectsClient />
         </Suspense>
     );
 }

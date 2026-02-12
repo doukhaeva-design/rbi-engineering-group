@@ -4,11 +4,10 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Header from "../components/layout/Header";
 import styles from "./projects.module.css";
-import Button from "../components/ui/Button";
 import BackButton from "../components/ui/BackButton";
 import Footer from "../components/layout/Footer";
 
-export default function ProjectsContent() {
+export default function ProjectsClient() {
     const searchParams = useSearchParams();
     const initialFilter = searchParams.get('filter');
 
@@ -26,8 +25,6 @@ export default function ProjectsContent() {
             setFilter("Монтаж / металлоконструкции");
         }
     }, [searchParams]);
-
-    const [showContent, setShowContent] = useState(false);
 
     const projects = [
         // Modular
@@ -100,12 +97,6 @@ export default function ProjectsContent() {
         }
     ];
 
-    const filteredProjects = filter === "Все"
-        ? projects
-        : projects.filter(p => p.category === filter);
-
-
-
     // Helper for visual dialect class
     const getCardClass = (category: string) => {
         return category === "Модульные сооружения" ? styles.modularCard : styles.steelCard;
@@ -117,14 +108,6 @@ export default function ProjectsContent() {
     };
 
     const filters = ["Все", "Модульные сооружения", "Монтаж / металлоконструкции"];
-
-    // const scrollToProject = (id: string) => { // Removed as per instructions
-    //     const element = document.getElementById(id);
-    //     if (element) {
-    //         element.scrollIntoView({ behavior: 'smooth' });
-    //         setShowContent(false);
-    //     }
-    // };
 
     return (
         <main>
@@ -157,7 +140,6 @@ export default function ProjectsContent() {
                                 </button>
                             ))}
                         </div>
-                        {/* TOC button removed as requested */}
                     </div>
 
                     {/* Combined Grid with Sorting Logic */}
@@ -206,7 +188,6 @@ export default function ProjectsContent() {
                                                 {project.detail?.split(':')[1]}
                                             </span>
                                         </div>
-                                        {/* Arrow removed to indicate non-clickable */}
                                     </div>
                                 </div>
                             ));
