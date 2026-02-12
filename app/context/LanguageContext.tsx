@@ -254,7 +254,7 @@ const translations: Translations = {
         "hero.description": "We perform construction and installation works of any complexity and build mobile modular structures. We rely on technology, quality and efficiency.",
         "hero.request": "Request a Proposal",
         "hero.projects": "View Projects",
-        "hero.trust": "• 14+ years • 62+ projects",
+        "hero.trust": "• 13+ years • 62+ projects",
         "hero.license": "• Category 1 License",
 
         "about.title": "Company Profile",
@@ -298,7 +298,7 @@ const translations: Translations = {
         "competencies.title": "Key Competencies",
         "competencies.title_alt": "Why Choose Us",
         "competencies.c1.title": "Experience and Scale",
-        "competencies.c1.desc": "14+ years on the Kazakhstan market, 62+ completed projects.",
+        "competencies.c1.desc": "13+ years on the Kazakhstan market, 62+ completed projects.",
         "competencies.c2.title": "Professional Team",
         "competencies.c2.desc": "50+ employees, regular certification and advanced training.",
         "competencies.c3.title": "Technical Capabilities",
