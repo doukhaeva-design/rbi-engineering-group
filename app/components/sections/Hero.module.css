@@ -32,7 +32,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 24px;
+    padding: 80px 24px 0;
+    /* Clear fixed header */
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -168,7 +169,7 @@
         height: auto;
         min-height: 100dvh;
         /* Dynamic full screen */
-        padding-top: 0px;
+        padding-top: calc(80px + env(safe-area-inset-top));
         padding-bottom: 60px;
         align-items: center;
         justify-content: center;
