@@ -1,3 +1,7 @@
+/* =========================
+   ROOT VARIABLES (DESKTOP)
+========================= */
+
 :root {
   --max-width: 1280px;
   --padding-x: 32px;
@@ -7,76 +11,85 @@
   --font-h2: 32px;
   --font-h3: 20px;
   --font-text: 18px;
-  /* Standardize desktop body text to 18px */
   --font-small: 14px;
 
   --spacing-tight: -0.02em;
   --spacing-wide: 0.05em;
 
-  @media (max-width: 768px) {
+  /* Palette */
+  --background: #F6F8FB;
+  --foreground: #111827;
+  --secondary-color: #FFFFFF;
+  --background-offset: #EEF2F6;
+  --border-color: #D9E2EC;
+
+  --primary-color: #2F5D9F;
+  --premium-copper: linear-gradient(135deg, #C67D53 0%, #EAA52F 100%);
+  --steel-color: #64748b;
+
+  --text-main: #111827;
+  --text-secondary: #374151;
+  --text-inverse: #FFFFFF;
+
+  --font-family: var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+
+/* =========================
+   MOBILE VARIABLE OVERRIDE
+========================= */
+
+@media (max-width: 768px) {
+  :root {
     --padding-x: 24px;
     --vertical-gap: 60px;
+
     --font-h1: 36px;
     --font-h2: 28px;
     --font-h3: 20px;
     --font-text: 16px;
-    /* Keep 16px for mobile */
   }
+}
 
-  /* Premium Light Palette (Construction & Engineering) */
-  --background: #F6F8FB;
-  /* Clean, professional light grey-blue */
-  --foreground: #111827;
-  /* Deep charcoal for main text */
-  --secondary-color: #FFFFFF;
-  /* Pure white for cards/sections */
-  --background-offset: #EEF2F6;
-  /* Slightly darker for alternating sections */
-  --border-color: #D9E2EC;
-  /* Soft cold grey for borders */
 
-  --primary-color: #2F5D9F;
-  /* Calm Engineering Blue */
-  --premium-copper: linear-gradient(135deg, #C67D53 0%, #EAA52F 100%);
-  /* Luxury Accent */
+/* =========================
+   GLOBAL RESET
+========================= */
 
-  --steel-color: #64748b;
-  /* Steel blue-grey for secondary elements */
-  --text-main: #111827;
-  /* Almost Black */
-  --text-secondary: #374151;
-  /* Dark Grey */
-  --text-inverse: #FFFFFF;
-  /* For buttons/dark areas */
-
-  --font-family: var(--font-inter),
-  -apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+
   font-family: var(--font-family);
   font-size: var(--font-text);
   line-height: 1.6;
-  /* Improved readability */
   color: var(--text-main);
   background-color: var(--background);
-  margin: 0;
-  padding: 0;
+
   -webkit-font-smoothing: antialiased;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
 
 h1,
 h2,
@@ -84,12 +97,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-main);
-  /* Dark titles */
   margin: 0;
+  font-family: var(--font-family);
   font-weight: 600;
   line-height: 1.2;
-  font-family: var(--font-family);
+  color: var(--text-main);
 }
 
 h1 {
@@ -98,37 +110,28 @@ h1 {
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  /* Wider stance */
   font-weight: 800;
-  /* Impact */
 }
 
 h2 {
   font-size: var(--font-h2);
-  line-height: 1.2;
   margin-bottom: 32px;
   text-transform: uppercase;
   letter-spacing: var(--spacing-wide);
-  font-weight: 600;
 }
 
 h3 {
   font-size: var(--font-h3);
-  line-height: 1.3;
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  font-weight: 600;
 }
 
 p {
   font-size: var(--font-text);
   margin-bottom: 24px;
   line-height: 1.7;
-  /* Luxury spacing */
   color: var(--text-secondary);
-  /* Premium dark grey */
-  font-weight: 400;
 }
 
 small {
@@ -140,6 +143,11 @@ a {
   text-decoration: none;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -147,38 +155,32 @@ a {
   width: 100%;
 }
 
-/* Ensure container doesn't overflow */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--padding-x);
-  }
 
-  /* Remove decorative stripes and corners on mobile for a cleaner look */
-  .section::before,
-  .section::after,
-  .section-alt::before,
-  .section-alt::after {
-    display: none !important;
-  }
+/* =========================
+   SECTIONS
+========================= */
+
+.section,
+.section-alt {
+  padding: 120px 0;
+  position: relative;
+  border-top: 1px solid var(--border-color);
 }
 
 .section {
-  padding: 120px 0;
   background-color: var(--background);
-  position: relative;
-  border-top: 1px solid var(--border-color);
 }
 
 .section-alt {
-  padding: 120px 0;
   background-color: var(--background-offset);
-  position: relative;
   overflow: hidden;
-  border-top: 1px solid var(--border-color);
-  background-image: linear-gradient(to bottom, rgba(230, 132, 66, 0.03), transparent 40%);
+  background-image: linear-gradient(to bottom,
+      rgba(230, 132, 66, 0.03),
+      transparent 40%);
 }
 
-/* Architectural Marker for Section Transitions */
+
+/* Decorative vertical line */
 .section::before,
 .section-alt::after {
   content: "";
@@ -194,7 +196,7 @@ a {
   z-index: 10;
 }
 
-/* Structural Corner Accent */
+/* Corner accent */
 .section::after {
   content: "";
   position: absolute;
@@ -212,11 +214,24 @@ a {
   z-index: 1;
 }
 
-/* Global Section Padding Override for Mobile */
+
+/* =========================
+   MOBILE SECTION ADJUSTMENT
+========================= */
+
 @media (max-width: 768px) {
 
   .section,
   .section-alt {
     padding: 60px 0;
   }
+
+  /* Remove decorative elements on mobile */
+  .section::before,
+  .section::after,
+  .section-alt::before,
+  .section-alt::after {
+    display: none !important;
+  }
+
 }
