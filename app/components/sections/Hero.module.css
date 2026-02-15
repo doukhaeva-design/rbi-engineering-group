@@ -166,13 +166,15 @@
 
     .hero {
         height: auto;
-        min-height: 500px;
-        /* Reduced height as requested */
-        padding-top: 100px;
-        /* Slightly reduce top padding further */
+        min-height: 80svh;
+        /* 80% screen height for mobile */
+        padding-top: 80px;
+        /* Account for header but less padding to allow centering */
         padding-bottom: 40px;
-        align-items: flex-start;
-        /* Align content to top */
+        align-items: center;
+        /* Center content vertically */
+        justify-content: center;
+        text-align: center;
     }
 
     .hero::before {
@@ -182,83 +184,127 @@
     }
 
     .glassPanel {
+        display: block !important;
         width: 100%;
-        background: rgba(255, 255, 255, 0.2);
-        /* 80% Opacity to make difference visible */
-        backdrop-filter: blur(6px);
+        height: 100%;
+        background: rgba(255, 255, 255, 0.82);
+        /* 82% opacity per user request */
+        backdrop-filter: blur(12px);
+        /* Stronger blur for premium feel */
+        -webkit-backdrop-filter: blur(12px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
     }
 
     .heroContent {
-        justify-content: flex-start;
-        /* Start from top */
-        padding-top: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        position: relative;
     }
 
     .title {
         order: 0;
-        font-size: 36px;
-        /* Larger for impact */
-        line-height: 1.1;
-        font-weight: 800;
+        font-size: 32px;
+        /* Balanced size */
+        line-height: 1.25;
+        /* More breathing room */
+        font-weight: 700;
+        /* Cleaner weight */
         white-space: normal;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
         color: var(--primary-color);
         max-width: 100%;
-        letter-spacing: -0.03em;
-        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+        /* Subtle, expensive-looking shadow */
+        text-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .subtitle {
-        order: 1;
+        order: -1;
         font-size: 11px;
-        /* Increased from 9px */
-        letter-spacing: 0.1em;
-        margin-bottom: 20px;
-        font-weight: 700;
+        letter-spacing: 0.25em;
+        /* Premium spacing */
+        margin-bottom: 16px;
+        font-weight: 600;
         color: #D98F18;
         text-transform: uppercase;
         display: block;
-        line-height: 1.4;
         max-width: 100%;
-        /* Removed constraint */
-        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+        text-shadow: none;
+        /* Clean */
+        text-align: center;
+        width: 100%;
     }
 
     .description {
-        order: 2;
+        order: 1;
         font-size: 16px;
-        /* Slightly larger */
-        line-height: 1.5;
-        margin-bottom: 32px;
-        color: var(--text-main);
+        line-height: 1.6;
+        /* Readable paragraph */
+        margin-bottom: 40px;
+        color: #111111;
+        /* Softer than black */
         max-width: 100%;
         font-weight: 500;
-        text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8);
+        text-shadow: none;
+        /* Clean */
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
     }
+
+    /* Ensure text doesn't touch screen edges */
+
 
     .trustLine {
         order: 3;
         margin-top: 0;
         margin-bottom: 32px;
-        padding-top: 16px;
-        font-size: 12px;
-        /* Increased size */
+        padding-top: 24px;
+        font-size: 13px;
         color: var(--primary-color);
-        font-weight: 600;
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        font-weight: 800;
+        /* Extra bold */
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
         width: 100%;
+        max-width: 100%;
+        display: block;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        text-align: center;
     }
 
     .trustBreak {
         display: block;
-        margin-top: 6px;
+        margin-top: 8px;
     }
 
     .buttonGroup {
         order: 4;
+        display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
-        gap: 12px;
+        max-width: 300px;
+        /* Constrain width for uniform look */
+        gap: 16px;
     }
 
     .scrollIndicator {
