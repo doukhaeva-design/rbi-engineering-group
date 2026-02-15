@@ -1,16 +1,17 @@
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    /* Frosted glass base */
+    background: rgba(255, 255, 255, 0.95);
+    /* Slightly more opaque for sticky */
     backdrop-filter: blur(16px);
-    /* The Blur Effect */
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    /* Safe Area Support */
+    padding-top: env(safe-area-inset-top);
 }
 
 .header::before {
