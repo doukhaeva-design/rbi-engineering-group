@@ -197,8 +197,8 @@
         display: block !important;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.45);
-        /* Lower opacity (45%) to let the photo shine through without washing out */
+        background: rgba(255, 255, 255, 0.85);
+        /* 85% Opacity as requested */
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         position: absolute;
