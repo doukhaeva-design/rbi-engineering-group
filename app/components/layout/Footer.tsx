@@ -27,7 +27,7 @@ export default function Footer() {
                             <Link href="/about" className={styles.link}>{t('nav.about')}</Link>
                             <Link href="/licenses" className={styles.link}>{t('nav.licenses')}</Link>
                             <Link href="/policy" className={styles.link}>{t('footer.policy')}</Link>
-                            <Link href="/#contacts" className={styles.link} style={{ textDecoration: 'underline' }}>{t('nav.contacts')}</Link>
+                            <Link href="/contacts" className={styles.link}>{t('nav.contacts')}</Link>
                         </div>
                     </div>
 

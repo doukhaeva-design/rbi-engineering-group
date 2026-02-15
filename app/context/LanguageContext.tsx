@@ -240,6 +240,11 @@ const translations: Translations = {
         "policy.6.title": "6. Контактная информация",
         "policy.6.text": "По вопросам, связанным с обработкой персональных данных, вы можете обратиться через форму обратной связи на сайте или по контактным данным, указанным в разделе ",
         "policy.6.link": "«Контакты»",
+
+        "notfound.title": "404",
+        "notfound.subtitle": "Страница не найдена",
+        "notfound.text": "К сожалению, страница, которую вы ищете, не существует или была перемещена.",
+        "notfound.button": "Вернуться на главную",
     },
     en: {
         "nav.home": "Home",
@@ -470,6 +475,11 @@ const translations: Translations = {
         "policy.6.title": "6. CONTACT INFORMATION",
         "policy.6.text": "For questions related to the processing of personal data, you may contact us via the feedback form on the website or using the contact details provided in the ",
         "policy.6.link": "“Contacts” section",
+
+        "notfound.title": "404",
+        "notfound.subtitle": "Page Not Found",
+        "notfound.text": "Sorry, the page you are looking for does not exist or has been moved.",
+        "notfound.button": "Back to Home",
     }
 };
 
