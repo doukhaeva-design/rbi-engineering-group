@@ -166,104 +166,105 @@
 
     .hero {
         height: auto;
-        min-height: 80svh;
-        /* 80% screen height for mobile */
+        min-height: 100dvh;
+        /* Dynamic full screen */
         padding-top: 80px;
-        /* Account for header but less padding to allow centering */
-        padding-bottom: 40px;
+        padding-bottom: 60px;
         align-items: center;
-        /* Center content vertically */
         justify-content: center;
         text-align: center;
+        background-color: var(--background);
+        overflow: hidden;
+        position: relative;
     }
 
     .hero::before {
         background-image: url('/HeroPhotoMobile.png');
         background-position: center top;
         background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
     }
 
+    /* Glass Panel - Reduced Opacity */
     .glassPanel {
         display: block !important;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.82);
-        /* 82% opacity per user request */
+        background: rgba(255, 255, 255, 0.67);
+        /* More transparent (67%) to show photo clearly */
         backdrop-filter: blur(12px);
-        /* Stronger blur for premium feel */
         -webkit-backdrop-filter: blur(12px);
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
         border-radius: 0;
         border: none;
         box-shadow: none;
     }
 
     .heroContent {
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-top: 0;
+        z-index: 2;
+        position: relative;
         width: 100%;
         display: flex;
         flex-direction: column;
-        z-index: 2;
-        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding-left: 24px;
+        /* Standardize with global padding */
+        padding-right: 24px;
     }
 
     .title {
         order: 0;
-        font-size: 32px;
-        /* Balanced size */
-        line-height: 1.25;
-        /* More breathing room */
-        font-weight: 700;
-        /* Cleaner weight */
+        font-size: clamp(38px, 13vw, 58px);
+        line-height: 0.95;
+        font-weight: 800;
         white-space: normal;
-        margin-bottom: 20px;
+        margin-bottom: 32px;
         color: var(--primary-color);
         max-width: 100%;
-        /* Subtle, expensive-looking shadow */
-        text-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+        text-shadow: none;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        letter-spacing: -0.02em;
     }
 
     .subtitle {
         order: -1;
-        font-size: 11px;
-        letter-spacing: 0.25em;
-        /* Premium spacing */
-        margin-bottom: 16px;
-        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.2em;
+        margin-bottom: 20px;
+        font-weight: 700;
         color: #D98F18;
         text-transform: uppercase;
         display: block;
         max-width: 100%;
         text-shadow: none;
-        /* Clean */
         text-align: center;
         width: 100%;
     }
 
-    .description {
+    .heroContent .description {
         order: 1;
-        font-size: 16px;
+        font-size: 19px;
         line-height: 1.6;
-        /* Readable paragraph */
-        margin-bottom: 40px;
+        margin-bottom: 52px;
         color: #111111;
-        /* Softer than black */
         max-width: 100%;
-        font-weight: 500;
+        font-weight: 300 !important;
         text-shadow: none;
-        /* Clean */
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        padding: 0 20px;
+        padding: 0 5px;
     }
 
     /* Ensure text doesn't touch screen edges */
@@ -271,8 +272,8 @@
 
     .trustLine {
         order: 3;
-        margin-top: 0;
-        margin-bottom: 32px;
+        margin-top: 32px;
+        margin-bottom: 0px;
         padding-top: 24px;
         font-size: 13px;
         color: var(--primary-color);
@@ -297,14 +298,16 @@
     }
 
     .buttonGroup {
-        order: 4;
+        order: 2;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        /* Stretch buttons to full width */
         width: 100%;
-        max-width: 300px;
-        /* Constrain width for uniform look */
+        max-width: 100%;
+        /* Full width allowed */
         gap: 16px;
+        padding: 0 10px;
     }
 
     .scrollIndicator {
