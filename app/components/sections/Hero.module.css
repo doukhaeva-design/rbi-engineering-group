@@ -109,8 +109,8 @@
     order: -1;
     font-size: 14px;
     font-weight: 800;
-    color: #D98F18;
-    /* Slightly darker/richer than original #EAA52F */
+    color: var(--primary-color);
+    /* Strict corporate engineering blue */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-bottom: 20px;
@@ -159,10 +159,18 @@
     display: none;
 }
 
+.desktopBreak {
+    display: inline;
+}
+
 /* Locked Eye Flow Optimization (Mobile) */
 @media (max-width: 768px) {
     .mobileBreak {
         display: block;
+    }
+
+    .desktopBreak {
+        display: none;
     }
 
     .hero {
@@ -218,7 +226,7 @@
         /* Prevent pseudo-layer from breaking out */
         width: auto;
         min-width: 280px;
-        max-width: 90%;
+        max-width: 84%;
         height: auto;
         margin: 0;
         padding: 32px 24px;
@@ -228,7 +236,7 @@
 
         border-radius: 28px;
         box-shadow:
-            0 20px 60px rgba(0, 0, 0, 0.25),
+            0 40px 100px rgba(0, 0, 0, 0.35),
             inset 0 1px 0 rgba(255, 255, 255, 0.6);
         border: 1px solid rgba(255, 255, 255, 0.35);
 
@@ -244,7 +252,7 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-        background: rgba(255, 255, 255, 0.57);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.51) 100%);
         -webkit-backdrop-filter: blur(4px) saturate(130%);
         backdrop-filter: blur(4px) saturate(130%);
         border-radius: inherit;
@@ -299,32 +307,30 @@
 
     .title {
         order: 0;
-        font-size: clamp(32px, 10vw, 40px);
-        /* Clean, controlled size */
+        font-size: clamp(28px, 9vw, 36px);
+        /* Elegant size */
         line-height: 1.1;
-        font-weight: 800;
-        /* Sturdy, corporate bold */
+        font-weight: 600;
+        /* Elegant semi-bold matching glass theme */
         white-space: normal;
         margin-bottom: 20px;
-        color: #111827;
-        /* Standard deep black */
+        color: var(--text-main);
+        /* Clean pure text color from globals */
         max-width: 100%;
         text-shadow: none;
         text-align: center;
         letter-spacing: -0.01em;
-        /* Less aggressive tracking */
     }
 
     .subtitle {
         order: -1;
         font-size: 13px;
-        /* Slightly larger, more readable */
-        letter-spacing: 0.1em;
-        /* Normal uppercase tracking */
+        letter-spacing: 0.15em;
+        /* Elegant tracking */
         margin-bottom: 12px;
-        font-weight: 800;
+        font-weight: 700;
         color: var(--primary-color);
-        /* Brand blue, safe and harmonious */
+        /* Match corporate blue harmoniously */
         text-transform: uppercase;
         display: block;
         text-align: center;
@@ -333,12 +339,12 @@
 
     .heroContent .description {
         order: 1;
-        font-size: 16px;
-        /* Classic readable text size */
+        font-size: 15px;
+        /* Smoother typography flow */
         line-height: 1.6;
         margin-bottom: 32px;
-        color: #4B5563;
-        /* Friendly medium-grey */
+        color: var(--text-secondary);
+        /* Global standard secondary text */
         max-width: 100%;
         font-weight: 400 !important;
         text-align: center;
@@ -353,10 +359,10 @@
         margin-top: 28px;
         margin-bottom: 0px;
         padding-top: 16px;
-        font-size: 13px;
+        font-size: 14px;
         letter-spacing: 0;
-        color: #64748B;
-        /* Standard grey */
+        color: var(--text-secondary);
+        /* Balanced dark grey */
         font-weight: 600;
         width: 100%;
         max-width: 100%;
@@ -365,8 +371,8 @@
         align-items: center;
         gap: 4px;
         background: transparent;
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
-        /* Standard soft divider */
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+        /* Darker divider for contrast */
         border-bottom: none;
         border-left: none;
         border-right: none;
@@ -377,10 +383,10 @@
     .trustBreak {
         display: block;
         margin-top: 0;
-        color: #9CA3AF;
-        /* Lighter grey for sub-text */
-        font-size: 12px;
-        font-weight: 400;
+        color: var(--steel-color);
+        /* Lighter steel grey */
+        font-size: 13px;
+        font-weight: 500;
     }
 
     .buttonGroup {
