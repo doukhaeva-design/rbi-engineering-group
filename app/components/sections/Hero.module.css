@@ -213,13 +213,29 @@
         justify-content: center;
 
         /* Floating Frosted Glass Card */
+        /* Fallback for Low Power Mode in Safari where backdrop-filter is disabled */
         background: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+
         border-radius: 28px;
         padding: 32px 24px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 1);
         border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    /* Advanced Glassmorphism applied ONLY if the browser actually supports and enables backdrop-filter */
+    @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+        .heroContent {
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.85) 0%,
+                    rgba(255, 255, 255, 0.70) 100%);
+            backdrop-filter: blur(24px) saturate(120%);
+            -webkit-backdrop-filter: blur(24px) saturate(120%);
+            /* Enhanced volumetric shadow to support the lower alpha */
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                inset 0 0 60px rgba(255, 255, 255, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9);
+        }
     }
 
     .title {
@@ -306,8 +322,9 @@
         width: 100%;
         max-width: 100%;
         /* Full width allowed */
-        gap: 16px;
-        padding: 0 10px;
+        gap: 12px;
+        padding: 0;
+        /* Remove side padding to give buttons max possible width */
     }
 
     .scrollIndicator {
