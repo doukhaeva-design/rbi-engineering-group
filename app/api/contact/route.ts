@@ -21,31 +21,41 @@ export async function POST(request: Request) {
             },
         });
 
+        const purposeTranslations: Record<string, string> = {
+            'modular': 'Модульные здания',
+            'smr': 'Строительно-монтажные работы',
+            'engineering': 'Инженерные сети',
+            'finishing': 'Отделочные работы',
+            'projecting': 'Проектирование',
+            'mounting': 'Монтаж оборудования',
+        };
+        const translatedPurpose = purpose ? (purposeTranslations[purpose] || purpose) : 'Без указания темы';
+
         const mailOptions = {
             from: `"RBI Engineering Site" <${user}>`,
             to: user, // Send to self
             replyTo: email,
-            subject: `New Contact Request: ${purpose || 'General Inquiry'}`,
+            subject: `Новая заявка с сайта: ${translatedPurpose}`,
             text: `
-        New contact request received:
+        Получена новая заявка с сайта:
 
-        Name: ${name}
-        Phone: ${phone}
+        Имя / Компания: ${name}
+        Телефон: ${phone}
         Email: ${email}
-        Purpose: ${purpose}
+        Интересующая услуга: ${translatedPurpose}
         
-        Message:
+        Сообщение или запрос:
         ${message}
       `,
             html: `
-        <h3>New contact request received from the website</h3>
+        <h3>Получена новая заявка с сайта</h3>
         <ul>
-            <li><strong>Name:</strong> ${name}</li>
-            <li><strong>Phone:</strong> ${phone}</li>
+            <li><strong>Имя / Компания:</strong> ${name}</li>
+            <li><strong>Телефон:</strong> ${phone}</li>
             <li><strong>Email:</strong> ${email}</li>
-            <li><strong>Purpose:</strong> ${purpose}</li>
+            <li><strong>Интересующая услуга:</strong> ${translatedPurpose}</li>
         </ul>
-        <h3>Message:</h3>
+        <h3>Сообщение или запрос:</h3>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
         };
