@@ -240,49 +240,52 @@
 
     .title {
         order: 0;
-        font-size: clamp(32px, 10vw, 42px);
-        /* Slightly tighter for elegance */
+        font-size: clamp(34px, 12vw, 46px);
+        /* Harmonized scaling */
         line-height: 1.05;
+        /* Safer for tall Cyrillic letters */
         font-weight: 800;
+        /* Revert to bold for impact */
         white-space: normal;
-        margin-bottom: 20px;
-        color: #111827;
-        /* Deep, premium dark instead of just primary blue for higher contrast */
+        margin-bottom: 16px;
+        /* Brought slightly closer to description */
+        color: #0f172a;
+        /* Keep the sleek dark slate */
         max-width: 100%;
         text-shadow: none;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.03em;
     }
 
     .subtitle {
         order: -1;
-        font-size: 12px;
-        /* Smaller, sharper */
-        letter-spacing: 0.18em;
-        /* Wider tracking */
-        margin-bottom: 12px;
-        /* Tighter grouping with title */
-        font-weight: 800;
-        color: #D98F18;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        margin-bottom: 20px;
+        /* Good breathing room before title */
+        font-weight: 700;
+        color: #B46500;
+        /* Deeper, richer gold for better contrast on white */
         text-transform: uppercase;
-        display: block;
-        max-width: 100%;
+        display: inline-block;
+        padding: 5px 14px;
+        background: rgba(217, 143, 24, 0.12);
+        /* Soft tinted background instead of sharp border */
+        border: none;
+        border-radius: 30px;
         text-align: center;
-        width: 100%;
     }
 
     .heroContent .description {
         order: 1;
         font-size: 15px;
-        /* Elegant, readable size instead of clunky 17px */
-        line-height: 1.6;
-        /* More breathing room */
+        line-height: 1.65;
         margin-bottom: 32px;
-        color: #4B5563;
-        /* Premium cool dark-grey */
-        max-width: 100%;
+        /* Anchor above buttons */
+        color: #475569;
+        /* Soft, highly readable slate */
+        max-width: 95%;
+        /* Prevent touching imaginary side walls */
         font-weight: 400 !important;
         text-align: center;
         margin-left: auto;
@@ -295,30 +298,36 @@
         order: 3;
         margin-top: 32px;
         margin-bottom: 0px;
-        padding-top: 24px;
+        padding-top: 20px;
         font-size: 12px;
-        letter-spacing: 0.1em;
-        color: #64748B;
-        /* Elegant slate color instead of bold blue */
+        letter-spacing: 0.05em;
+        color: #334155;
+        /* Darker main trust text */
         font-weight: 600;
-        /* Regular weight to not compete with buttons */
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
-        /* Softer line */
         width: 100%;
         max-width: 100%;
-        display: block;
-        background: none;
-        box-shadow: none;
-        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        /* Perfectly structured gap */
+        background: transparent;
+        border-top: 1px solid rgba(15, 23, 42, 0.06);
+        /* Extremely subtle line */
+        border-bottom: none;
         border-left: none;
         border-right: none;
-        border-bottom: none;
+        border-radius: 0;
         text-align: center;
     }
 
     .trustBreak {
         display: block;
-        margin-top: 8px;
+        margin-top: 0;
+        color: #64748B;
+        /* Lighter secondary text */
+        font-size: 11px;
+        font-weight: 400;
     }
 
     .buttonGroup {
