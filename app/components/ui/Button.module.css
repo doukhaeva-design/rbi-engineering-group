@@ -21,13 +21,11 @@
 .primary {
     /* Modern, clean */
     background: #D98F18;
-    /* User Requested Orange 3 */
     color: #ffffff;
     border: none;
-    box-shadow: 0 4px 20px rgba(217, 143, 24, 0.25);
-    /* Soft outer glow only */
+    box-shadow: 0 10px 25px rgba(234, 165, 47, 0.35);
     font-weight: 700;
-    /* Slightly lighter weight for modern look */
+    transition: all 0.25s ease;
 }
 
 .primary::before {
@@ -46,9 +44,7 @@
 
 .primary:hover {
     transform: translateY(-2px);
-    box-shadow:
-        0 8px 25px rgba(217, 143, 24, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 18px 40px rgba(234, 165, 47, 0.45);
     filter: brightness(1.05);
 }
 
