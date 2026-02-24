@@ -47,6 +47,29 @@ export default function ContactsPage() {
         }
     };
 
+    const handleWhatsAppShare = () => {
+        let translatedPurpose = formData.purpose;
+        if (language === 'ru') {
+            const purposeTranslations: Record<string, string> = {
+                'modular': 'Модульные здания',
+                'smr': 'Строительно-монтажные работы',
+                'engineering': 'Инженерные сети',
+                'finishing': 'Отделочные работы',
+                'projecting': 'Проектирование',
+                'mounting': 'Монтаж оборудования',
+            };
+            translatedPurpose = purposeTranslations[formData.purpose] || formData.purpose;
+        }
+
+        // We use || '-' to ensure empty fields are represented
+        const text = `Здравствуйте! Хочу оставить заявку с сайта:\n\nИмя: ${formData.name || '-'}\nТелефон: ${formData.phone || '-'}\nEmail: ${formData.email || '-'}\nУслуга: ${translatedPurpose || 'Не указана'}\n\nСообщение:\n${formData.message || '-'}`;
+
+        const encodedText = encodeURIComponent(text);
+        // Note: Temporarily using test number +33768770697
+        const url = `https://wa.me/33768770697?text=${encodedText}`;
+        window.open(url, '_blank');
+    };
+
     return (
         <main>
             <Header />
@@ -133,7 +156,6 @@ export default function ContactsPage() {
                                         name="name"
                                         placeholder={t("contacts_page.form.name.placeholder")}
                                         className={styles.input}
-                                        required
                                         value={formData.name}
                                         onChange={handleChange}
                                     />
@@ -145,13 +167,14 @@ export default function ContactsPage() {
                                         name="phone"
                                         placeholder={t("contacts_page.form.phone.placeholder")}
                                         className={styles.input}
-                                        required
                                         value={formData.phone}
                                         onChange={handleChange}
                                     />
                                 </div>
                                 <div className={styles.inputGroup}>
-                                    <label className={styles.label}>Email</label>
+                                    <label className={styles.label}>
+                                        Email <span style={{ textTransform: 'none', color: '#9CA3AF', fontWeight: 400 }}>{t("contacts_page.form.email.required")}</span>
+                                    </label>
                                     <input
                                         type="email"
                                         name="email"
@@ -174,31 +197,41 @@ export default function ContactsPage() {
                                     ></textarea>
                                 </div>
 
-                                <div style={{ marginTop: '10px' }}>
+                                <div className={styles.submitGroup}>
                                     <Button type="submit" variant="primary">
-                                        {status === 'loading' ? t("contacts_page.form.sending") : t("contacts_page.form.submit")}
+                                        {status === 'loading' ? t("contacts_page.form.sending") : t("contacts_page.form.submit.email")}
                                     </Button>
 
-                                    {status === 'success' && (
-                                        <div className={styles.successMessage}>
-                                            <svg viewBox="0 0 24 24" fill="none" className={styles.successIcon}>
-                                                <path d="M22 11.08V12C21.9988 14.1564 21.3001 16.2547 20.0093 17.9818C18.7185 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                            {t("contacts_page.form.success")}
-                                        </div>
-                                    )}
-                                    {status === 'error' && (
-                                        <div className={styles.errorMessage}>
-                                            <svg viewBox="0 0 24 24" fill="none" className={styles.errorIcon}>
-                                                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M12 8V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M12 16H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                            {t("contacts_page.form.error")}
-                                        </div>
-                                    )}
+                                    <button
+                                        type="button"
+                                        className={styles.whatsappButton}
+                                        onClick={handleWhatsAppShare}
+                                    >
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                                        </svg>
+                                        {t("contacts_page.form.submit.whatsapp")}
+                                    </button>
                                 </div>
+                                {status === 'success' && (
+                                    <div className={styles.successMessage}>
+                                        <svg viewBox="0 0 24 24" fill="none" className={styles.successIcon}>
+                                            <path d="M22 11.08V12C21.9988 14.1564 21.3001 16.2547 20.0093 17.9818C18.7185 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        {t("contacts_page.form.success")}
+                                    </div>
+                                )}
+                                {status === 'error' && (
+                                    <div className={styles.errorMessage}>
+                                        <svg viewBox="0 0 24 24" fill="none" className={styles.errorIcon}>
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M12 8V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M12 16H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        {t("contacts_page.form.error")}
+                                    </div>
+                                )}
 
                                 <p className={styles.disclaimer}>
                                     {t("contacts_page.form.consent")} <a href="/policy" style={{ textDecoration: 'underline', color: 'inherit' }}>{t("footer.policy")}</a>.
