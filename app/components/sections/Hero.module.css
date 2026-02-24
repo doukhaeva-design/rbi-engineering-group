@@ -224,9 +224,9 @@
         inset: 0;
         background:
             linear-gradient(180deg,
-                rgba(18, 32, 60, 0.80) 0%,
-                rgba(18, 32, 60, 0.60) 40%,
-                rgba(18, 32, 60, 0.90) 100%);
+                rgba(18, 32, 60, 0.85) 0%,
+                rgba(18, 32, 60, 0.70) 40%,
+                rgba(18, 32, 60, 0.95) 100%);
         pointer-events: none;
         z-index: 1;
     }
@@ -245,7 +245,7 @@
         max-width: 90%;
         height: auto;
         margin: 0;
-        padding: 48px 32px;
+        padding: 56px 28px;
 
         /* The transparent glass */
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(230, 240, 255, 0.45) 100%);
@@ -287,13 +287,14 @@
 
 
     .title {
-        font-size: clamp(28px, 9vw, 36px);
-        /* Elegant size */
-        line-height: 1.1;
+        font-size: clamp(26px, 8.5vw, 32px);
+        /* Slightly smaller size */
+        line-height: 1.25;
+        /* More air between lines */
         font-weight: 600;
         /* Elegant semi-bold matching glass theme */
         white-space: normal;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
         color: rgba(17, 24, 39, 0.9);
         /* Muted black to blend softly with glass */
         max-width: 100%;
@@ -303,10 +304,10 @@
     }
 
     .subtitle {
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 0.15em;
         /* Elegant tracking */
-        margin-bottom: 12px;
+        margin-bottom: 16px;
         font-weight: 700;
         color: var(--primary-color);
         /* Match corporate blue harmoniously */
@@ -317,9 +318,9 @@
     }
 
     .heroContent .description {
-        font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 32px;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 40px;
         color: var(--text-secondary);
         max-width: 88%;
         font-weight: 400 !important;
@@ -331,8 +332,8 @@
     /* Ensure text doesn't touch screen edges */
 
     .trustLine {
-        margin-bottom: 32px;
-        padding-top: 20px;
+        margin-bottom: 40px;
+        padding-top: 24px;
         font-size: 13px;
         letter-spacing: 0;
         color: var(--text-secondary);
