@@ -45,12 +45,12 @@
     left: 0;
     width: 66vw;
     height: 100%;
-    background: rgba(255, 255, 255, 0.83);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-right: 1px solid rgba(255, 255, 255, 1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.90) 0%, rgba(240, 245, 255, 0.70) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0 24px 24px 0;
-    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.08);
     z-index: 1;
 }
 
@@ -239,8 +239,7 @@
     .heroContent {
         z-index: 2;
         position: relative;
-        /* Prevent pseudo-layer from breaking out */
-        overflow: hidden;
+        /* Safari Fix: overflow:hidden combined with border-radius and backdrop-filter causes the element to render completely opaque without blur on iOS */
         width: auto;
         min-width: 280px;
         max-width: 90%;
@@ -248,10 +247,10 @@
         margin: 0;
         padding: 48px 32px;
 
-        /* Very transparent glass */
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(230, 240, 255, 0.25) 100%);
-        -webkit-backdrop-filter: blur(16px);
-        backdrop-filter: blur(16px);
+        /* The transparent glass */
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(230, 240, 255, 0.45) 100%);
+        -webkit-backdrop-filter: blur(22px);
+        backdrop-filter: blur(22px);
 
         border-radius: 28px;
         box-shadow:
@@ -259,9 +258,9 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.6);
         border: 1px solid rgba(255, 255, 255, 0.35);
 
-        /* Fixes Safari rendering bug */
-        transform: translate3d(0, 0, 0);
-        -webkit-transform: translate3d(0, 0, 0);
+        /* Fixes Safari rendering glitch on specific iOS versions */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
     }
 
     .heroContent::after {
