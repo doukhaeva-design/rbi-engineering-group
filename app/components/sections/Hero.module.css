@@ -214,8 +214,11 @@
         border-radius: 32px;
         padding: 40px 24px 32px;
         /* Generous padding inside the card */
-        margin: 0 auto;
+        margin: auto auto 20px;
+        /* Push from top, reserve space at bottom */
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 1);
+        margin-top: calc(85px + 20px + env(safe-area-inset-top));
+        /* Ensure it physically cannot hit header */
     }
 
     .title {
