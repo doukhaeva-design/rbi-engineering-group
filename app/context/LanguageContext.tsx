@@ -216,6 +216,9 @@ const translations: Translations = {
         "contacts_page.form.phone.placeholder": "Телефон",
         "contacts_page.form.message.placeholder": "Опишите ваш запрос",
         "contacts_page.form.submit": "ОТПРАВИТЬ ЗАПРОС",
+        "contacts_page.form.sending": "Отправка...",
+        "contacts_page.form.success": "Запрос успешно отправлен! Мы свяжемся с вами.",
+        "contacts_page.form.error": "Произошла ошибка. Пожалуйста, попробуйте еще раз.",
         "contacts_page.form.consent": "Нажимая «Отправить запрос», вы соглашаетесь на обработку персональных данных в соответствии с",
 
         "policy.title": "Политика конфиденциальности",
@@ -446,6 +449,9 @@ const translations: Translations = {
         "contacts_page.form.phone.placeholder": "Phone",
         "contacts_page.form.message.placeholder": "Describe your request",
         "contacts_page.form.submit": "SEND REQUEST",
+        "contacts_page.form.sending": "Sending...",
+        "contacts_page.form.success": "Request sent successfully! We will contact you.",
+        "contacts_page.form.error": "An error occurred. Please try again.",
         "contacts_page.form.consent": "By clicking “Send request”, you agree to the processing of personal data in accordance with the",
 
         "policy.title": "PRIVACY POLICY",
