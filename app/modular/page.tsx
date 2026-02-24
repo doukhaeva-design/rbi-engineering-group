@@ -27,7 +27,7 @@ export default function ModularPage() {
                 </div>
             </section>
 
-            <section className="section">
+            <section className={`section ${styles.advantagesSection}`}>
                 <div className="container">
                     <h2 className={styles.sectionTitle}>{t("modular_page.advantages.title")}</h2>
                     <ul className={styles.advantagesList}>
