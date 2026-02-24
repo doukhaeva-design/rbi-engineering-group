@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
 import Button from '../ui/Button';
+import { Clock, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
 
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -42,12 +43,26 @@ export default function Hero() {
                     {t('hero.description')}
                 </p>
                 <div className={styles.trustLine}>
-                    <span>{t('hero.trust')}</span>
-                    <span className={styles.trustBreak}>{t('hero.license')}</span>
+                    <div className={styles.trustItem}>
+                        <Clock className={styles.trustIcon} />
+                        <span>{t('hero.trust.years')}</span>
+                    </div>
+                    <div className={styles.trustItem}>
+                        <CheckCircle2 className={styles.trustIcon} />
+                        <span>{t('hero.trust.projects')}</span>
+                    </div>
+                    <div className={styles.trustItem}>
+                        <ShieldCheck className={styles.trustIcon} />
+                        <span>{t('hero.trust.license')}</span>
+                    </div>
                 </div>
                 <div className={styles.buttonGroup}>
-                    <Button href="/contacts" variant="primary">{t('hero.request')}</Button>
-                    <Button href="/projects" variant="outline">{t('hero.projects')}</Button>
+                    <Button href="/contacts" variant="primary" iconRight={<ArrowRight size={20} />}>
+                        {t('hero.request')}
+                    </Button>
+                    <Button href="/projects" variant="outline">
+                        {t('hero.projects')}
+                    </Button>
                 </div>
             </div>
         </section>

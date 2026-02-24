@@ -24,8 +24,9 @@ const translations: Translations = {
         "hero.description": "Модульные сооружения и строительство современных объектов в Казахстане. Продуманная инженерия и реализация, рассчитанная на долгий срок.",
         "hero.request": "Запросить предложение",
         "hero.projects": "Смотреть проекты",
-        "hero.trust": "13+ лет опыта • 62+ проекта",
-        "hero.license": "• Лицензия I категории",
+        "hero.trust.years": "13+ лет опыта",
+        "hero.trust.projects": "62+ проекта",
+        "hero.trust.license": "Лицензия I категории",
 
         "about.title": "Профиль компании",
         "about.desc": "RBI Engineering Group — строительная организация полного цикла, специализирующаяся на сложных строительно-монтажные работах и проектировании высокотехнологичных модульных сооружений.",
@@ -254,8 +255,9 @@ const translations: Translations = {
         "hero.description": "Modular structures and construction of modern facilities in Kazakhstan. Thoughtful engineering and execution designed for the long term.",
         "hero.request": "Request a Proposal",
         "hero.projects": "View Projects",
-        "hero.trust": "13+ years of experience • 62+ projects",
-        "hero.license": "• Category I License",
+        "hero.trust.years": "13+ years of experience",
+        "hero.trust.projects": "62+ projects",
+        "hero.trust.license": "Category I License",
 
         "about.title": "Company Profile",
         "about.desc": "RBI Engineering Group is a full-cycle construction organization specializing in complex construction and installation works and the design of high-tech modular structures.",

@@ -145,14 +145,31 @@
 .trustLine {
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     color: var(--text-secondary);
     font-weight: 600;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 24px;
     width: 100%;
-    max-width: 600px;
+    max-width: 680px;
     margin-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+}
+
+.trustItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trustIcon {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-color);
+    flex-shrink: 0;
 }
 
 .mobileBreak {
@@ -353,35 +370,39 @@
 
     .trustLine {
         margin-bottom: 32px;
-        padding-top: 16px;
-        font-size: 14px;
+        padding-top: 20px;
+        font-size: 13px;
         letter-spacing: 0;
         color: var(--text-secondary);
-        /* Balanced dark grey */
         font-weight: 600;
         width: 100%;
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
+        gap: 12px;
         background: transparent;
         border-top: 1px solid rgba(0, 0, 0, 0.15);
-        /* Darker divider for contrast */
         border-bottom: none;
         border-left: none;
         border-right: none;
         border-radius: 0;
-        text-align: center;
+        text-align: left;
     }
 
-    .trustBreak {
-        display: block;
-        margin-top: 0;
-        color: var(--steel-color);
-        /* Lighter steel grey */
-        font-size: 13px;
-        font-weight: 500;
+    .trustItem {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .trustIcon {
+        width: 18px;
+        height: 18px;
+        color: var(--primary-color);
+        flex-shrink: 0;
     }
 
     .buttonGroup {
