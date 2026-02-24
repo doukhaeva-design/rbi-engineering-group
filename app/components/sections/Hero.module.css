@@ -240,13 +240,14 @@
 
     .title {
         order: 0;
-        font-size: clamp(34px, 11vw, 48px);
-        /* Slightly refined scalar */
+        font-size: clamp(32px, 10vw, 42px);
+        /* Slightly tighter for elegance */
         line-height: 1.05;
         font-weight: 800;
         white-space: normal;
-        margin-bottom: 24px;
-        color: var(--primary-color);
+        margin-bottom: 20px;
+        color: #111827;
+        /* Deep, premium dark instead of just primary blue for higher contrast */
         max-width: 100%;
         text-shadow: none;
         text-align: center;
@@ -257,9 +258,12 @@
 
     .subtitle {
         order: -1;
-        font-size: 13px;
-        letter-spacing: 0.15em;
-        margin-bottom: 16px;
+        font-size: 12px;
+        /* Smaller, sharper */
+        letter-spacing: 0.18em;
+        /* Wider tracking */
+        margin-bottom: 12px;
+        /* Tighter grouping with title */
         font-weight: 800;
         color: #D98F18;
         text-transform: uppercase;
@@ -271,11 +275,13 @@
 
     .heroContent .description {
         order: 1;
-        font-size: 17px;
-        line-height: 1.5;
+        font-size: 15px;
+        /* Elegant, readable size instead of clunky 17px */
+        line-height: 1.6;
+        /* More breathing room */
         margin-bottom: 32px;
-        color: #333333;
-        /* Darker for crisp contrast */
+        color: #4B5563;
+        /* Premium cool dark-grey */
         max-width: 100%;
         font-weight: 400 !important;
         text-align: center;
@@ -285,17 +291,19 @@
 
     /* Ensure text doesn't touch screen edges */
 
-
     .trustLine {
         order: 3;
         margin-top: 32px;
         margin-bottom: 0px;
         padding-top: 24px;
-        font-size: 13px;
-        color: var(--primary-color);
-        font-weight: 800;
-        /* Extra bold */
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        color: #64748B;
+        /* Elegant slate color instead of bold blue */
+        font-weight: 600;
+        /* Regular weight to not compete with buttons */
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        /* Softer line */
         width: 100%;
         max-width: 100%;
         display: block;
