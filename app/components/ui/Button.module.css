@@ -117,11 +117,16 @@
         /* Force single line */
     }
 
+    .primary {
+        box-shadow: 0 12px 30px rgba(217, 143, 24, 0.45);
+        transform: translateY(-1px);
+    }
+
     .filled,
     .outline {
-        background: rgba(47, 93, 159, 0.8);
+        background: rgba(47, 93, 159, 0.6);
         color: #ffffff;
-        border: none;
-        box-shadow: 0 4px 20px rgba(47, 93, 159, 0.25);
+        border: 1px solid rgba(47, 93, 159, 0.5);
+        box-shadow: none;
     }
 }
