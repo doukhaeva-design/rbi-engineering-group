@@ -16,6 +16,25 @@
     position: relative;
     overflow: hidden;
     text-decoration: none;
+    gap: 8px;
+    /* space between text and icon */
+}
+
+.buttonText {
+    position: relative;
+    z-index: 2;
+}
+
+.iconRight {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover .iconRight {
+    transform: translateX(4px);
 }
 
 .primary {

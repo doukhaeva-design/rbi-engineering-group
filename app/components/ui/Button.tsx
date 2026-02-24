@@ -9,6 +9,7 @@ interface ButtonProps {
     onClick?: () => void;
     className?: string;
     type?: 'button' | 'submit' | 'reset';
+    iconRight?: React.ReactNode;
 }
 
 export default function Button({
@@ -17,21 +18,24 @@ export default function Button({
     href,
     onClick,
     className = '',
-    type = 'button'
+    type = 'button',
+    iconRight
 }: ButtonProps) {
     const buttonClass = `${styles.button} ${styles[variant]} ${className}`;
 
     if (href) {
         return (
             <Link href={href} className={buttonClass}>
-                {children}
+                <span className={styles.buttonText}>{children}</span>
+                {iconRight && <span className={styles.iconRight}>{iconRight}</span>}
             </Link>
         );
     }
 
     return (
         <button type={type} className={buttonClass} onClick={onClick}>
-            {children}
+            <span className={styles.buttonText}>{children}</span>
+            {iconRight && <span className={styles.iconRight}>{iconRight}</span>}
         </button>
     );
 }
