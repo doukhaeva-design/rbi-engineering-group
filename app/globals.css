@@ -2,6 +2,7 @@
   --max-width: 1280px;
   --padding-x: 32px;
   --vertical-gap: 100px;
+  --header-height: calc(80px + env(safe-area-inset-top));
 
   --font-h1: 72px;
   --font-h2: 32px;
