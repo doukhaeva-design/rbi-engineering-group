@@ -7,7 +7,7 @@ import { useLanguage } from '../../context/LanguageContext';
 export default function CTA() {
     const { t } = useLanguage();
     return (
-        <section className={`section-alt ${styles.ctaSection}`} id="contacts">
+        <section className={`section ${styles.ctaSection}`} id="contacts">
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
                     <h2 className={styles.title}>{t('cta.title')}</h2>
