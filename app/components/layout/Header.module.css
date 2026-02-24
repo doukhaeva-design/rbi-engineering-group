@@ -42,6 +42,12 @@
     opacity: 0.8;
 }
 
+.logoImage {
+    height: 40px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -145,6 +151,11 @@
         padding: 0 20px;
         display: flex;
         justify-content: space-between;
+    }
+
+    .logoImage {
+        height: 32px;
+        /* Slightly smaller for mobile */
     }
 
     .mobileMenuBtn {
