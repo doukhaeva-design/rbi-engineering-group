@@ -9,7 +9,7 @@ import Footer from "../components/layout/Footer";
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactsPage() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const [formData, setFormData] = useState({
         purpose: '',
         name: '',
@@ -32,7 +32,7 @@ export default function ContactsPage() {
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, language }),
             });
 
             if (response.ok) {

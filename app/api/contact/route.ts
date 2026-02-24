@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
     try {
-        const { name, email, phone, purpose, message } = await request.json();
+        const { name, email, phone, purpose, message, language } = await request.json();
 
         const user = process.env.EMAIL_USER;
         const pass = process.env.EMAIL_PASS;
@@ -61,6 +61,32 @@ export async function POST(request: Request) {
         };
 
         await transporter.sendMail(mailOptions);
+
+        if (email) {
+            const isEnglish = language === 'en';
+
+            const autoReplySubject = isEnglish
+                ? "Your request has been received - RBI Engineering Group"
+                : "Ваша заявка получена - RBI Engineering Group";
+
+            const autoReplyText = isEnglish
+                ? `Dear ${name},\n\nThank you for reaching out to RBI Engineering Group. We have received your request and our engineers will get back to you shortly to discuss your task and prepare the best solution.\n\nBest regards,\nRBI Engineering Group Team`
+                : `Здравствуйте, ${name}!\n\nСпасибо за обращение в RBI Engineering Group. Мы получили вашу заявку. Наш специалист свяжется с вами в ближайшее время для обсуждения задачи и подготовки оптимального решения.\n\nС уважением,\nКоманда RBI Engineering Group`;
+
+            const autoReplyHtml = isEnglish
+                ? `<p>Dear <strong>${name}</strong>,</p><p>Thank you for reaching out to RBI Engineering Group. We have received your request and our engineers will get back to you shortly to discuss your task and prepare the best solution.</p><p>Best regards,<br><strong>RBI Engineering Group Team</strong></p>`
+                : `<p>Здравствуйте, <strong>${name}</strong>!</p><p>Спасибо за обращение в RBI Engineering Group. Мы получили вашу заявку. Наш специалист свяжется с вами в ближайшее время для обсуждения задачи и подготовки оптимального решения.</p><p>С уважением,<br><strong>Команда RBI Engineering Group</strong></p>`;
+
+            const autoReplyOptions = {
+                from: `"RBI Engineering Group" <${user}>`,
+                to: email,
+                subject: autoReplySubject,
+                text: autoReplyText,
+                html: autoReplyHtml,
+            };
+
+            await transporter.sendMail(autoReplyOptions);
+        }
 
         return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
     } catch (error) {
