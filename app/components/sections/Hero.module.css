@@ -45,10 +45,10 @@
     left: 0;
     width: 66vw;
     height: 100%;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
-    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.83);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-right: 1px solid rgba(255, 255, 255, 1);
     border-radius: 0 24px 24px 0;
     box-shadow: 20px 0 40px rgba(0, 0, 0, 0.05);
     z-index: 1;
@@ -239,8 +239,8 @@
     .heroContent {
         z-index: 2;
         position: relative;
-        overflow: hidden;
         /* Prevent pseudo-layer from breaking out */
+        overflow: hidden;
         width: auto;
         min-width: 280px;
         max-width: 90%;
@@ -248,10 +248,10 @@
         margin: 0;
         padding: 48px 32px;
 
-        /* Applied directly as requested */
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.76) 0%, rgba(230, 240, 255, 0.70) 100%);
-        backdrop-filter: blur(22px);
-        -webkit-backdrop-filter: blur(22px);
+        /* Very transparent glass */
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(230, 240, 255, 0.25) 100%);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
 
         border-radius: 28px;
         box-shadow:
@@ -259,10 +259,9 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.6);
         border: 1px solid rgba(255, 255, 255, 0.35);
 
-        /* Compositing Hack for iOS Safari to force layer rendering */
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        will-change: transform;
+        /* Fixes Safari rendering bug */
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
     }
 
     .heroContent::after {
@@ -286,21 +285,7 @@
         width: 100%;
     }
 
-    /* Fallback for browsers that don't support backdrop-filter or use WebKit only */
-    @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-        .heroContent {
-            background: rgba(255, 255, 255, 0.94);
-        }
-    }
 
-    /* Fallback for iOS Low Power Mode / Reduce Transparency */
-    @media (prefers-reduced-transparency: reduce) {
-        .heroContent {
-            background: rgba(255, 255, 255, 0.94) !important;
-            -webkit-backdrop-filter: none !important;
-            backdrop-filter: none !important;
-        }
-    }
 
     .title {
         font-size: clamp(28px, 9vw, 36px);
