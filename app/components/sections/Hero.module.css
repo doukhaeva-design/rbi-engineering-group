@@ -224,9 +224,9 @@
         inset: 0;
         background:
             linear-gradient(180deg,
-                rgba(18, 32, 60, 0.75) 0%,
-                rgba(18, 32, 60, 0.55) 40%,
-                rgba(18, 32, 60, 0.85) 100%);
+                rgba(18, 32, 60, 0.80) 0%,
+                rgba(18, 32, 60, 0.60) 40%,
+                rgba(18, 32, 60, 0.90) 100%);
         pointer-events: none;
         z-index: 1;
     }
