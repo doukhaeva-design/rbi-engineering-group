@@ -226,10 +226,10 @@
         /* Prevent pseudo-layer from breaking out */
         width: auto;
         min-width: 280px;
-        max-width: 84%;
+        max-width: 90%;
         height: auto;
         margin: 0;
-        padding: 32px 24px;
+        padding: 48px 32px;
 
         /* 1. Transparent base color so ::before handles the glass */
         background: transparent;
