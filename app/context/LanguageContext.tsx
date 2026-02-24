@@ -26,7 +26,7 @@ const translations: Translations = {
         "hero.projects": "Смотреть проекты",
         "hero.trust.years": "13+ лет опыта",
         "hero.trust.projects": "62+ проекта",
-        "hero.trust.license": "Лицензия I категории",
+        "hero.trust.license": "Лицензия 1 категории",
 
         "about.title": "Профиль компании",
         "about.desc": "RBI Engineering Group — строительная организация полного цикла, специализирующаяся на сложных строительно-монтажные работах и проектировании высокотехнологичных модульных сооружений.",
@@ -261,7 +261,7 @@ const translations: Translations = {
         "hero.projects": "View Projects",
         "hero.trust.years": "13+ years of experience",
         "hero.trust.projects": "62+ projects",
-        "hero.trust.license": "Category I License",
+        "hero.trust.license": "Category 1 License",
 
         "about.title": "Company Profile",
         "about.desc": "RBI Engineering Group is a full-cycle construction organization specializing in complex construction and installation works and the design of high-tech modular structures.",
