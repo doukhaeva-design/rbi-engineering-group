@@ -354,12 +354,10 @@
 
     .heroContent .description {
         font-size: 15px;
-        /* Smoother typography flow */
-        line-height: 1.6;
+        line-height: 1.5;
         margin-bottom: 32px;
         color: var(--text-secondary);
-        /* Global standard secondary text */
-        max-width: 100%;
+        max-width: 88%;
         font-weight: 400 !important;
         text-align: center;
         margin-left: auto;
