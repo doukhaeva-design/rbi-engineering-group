@@ -166,14 +166,8 @@
     }
 
     .hero {
-        height: auto;
+        height: 100dvh;
         min-height: 100dvh;
-        padding-top: calc(85px + env(safe-area-inset-top));
-        padding-bottom: 60px;
-        align-items: center;
-        /* Center the card */
-        justify-content: center;
-        text-align: center;
         background-color: transparent;
         overflow: hidden;
         position: relative;
@@ -182,7 +176,8 @@
     .hero::before {
         content: "";
         background-image: url('/HeroPhotoMobile.png');
-        background-position: center top;
+        background-position: center center;
+        /* Ensure building is centered */
         background-size: cover;
         position: absolute;
         top: 0;
@@ -199,9 +194,18 @@
 
     .heroContent {
         z-index: 2;
-        position: relative;
+        /* Perfect Mathematical Centering */
+        position: absolute;
+        top: calc(85px + env(safe-area-inset-top) + (100dvh - (85px + env(safe-area-inset-top))) / 2);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Pull center of card to the calculated math center */
+
         width: calc(100% - 32px);
         max-width: 500px;
+        height: auto;
+        /* Reset desktop height: 100% so it wraps the text tightly */
+        min-height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -213,12 +217,9 @@
         -webkit-backdrop-filter: blur(24px);
         border-radius: 32px;
         padding: 40px 24px 32px;
-        /* Generous padding inside the card */
-        margin: auto auto 20px;
-        /* Push from top, reserve space at bottom */
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 1);
-        margin-top: calc(85px + 20px + env(safe-area-inset-top));
-        /* Ensure it physically cannot hit header */
+        margin: 0;
+        /* Clear margins */
     }
 
     .title {
