@@ -30,7 +30,7 @@ export default function Header() {
             }
           }}
         >
-          <NewRBILogo style={{ height: '40px', width: 'auto' }} />
+          <NewRBILogo className={styles.logoImage} />
         </Link>
 
         <button
