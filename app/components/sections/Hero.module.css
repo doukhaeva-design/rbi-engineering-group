@@ -180,8 +180,10 @@
 
     .hero::before {
         content: "";
-        background-image: url('/HeroPhotoMobile.png');
-        background-position: center center;
+        background-image: url('/HeroNoviyFon.png');
+        /* Use desktop image */
+        background-position: 85% center;
+        /* Focus on the right side (where the building detail is nice) */
         background-size: cover;
         position: absolute;
         top: 0;
