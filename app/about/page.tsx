@@ -16,7 +16,7 @@ export default function AboutPage() {
             <Header />
             <section className={styles.hero}>
                 <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
-                    <BackButton />
+                    <BackButton style={{ color: 'white' }} />
                 </div>
                 <div className="container">
                     <h1 className={styles.heroTitle}>{t("about_page.title")}</h1>
