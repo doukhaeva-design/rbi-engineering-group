@@ -126,9 +126,10 @@
 
     .filled,
     .outline {
-        background: rgb(47, 93, 159);
+        background: rgb(64, 106, 167);
+        /* Lightened by 8% from original rgb(47, 93, 159) */
         color: #ffffff;
-        border: 1px solid rgb(47, 93, 159);
-        box-shadow: 0 4px 10px rgba(47, 93, 159, 0.25);
+        border: 1px solid rgb(64, 106, 167);
+        box-shadow: 0 4px 10px rgba(64, 106, 167, 0.25);
     }
 }
