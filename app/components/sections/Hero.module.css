@@ -248,12 +248,14 @@
         margin: 0;
         padding: 48px 32px;
 
-        /* 1. Transparent base color so ::before handles the glass */
-        background: transparent;
+        /* Applied directly as requested */
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.76) 0%, rgba(230, 240, 255, 0.70) 100%);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
 
         border-radius: 28px;
         box-shadow:
-            0 40px 100px rgba(0, 0, 0, 0.35),
+            0 30px 70px rgba(0, 0, 0, 0.14),
             inset 0 1px 0 rgba(255, 255, 255, 0.6);
         border: 1px solid rgba(255, 255, 255, 0.35);
 
@@ -261,20 +263,6 @@
         transform: translateZ(0);
         -webkit-transform: translateZ(0);
         will-change: transform;
-    }
-
-    /* 2. Glass Layer isolated to ::before */
-    .heroContent::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.35) 100%);
-        -webkit-backdrop-filter: blur(16px) saturate(160%);
-        backdrop-filter: blur(16px) saturate(160%);
-        border-radius: inherit;
-        transform: translateZ(0);
-        z-index: -1;
     }
 
     .heroContent::after {
@@ -300,10 +288,6 @@
 
     /* Fallback for browsers that don't support backdrop-filter or use WebKit only */
     @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-        .heroContent::before {
-            display: none;
-        }
-
         .heroContent {
             background: rgba(255, 255, 255, 0.94);
         }
@@ -313,10 +297,6 @@
     @media (prefers-reduced-transparency: reduce) {
         .heroContent {
             background: rgba(255, 255, 255, 0.94) !important;
-        }
-
-        .heroContent::before {
-            display: none !important;
             -webkit-backdrop-filter: none !important;
             backdrop-filter: none !important;
         }
