@@ -314,8 +314,8 @@
         /* Elegant semi-bold matching glass theme */
         white-space: normal;
         margin-bottom: 20px;
-        color: var(--text-main);
-        /* Clean pure text color from globals */
+        color: rgba(17, 24, 39, 0.9);
+        /* Muted black to blend softly with glass */
         max-width: 100%;
         text-shadow: none;
         text-align: center;
