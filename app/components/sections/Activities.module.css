@@ -68,9 +68,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
+    width: 55%;
     /* Text takes left side */
     height: 100%;
+    padding-right: 8px;
 }
 
 .imageWrapper {
@@ -95,10 +96,7 @@
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
 }
 
-.card:hover .sketchImage {
-    transform: scale(1.08) translateX(-10px);
-    /* slight float left on hover */
-}
+/* Removed .card:hover .sketchImage to prevent image overlapping text */
 
 /* Typography */
 .cardNumber {
@@ -138,7 +136,8 @@
 .cardWrapper:nth-child(1) .cardContent,
 .cardWrapper:nth-child(2) .cardContent {
     max-width: none;
-    width: 60%;
+    width: 55%;
+    padding-right: 8px;
 }
 
 .cardWrapper:nth-child(1) .imageWrapper,

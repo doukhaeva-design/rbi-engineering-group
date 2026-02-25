@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 interface ButtonProps {
     children: React.ReactNode;
-    variant?: 'primary' | 'outline' | 'filled';
+    variant?: 'primary' | 'outline' | 'filled' | 'blue';
     href?: string;
     onClick?: () => void;
     className?: string;
