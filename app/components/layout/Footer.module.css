@@ -96,3 +96,95 @@
         gap: 40px;
     }
 }
+
+/* Map Selector Modal */
+.mapOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.mapModal {
+    background: #fff;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.mapModalTitle {
+    color: #111827;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mapOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mapOption {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #F9FAFB;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid #F3F4F6;
+}
+
+.mapOption:hover {
+    background: #F3F4F6;
+    border-color: #E5E7EB;
+    transform: translateY(-2px);
+}
+
+.mapOptionIcon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.closeButton {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #9CA3AF;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+    color: #111827;
+}
+
+.clickableAddress {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.clickableAddress:hover {
+    opacity: 0.8;
+}
