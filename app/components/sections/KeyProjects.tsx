@@ -37,7 +37,7 @@ export default function KeyProjects() {
         {
             title: t("projects.p5.title"),
             category: t("projects.cat.modular"),
-            specs: { label: t("projects.p5.label"), value: "850 м²" },
+            specs: { label: t("projects.p5.label"), value: t("projects.p5.value") },
             isModular: true
         },
         {

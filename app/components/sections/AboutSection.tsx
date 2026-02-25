@@ -81,7 +81,7 @@ export default function AboutSection() {
                             <h2 className={styles.tagline}>{t('about.title')}</h2>
                             <div className={styles.description}>
                                 <p>
-                                    <span className={styles.accent}>RBI Engineering Group</span> — {t('about.desc').replace("RBI Engineering Group — ", "")}
+                                    <span className={styles.accent}>RBI Engineering Group</span> — {t('about.desc').replace("RBI Engineering Group — ", "").replace("RBI Engineering Group is a ", "is a ")}
                                 </p>
                                 <p className={styles.secondaryText}>
                                     {t('about.subdesc')}

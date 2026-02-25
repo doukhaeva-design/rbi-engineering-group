@@ -2,14 +2,16 @@
 
 import { useRouter } from 'next/navigation';
 import styles from './BackButton.module.css';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface BackButtonProps {
     label?: string;
     style?: React.CSSProperties;
 }
 
-export default function BackButton({ label = "Назад", style }: BackButtonProps) {
+export default function BackButton({ label, style }: BackButtonProps) {
     const router = useRouter();
+    const { t } = useLanguage();
 
     return (
         <button
@@ -17,7 +19,7 @@ export default function BackButton({ label = "Назад", style }: BackButtonPr
             className={styles.backBtn}
             style={style}
         >
-            ← {label}
+            ← {label || t("button.back")}
         </button>
     );
 }

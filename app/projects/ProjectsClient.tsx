@@ -6,23 +6,22 @@ import Header from "../components/layout/Header";
 import styles from "./projects.module.css";
 import BackButton from "../components/ui/BackButton";
 import Footer from "../components/layout/Footer";
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ProjectsClient() {
     const searchParams = useSearchParams();
     const initialFilter = searchParams.get('filter');
+    const { t } = useLanguage();
 
     // Map URL param text to exact filter text if needed, or use direct value
-    // URL param: "modular" -> Filter: "Модульные сооружения"
-    // URL param: "metal" -> Filter: "Монтаж / металлоконструкции"
-
-    const [filter, setFilter] = useState("Все");
+    const [filter, setFilter] = useState("all");
 
     useEffect(() => {
         const param = searchParams.get('filter');
         if (param === 'modular') {
-            setFilter("Модульные сооружения");
+            setFilter("modular");
         } else if (param === 'metal') {
-            setFilter("Монтаж / металлоконструкции");
+            setFilter("metal");
         }
     }, [searchParams]);
 
@@ -30,84 +29,99 @@ export default function ProjectsClient() {
         // Modular
         {
             id: "khromtau",
-            category: "Модульные сооружения",
-            title: "ВЭС «Хромтау»",
-            detail: "Партнёры: Sinohydro / Power China"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p1.title"),
+            detail: `${t("projects.p1.label")}: Sinohydro / Power China`
         },
         {
             id: "canteen",
-            category: "Модульные сооружения",
-            title: "Столовая для военной базы",
-            detail: "Заказчик: АО «Əскери Құрылыс»"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p3.title"),
+            detail: `${t("projects.p3.label")}: ${t("projects.p3.value")}`
         },
         {
             id: "conference",
-            category: "Модульные сооружения",
-            title: "Конференц-зал (Алматы)",
-            detail: "Локация: г. Алматы"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p_conf.title"),
+            detail: `${t("projects.p_conf.label")}: ${t("projects.p_conf.value")}`
         },
         {
             id: "lab",
-            category: "Модульные сооружения",
-            title: "Лаборатория ПЦР (Аксай)",
-            detail: "Локация: г. Аксай"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p_lab.title"),
+            detail: `${t("projects.p_lab.label")}: ${t("projects.p_lab.value")}`
         },
         {
             id: "pavilion",
-            category: "Модульные сооружения",
-            title: "Остановочный павильон",
-            detail: "Заказчик: Акимат города"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p_pavilion.title"),
+            detail: `${t("projects.p_pavilion.label")}: ${t("projects.p_pavilion.value")}`
         },
         {
             id: "terminal",
-            category: "Модульные сооружения",
-            title: "Таможенный терминал",
-            detail: "Тип: Инфраструктурный объект"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p_terminal.title"),
+            detail: `${t("projects.p_terminal.label")}: ${t("projects.p_terminal.value")}`
         },
         {
             id: "factory",
-            category: "Модульные сооружения",
-            title: "Заводы и складские помещения",
-            detail: "Заказчик: ТОО «ВМП Казахстан»"
+            category: "modular",
+            categoryLabel: t("projects.cat.modular"),
+            title: t("projects.p_factory.title"),
+            detail: `${t("projects.p_factory.label")}: ${t("projects.p_factory.value")}`
         },
         // Installation
         {
             id: "wind",
-            category: "Монтаж / металлоконструкции",
-            title: "Монтаж ветровых генераторов (750 кВт)",
-            detail: "Локация: Петропавловск"
+            category: "metal",
+            categoryLabel: t("projects.cat.metal"),
+            title: t("projects.p2.title"),
+            detail: `${t("projects.p2.label")}: ${t("projects.p2.value")}`
         },
         {
             id: "khan",
-            category: "Монтаж / металлоконструкции",
-            title: "Монтаж конструкций ТРЦ «Хан Шатыр»",
-            detail: "Объект: ТРЦ «Хан Шатыр»"
+            category: "metal",
+            categoryLabel: t("projects.cat.metal"),
+            title: t("projects.p4.title"),
+            detail: `${t("projects.p4.label")}: ${t("projects.p4.value")}`
         },
         {
             id: "crane",
-            category: "Монтаж / металлоконструкции",
-            title: "Демонтаж башенного крана",
-            detail: "Объект: ЖК «Триумф Астаны»"
+            category: "metal",
+            categoryLabel: t("projects.cat.metal"),
+            title: t("projects.p_crane.title"),
+            detail: `${t("projects.p_crane.label")}: ${t("projects.p_crane.value")}`
         },
         {
             id: "velotrek",
-            category: "Монтаж / металлоконструкции",
-            title: "Монтаж металлоконструкций на СК «Велотрек»",
-            detail: "Локация: г. Нур-Султан"
+            category: "metal",
+            categoryLabel: t("projects.cat.metal"),
+            title: t("projects.p_velo.title"),
+            detail: `${t("projects.p_velo.label")}: ${t("projects.p_velo.value")}`
         }
     ];
 
     // Helper for visual dialect class
     const getCardClass = (category: string) => {
-        return category === "Модульные сооружения" ? styles.modularCard : styles.steelCard;
+        return category === "modular" ? styles.modularCard : styles.steelCard;
     };
 
     // Helper for cover gradient
     const getCoverClass = (category: string) => {
-        return category === "Модульные сооружения" ? styles.coverModular : styles.coverSteel;
+        return category === "modular" ? styles.coverModular : styles.coverSteel;
     };
 
-    const filters = ["Все", "Модульные сооружения", "Монтаж / металлоконструкции"];
+    const filters = [
+        { id: "all", label: t("projects.filter.all") },
+        { id: "modular", label: t("projects.cat.modular") },
+        { id: "metal", label: t("projects.cat.metal") }
+    ];
 
     return (
         <main>
@@ -117,9 +131,9 @@ export default function ProjectsClient() {
                     <BackButton />
                 </div>
                 <div className="container">
-                    <h1 className={styles.heroTitle}>Проекты</h1>
+                    <h1 className={styles.heroTitle}>{t("projects.title")}</h1>
                     <p className={styles.heroText}>
-                        Примеры выполненных работ: модульные сооружения и монтажные проекты.
+                        {t("projects.desc")}
                     </p>
                 </div>
             </section>
@@ -132,11 +146,11 @@ export default function ProjectsClient() {
                         <div className={styles.tabs}>
                             {filters.map(f => (
                                 <button
-                                    key={f}
-                                    className={`${styles.tab} ${filter === f ? styles.active : ''}`}
-                                    onClick={() => setFilter(f)}
+                                    key={f.id}
+                                    className={`${styles.tab} ${filter === f.id ? styles.active : ''}`}
+                                    onClick={() => setFilter(f.id)}
                                 >
-                                    {f}
+                                    {f.label}
                                 </button>
                             ))}
                         </div>
@@ -146,7 +160,7 @@ export default function ProjectsClient() {
                     <div className={styles.grid}>
                         {(() => {
                             // 1. Filter projects based on selected tab
-                            const filtered = filter === "Все"
+                            const filtered = filter === "all"
                                 ? projects
                                 : projects.filter(p => p.category === filter);
 
@@ -161,11 +175,11 @@ export default function ProjectsClient() {
                                 let aPriority = false;
                                 let bPriority = false;
 
-                                if (filter === "Модульные сооружения" || filter === "Все") {
+                                if (filter === "modular" || filter === "all") {
                                     if (priorityIds.modular.includes(a.id)) aPriority = true;
                                     if (priorityIds.modular.includes(b.id)) bPriority = true;
                                 }
-                                if (filter === "Монтаж / металлоконструкции" || filter === "Все") {
+                                if (filter === "metal" || filter === "all") {
                                     if (priorityIds.metal.includes(a.id)) aPriority = true;
                                     if (priorityIds.metal.includes(b.id)) bPriority = true;
                                 }
@@ -179,7 +193,7 @@ export default function ProjectsClient() {
                                 <div key={project.id} id={project.id} className={`${styles.card} ${getCardClass(project.category)}`}>
                                     <div className={`${styles.cardCover} ${getCoverClass(project.category)}`}></div>
                                     <div className={styles.cardContent}>
-                                        <div className={styles.categoryLabel}>{project.category}</div>
+                                        <div className={styles.categoryLabel}>{project.categoryLabel}</div>
                                         <h3 className={styles.cardTitle}>{project.title}</h3>
 
                                         <div className={styles.metaRow}>
