@@ -10,6 +10,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactsPage() {
     const { t, language } = useLanguage();
+    const [showMapSelector, setShowMapSelector] = useState(false);
     const [formData, setFormData] = useState({
         purpose: '',
         name: '',
@@ -87,7 +88,10 @@ export default function ContactsPage() {
                             </p>
 
                             <div className={styles.contactItems}>
-                                <div className={styles.contactItem}>
+                                <div
+                                    className={`${styles.contactItem} ${styles.clickableAddress}`}
+                                    onClick={() => setShowMapSelector(true)}
+                                >
                                     <div className={styles.iconWrapper}>
                                         <svg viewBox="0 0 24 24" fill="none" className={styles.icon}>
                                             <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -100,26 +104,26 @@ export default function ContactsPage() {
                                     </div>
                                 </div>
                                 <div className={styles.contactItem}>
-                                    <div className={styles.iconWrapper}>
+                                    <a href="tel:+77025555169" className={styles.iconWrapper} style={{ color: 'inherit' }}>
                                         <svg viewBox="0 0 24 24" fill="none" className={styles.icon}>
                                             <path d="M22 16.92V19.92C22.0032 20.1986 21.9441 20.4735 21.8266 20.7259C21.7092 20.9783 21.536 21.2023 21.3195 21.3813C21.1029 21.5604 20.84 21.6908 20.5513 21.7644C20.2627 21.838 19.9675 21.8546 19.68 21.81C16.5368 21.4682 13.5677 20.4435 11.01 18.81C8.61483 17.3061 6.64333 15.3346 5.13944 12.9395C3.50294 10.3703 2.47895 7.38883 2.14 4.23999C2.09559 3.95368 2.1121 3.65961 2.18538 3.37227C2.25866 3.08493 2.38851 2.82294 2.56686 2.60749C2.74521 2.39204 2.96887 2.2201 3.22061 2.10427C3.47236 1.98844 3.74665 1.93175 4.02 1.93999H7.02C7.50257 1.9358 7.97157 2.11026 8.3377 2.42938C8.70384 2.74851 8.94054 3.19033 9 3.67999C9.05333 4.63953 9.21366 5.58626 9.48 6.50999C9.58557 6.87321 9.59371 7.26252 9.50346 7.63009C9.41321 7.99767 9.22822 8.3273 8.97 8.58999L7.7 9.85999C9.12328 12.3686 11.2314 14.4767 13.74 15.9L15.01 14.63C15.2727 14.3718 15.6023 14.1868 15.9699 14.0965C16.3375 14.0063 16.7268 14.0144 17.09 14.12C18.0137 14.3863 18.9605 14.5467 19.92 14.6C20.4137 14.6606 20.8595 14.9011 21.18 15.2713C21.5005 15.6414 21.6748 16.1156 21.67 16.6V16.92H22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                    </div>
+                                    </a>
                                     <div>
                                         <span className={styles.itemLabel}>{t("contacts_page.phone.label")}</span>
-                                        <span className={styles.itemValue}>+7 702 555 51 69</span>
+                                        <a href="tel:+77025555169" className={styles.itemValue} style={{ textDecoration: 'none', color: 'inherit' }}>+7 702 555 51 69</a>
                                     </div>
                                 </div>
                                 <div className={styles.contactItem}>
-                                    <div className={styles.iconWrapper}>
+                                    <a href="mailto:info@rbi.asia" className={styles.iconWrapper} style={{ color: 'inherit' }}>
                                         <svg viewBox="0 0 24 24" fill="none" className={styles.icon}>
                                             <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                             <path d="M22 6L12 13L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                    </div>
+                                    </a>
                                     <div>
                                         <span className={styles.itemLabel}>Email:</span>
-                                        <span className={styles.itemValue}>info@rbi.asia</span>
+                                        <a href="mailto:info@rbi.asia" className={styles.itemValue} style={{ textDecoration: 'none', color: 'inherit' }}>info@rbi.asia</a>
                                     </div>
                                 </div>
                             </div>
@@ -246,6 +250,49 @@ export default function ContactsPage() {
                 </div>
             </section>
             <Footer />
+
+            {/* Map Selector Modal */}
+            {showMapSelector && (
+                <div className={styles.mapOverlay} onClick={() => setShowMapSelector(false)}>
+                    <div className={styles.mapModal} onClick={e => e.stopPropagation()}>
+                        <h3 className={styles.mapModalTitle}>
+                            {language === 'ru' ? 'Выберите карту' : 'Select Maps'}
+                        </h3>
+                        <div className={styles.mapOptions}>
+                            <a
+                                href="https://2gis.kz/astana/search/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C+%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C+%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4+69%2C+%D0%B7%D0%B4.+1%D0%90"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.mapOption}
+                            >
+                                <img src="https://2gis.kz/favicon.ico" alt="" className={styles.mapOptionIcon} />
+                                <span>2GIS</span>
+                            </a>
+                            <a
+                                href="https://yandex.kz/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C+%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C+%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4+69%2C+%D0%B7%D0%B4.+1%D0%90"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.mapOption}
+                            >
+                                <img src="https://yastatic.net/icon-static/maps/favicon.ico" alt="" className={styles.mapOptionIcon} />
+                                <span>Yandex Maps</span>
+                            </a>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C+%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C+%D0%9F%D1%80%D0%BE%D0%B5%D0%B7%D0%B4+69%2C+1%D0%90"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.mapOption}
+                            >
+                                <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com/maps" alt="" className={styles.mapOptionIcon} />
+                                <span>Google Maps</span>
+                            </a>
+                        </div>
+                        <button className={styles.closeButton} onClick={() => setShowMapSelector(false)}>
+                            {language === 'ru' ? 'Закрыть' : 'Close'}
+                        </button>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
