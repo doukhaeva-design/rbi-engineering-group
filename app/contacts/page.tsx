@@ -150,7 +150,7 @@ export default function ContactsPage() {
                                     </select>
                                 </div>
                                 <div className={styles.inputGroup}>
-                                    <label className={styles.label}>Имя</label>
+                                    <label className={styles.label}>{t("contacts_page.form.name.label")}</label>
                                     <input
                                         type="text"
                                         name="name"
@@ -161,7 +161,9 @@ export default function ContactsPage() {
                                     />
                                 </div>
                                 <div className={styles.inputGroup}>
-                                    <label className={styles.label}>{t("contacts_page.phone.label")}</label>
+                                    <label className={styles.label}>
+                                        {t("contacts_page.phone.label")} <span style={{ textTransform: 'none', color: '#9CA3AF', fontWeight: 400 }}>{t("contacts_page.form.phone.optional")}</span>
+                                    </label>
                                     <input
                                         type="tel"
                                         name="phone"
