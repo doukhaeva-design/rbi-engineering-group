@@ -83,7 +83,7 @@ export default function ContactsPage() {
                         <div className={styles.infoSidebar}>
                             <h1 className={styles.pageTitle}>{t("contacts_page.title")}</h1>
                             <p className={styles.sidebarDesc}>
-                                Мы всегда открыты для новых проектов и партнерства. Оставьте заявку или свяжитесь с нами напрямую, и наши инженеры предложат оптимальное решение для вашей задачи.
+                                {t("contacts_page.intro")}
                             </p>
 
                             <div className={styles.contactItems}>
@@ -188,7 +188,7 @@ export default function ContactsPage() {
                                     />
                                 </div>
                                 <div className={styles.inputGroup}>
-                                    <label className={styles.label}>Сообщение</label>
+                                    <label className={styles.label}>{t("contacts_page.form.message.label")}</label>
                                     <textarea
                                         name="message"
                                         placeholder={t("contacts_page.form.message.placeholder")}

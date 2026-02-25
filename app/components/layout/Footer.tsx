@@ -36,7 +36,7 @@ export default function Footer() {
                             <span className={styles.contactItem}>+7 702 555 51 69</span>
                             <span className={styles.contactItem}>info@rbi.asia</span>
                             <span>{t('footer.address')}</span>
-                            <span className={styles.bin}>БИН: [вставь БИН]</span>
+                            <span className={styles.bin}>{t("footer.bin")}</span>
                         </div>
                     </div>
                 </div>

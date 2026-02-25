@@ -96,7 +96,7 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
                         <RevealOnScroll className={styles.imageWrapper}>
                             <Image
                                 src="/PochemuNasVibirayut.png"
-                                alt="Почему выбирают RBI Engineering Group"
+                                alt={t("competencies.title_alt")}
                                 fill
                                 className={styles.image}
                             />
