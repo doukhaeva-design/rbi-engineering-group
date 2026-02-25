@@ -33,8 +33,10 @@
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover .iconRight {
-    transform: translateX(4px);
+@media (hover: hover) {
+    .button:hover .iconRight {
+        transform: translateX(4px);
+    }
 }
 
 .primary {
@@ -62,15 +64,17 @@
     transition: 0.5s;
 }
 
-.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(139, 79, 7, 0.35);
-    /* Tighter, darker hover shadow */
-    filter: brightness(1.05);
-}
+@media (hover: hover) {
+    .primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(139, 79, 7, 0.35);
+        /* Tighter, darker hover shadow */
+        filter: brightness(1.05);
+    }
 
-.primary:hover::before {
-    left: 100%;
+    .primary:hover::before {
+        left: 100%;
+    }
 }
 
 .primary:active {
@@ -85,11 +89,13 @@
     box-shadow: none;
 }
 
-.outline:hover {
-    background: var(--primary-color);
-    color: #ffffff;
-    /* White text on hover */
-    box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
+@media (hover: hover) {
+    .outline:hover {
+        background: var(--primary-color);
+        color: #ffffff;
+        /* White text on hover */
+        box-shadow: 0 4px 20px rgba(230, 132, 66, 0.25);
+    }
 }
 
 /* Blue variant (specifically requested for certain buttons) */
@@ -116,14 +122,16 @@
     transition: 0.5s;
 }
 
-.blue:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(47, 93, 159, 0.35);
-    filter: brightness(1.05);
-}
+@media (hover: hover) {
+    .blue:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(47, 93, 159, 0.35);
+        filter: brightness(1.05);
+    }
 
-.blue:hover::before {
-    left: 100%;
+    .blue:hover::before {
+        left: 100%;
+    }
 }
 
 .blue:active {
@@ -138,11 +146,13 @@
     box-shadow: none;
 }
 
-.filled:hover {
-    background: var(--primary-color);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(47, 93, 159, 0.4);
+@media (hover: hover) {
+    .filled:hover {
+        background: var(--primary-color);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(47, 93, 159, 0.4);
+    }
 }
 
 @media (max-width: 768px) {
@@ -182,9 +192,11 @@
         box-shadow: none;
     }
 
-    .outline:hover {
-        background: rgb(64, 106, 167);
-        color: #ffffff;
-        border-color: rgb(64, 106, 167);
+    @media (hover: hover) {
+        .outline:hover {
+            background: rgb(64, 106, 167);
+            color: #ffffff;
+            border-color: rgb(64, 106, 167);
+        }
     }
 }
