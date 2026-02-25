@@ -45,6 +45,11 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
+          {/* Mobile only CTA at the top */}
+          <div className={styles.mobileCta}>
+            <LanguageSwitcher />
+          </div>
+
           <Link href="/" className={`${styles.link} ${pathname === '/' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.home')}</Link>
           <Link href="/services" className={`${styles.link} ${pathname === '/services' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.services')}</Link>
           <Link href="/modular" className={`${styles.link} ${pathname === '/modular' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.modular')}</Link>
@@ -53,10 +58,6 @@ export default function Header() {
           <Link href="/licenses" className={`${styles.link} ${pathname === '/licenses' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.licenses')}</Link>
           <Link href="/contacts" className={`${styles.link} ${pathname === '/contacts' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.contacts')}</Link>
 
-          {/* Mobile only CTA */}
-          <div className={styles.mobileCta}>
-            <LanguageSwitcher />
-          </div>
         </nav>
 
         {/* Desktop CTA (Visible on large screens) */}
