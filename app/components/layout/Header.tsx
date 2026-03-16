@@ -56,7 +56,7 @@ export default function Header() {
           <Link href="/projects" className={`${styles.link} ${pathname === '/projects' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.projects')}</Link>
           <Link href="/about" className={`${styles.link} ${pathname === '/about' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.about')}</Link>
           <Link href="/licenses" className={`${styles.link} ${pathname === '/licenses' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.licenses')}</Link>
-          <Link href="/contacts" className={`${styles.link} ${pathname === '/contacts' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.contacts')}</Link>
+          <Link href="/contacts" className={`${styles.link} ${styles.contactLinkMobile} ${pathname === '/contacts' ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.contacts')}</Link>
 
         </nav>
 

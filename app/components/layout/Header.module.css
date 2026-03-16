@@ -221,6 +221,13 @@
         border-color: #FFFFFF;
     }
 
+    .contactLinkMobile {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-decoration-color: rgba(255, 255, 255, 0.6);
+        text-decoration-thickness: 1px;
+    }
+
     /* Burger animation state */
     .mobileMenuBtn.open .bar {
         background-color: #FFFFFF;

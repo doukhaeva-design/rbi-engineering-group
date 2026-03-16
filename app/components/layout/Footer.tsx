@@ -44,7 +44,7 @@ export default function Footer() {
                             >
                                 {t('footer.address')}
                             </span>
-                            <span className={styles.bin}>{t("footer.bin")}</span>
+
                         </div>
                     </div>
                 </div>

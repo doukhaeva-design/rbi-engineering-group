@@ -156,7 +156,6 @@ const translations: Translations = {
         "footer.desc": "RBI Engineering Group работает в Казахстане и выполняет строительство, СМР и модульные решения.",
         "footer.policy": "Политика конфиденциальности",
         "footer.address": "г. Астана, ул. Проезд 69, зд. 1А",
-        "footer.bin": "БИН: [вставь БИН]",
         "footer.rights": "Все права защищены.",
 
         "services.title": "НАШИ УСЛУГИ",
@@ -420,7 +419,6 @@ const translations: Translations = {
         "footer.desc": "RBI Engineering Group operates in Kazakhstan and performs construction, installation works, and modular solutions.",
         "footer.policy": "Privacy Policy",
         "footer.address": "Astana, Proyezd 69 st., bldg. 1A",
-        "footer.bin": "BIN: [insert BIN]",
         "footer.rights": "All rights reserved.",
 
         "services.title": "OUR SERVICES",
