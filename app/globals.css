@@ -14,14 +14,13 @@
   --spacing-tight: -0.02em;
   --spacing-wide: 0.05em;
 
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     --padding-x: 24px;
     --vertical-gap: 60px;
     --font-h1: 36px;
     --font-h2: 28px;
     --font-h3: 20px;
     --font-text: 16px;
-    /* Keep 16px for mobile */
   }
 
   /* Premium Light Palette (Construction & Engineering) */
@@ -56,6 +55,12 @@
   "Segoe UI",
   Roboto,
   sans-serif;
+}
+
+@media (max-width: 968px) {
+  :root {
+    --header-height: calc(56px + env(safe-area-inset-top));
+  }
 }
 
 html,
