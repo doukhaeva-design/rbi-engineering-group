@@ -1,22 +1,47 @@
 /* Hero */
 .hero {
+    position: relative;
     padding-top: 150px;
     padding-bottom: 80px;
-    background-color: var(--secondary-color);
     text-align: center;
+    overflow: hidden;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/modular-hero.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 34, 64, 0.96);
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
 }
 
 .heroTitle {
     font-size: 48px;
     margin-bottom: 24px;
-    color: var(--text-main);
+    color: #ffffff;
 }
 
 .heroText {
     font-size: 18px;
     max-width: 700px;
     margin: 0 auto 40px;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
 }
 
