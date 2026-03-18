@@ -232,3 +232,10 @@
         margin-bottom: 30px;
     }
 }
+
+.buttonWrapper :global(a) {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+

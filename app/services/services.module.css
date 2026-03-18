@@ -33,27 +33,26 @@
 }
 
 .card {
-    background: #FFFFFF;
-    /* Clean white */
+    background: #f8f9fb;
     padding: 40px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 16px;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
     display: flex;
     flex-direction: row;
-    /* Horizontal layout */
     align-items: center;
     justify-content: space-between;
     min-height: 240px;
     gap: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 6px 24px rgba(0, 0, 0, 0.06);
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-    border-color: var(--primary-color);
+@media (hover: hover) {
+    .card:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
+    }
 }
 
 .cardContent {
@@ -90,8 +89,10 @@
     height: 100%;
 }
 
-.card:hover .sketchImage {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .card:hover .sketchImage {
+        transform: scale(1.05);
+    }
 }
 
 /* Typography */
@@ -245,9 +246,9 @@
         padding: 20px;
         min-height: auto;
         border-radius: 12px;
-        background: #FFFFFF;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        border: 1px solid var(--border-color);
+        background: #f8f9fb;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 6px 24px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.05);
         gap: 16px;
         align-items: start;
         margin-bottom: 0;
