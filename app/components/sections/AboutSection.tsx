@@ -27,19 +27,18 @@ export default function AboutSection() {
     const [counts, setCounts] = useState(stats.map(() => 0));
     const sectionRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
+    const hasAnimated = useRef(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !hasAnimated.current) {
+                    hasAnimated.current = true;
                     setIsVisible(true);
-                } else {
-                    setIsVisible(false);
-                    // Reset counts to 0 when leaving to allow re-animation
-                    setCounts(stats.map(() => 0));
+                    observer.disconnect();
                 }
             },
-            { threshold: 0.5 }
+            { threshold: 0.3, rootMargin: '0px 0px -80px 0px' }
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);
