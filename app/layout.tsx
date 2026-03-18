@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import React from "react";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
+import WhatsAppButton from "./components/ui/WhatsAppButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -11,11 +12,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RBI Engineering Group — строительство и модульные сооружения в Казахстане",
-  description: "Строительно-монтажные работы любой сложности и мобильные модульные сооружения. 13+ лет опыта, 62+ проектов, собственная техника и лицензия 1 категории.",
+  title: "Строительная компания в Астане, Казахстан | RBI Engineering Group",
+  description: "Генеральный подряд, строительно-монтажные работы (СМР), изготовление и монтаж металлоконструкций, модульные здания. Работаем с B2B и госсектором по всему Казахстану.",
   openGraph: {
-    title: "RBI Engineering Group",
-    description: "Строительство и модульные решения в Казахстане. Проекты, компетенции, лицензии, контакты."
+    title: "Строительная компания RBI Engineering Group | Астана",
+    description: "Строительство, модульные здания, металлоконструкции. Лицензия I категории.",
+    type: "website",
+    locale: "ru_RU",
   }
 };
 
@@ -36,6 +39,7 @@ export default function RootLayout({
       <body className={inter.variable} suppressHydrationWarning={true}>
         <LanguageProvider>
           {children}
+          <WhatsAppButton />
         </LanguageProvider>
       </body>
     </html>

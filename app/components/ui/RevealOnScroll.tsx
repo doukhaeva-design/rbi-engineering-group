@@ -22,7 +22,10 @@ export default function RevealOnScroll({
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsVisible(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
             },
             {
                 threshold: threshold,
@@ -35,7 +38,7 @@ export default function RevealOnScroll({
         }
 
         return () => {
-            if (ref.current) observer.disconnect();
+            observer.disconnect();
         };
     }, [threshold]);
 
