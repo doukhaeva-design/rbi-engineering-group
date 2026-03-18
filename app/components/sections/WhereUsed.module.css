@@ -116,9 +116,9 @@
     }
 
     .card {
-        padding: 16px 0;
+        padding: 12px 0;
         min-height: auto;
-        gap: 16px;
+        gap: 14px;
     }
 
     /* Restore border for the second to last item on mobile (since it's a single column) */
@@ -127,14 +127,14 @@
     }
 
     .iconWrapper {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
     }
 
     .icon {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
     }
 
     .text {
