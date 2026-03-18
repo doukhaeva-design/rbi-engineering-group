@@ -24,7 +24,12 @@ export default function RevealOnScroll({
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect();
+                } else {
+                    // Reset only when element is below viewport (user scrolled up)
+                    // so animation replays on next scroll down
+                    if (entry.boundingClientRect.top > 0) {
+                        setIsVisible(false);
+                    }
                 }
             },
             {
