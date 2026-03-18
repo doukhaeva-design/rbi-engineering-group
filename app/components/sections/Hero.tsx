@@ -36,6 +36,7 @@ export default function Hero() {
 
             {/* Content Container - Aligned with Global Layout */}
             <div className={`${styles.heroContent} ${isVisible ? styles.visible : ''}`}>
+                <p className={styles.subtitle}>{t('hero.subtitle')}</p>
                 <h1 className={styles.title}>
                     RBI Engineering<br className={styles.desktopBreak} /> Group
                 </h1>

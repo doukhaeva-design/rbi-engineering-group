@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from './KeyCompetencies.module.css';
 import RevealOnScroll from '../ui/RevealOnScroll';
 import { useLanguage } from '../../context/LanguageContext';
-import { Trophy, UsersRound, Truck, Boxes, Handshake, BadgeCheck } from 'lucide-react';
+import { IconMountain, IconUsersGroup, IconTruck, IconBuildingFactory2, IconHeartHandshake, IconRosetteDiscountCheck } from '@tabler/icons-react';
 
 export default function KeyCompetencies({ limited = false }: { limited?: boolean }) {
     const { t } = useLanguage();
@@ -12,32 +12,32 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
         {
             title: t("competencies.c1.title"),
             desc: t("competencies.c1.desc"),
-            icon: <Trophy className={styles.icon} />
+            icon: <IconMountain className={styles.icon} stroke={1.5} />
         },
         {
             title: t("competencies.c2.title"),
             desc: t("competencies.c2.desc"),
-            icon: <UsersRound className={styles.icon} />
+            icon: <IconUsersGroup className={styles.icon} stroke={1.5} />
         },
         {
             title: t("competencies.c3.title"),
             desc: t("competencies.c3.desc"),
-            icon: <Truck className={styles.icon} />
+            icon: <IconTruck className={styles.icon} stroke={1.5} />
         },
         {
             title: t("competencies.c4.title"),
             desc: t("competencies.c4.desc"),
-            icon: <Boxes className={styles.icon} />
+            icon: <IconBuildingFactory2 className={styles.icon} stroke={1.5} />
         },
         {
             title: t("competencies.c5.title"),
             desc: t("competencies.c5.desc"),
-            icon: <Handshake className={styles.icon} />
+            icon: <IconHeartHandshake className={styles.icon} stroke={1.5} />
         },
         {
             title: t("competencies.c6.title"),
             desc: t("competencies.c6.desc"),
-            icon: <BadgeCheck className={styles.icon} />
+            icon: <IconRosetteDiscountCheck className={styles.icon} stroke={1.5} />
         }
     ];
 
@@ -50,6 +50,7 @@ export default function KeyCompetencies({ limited = false }: { limited?: boolean
         <section className={`section ${styles.section}`}>
             <div className={`container`}>
                 <RevealOnScroll>
+                    {!limited && <p className="eyebrow">{t('competencies.eyebrow')}</p>}
                     <h2 className={styles.title}>{limited ? t('competencies.title_alt') : t('competencies.title')}</h2>
                 </RevealOnScroll>
 

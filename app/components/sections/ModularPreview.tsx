@@ -10,6 +10,8 @@ export default function ModularPreview() {
     const { t } = useLanguage();
     return (
         <section className={`section ${styles.section}`} id="modular">
+            <div className={styles.bgPhoto} />
+            <div className={styles.bgOverlay} />
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
                     <RevealOnScroll>

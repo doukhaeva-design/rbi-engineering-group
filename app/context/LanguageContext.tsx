@@ -21,7 +21,7 @@ const translations: Translations = {
         "nav.contacts": "Контакты",
         "nav.consultation": "Получить консультацию",
         "button.back": "Назад",
-        "hero.subtitle": "",
+        "hero.subtitle": "Казахстан",
         "hero.description": "Модульные и строительные проекты в Казахстане. Реализация сложных задач с инженерной точностью и стандартами качества.",
         "hero.request": "Запросить предложение",
         "hero.projects": "Смотреть проекты",
@@ -39,6 +39,7 @@ const translations: Translations = {
         "about.stat.license": "ЛИЦЕНЗИЯ НА СМР",
         "about.stat.license.suffix": " КАТ.",
 
+        "activities.eyebrow": "Услуги",
         "activities.title": "Комплексные инженерные решения",
         "activities.desc": "Обеспечиваем безупречное качество исполнения на каждом этапе проекта.",
         "activities.modular.title": "Модульные сооружения",
@@ -67,6 +68,7 @@ const translations: Translations = {
         "modular.benefit3.desc": "Легко перевезти на новое место",
         "modular.button": "Подробнее о модульных решениях",
 
+        "competencies.eyebrow": "Преимущества",
         "competencies.title": "Ключевые компетенции",
         "competencies.title_alt": "Почему выбирают нас",
         "competencies.c1.title": "Опыт и масштаб",
@@ -284,7 +286,7 @@ const translations: Translations = {
         "nav.contacts": "Contacts",
         "nav.consultation": "Get Consultation",
         "button.back": "Back",
-        "hero.subtitle": "",
+        "hero.subtitle": "Astana · Kazakhstan",
         "hero.description": "Modular and construction projects in Kazakhstan. Execution of complex tasks with engineering precision and quality standards.",
         "hero.request": "Request a Proposal",
         "hero.projects": "View Projects",
@@ -302,6 +304,7 @@ const translations: Translations = {
         "about.stat.license": "CONSTRUCTION LICENSE",
         "about.stat.license.suffix": " CAT.",
 
+        "activities.eyebrow": "Services",
         "activities.title": "Comprehensive Engineering Solutions",
         "activities.desc": "We ensure impeccable execution quality at every stage of the project.",
         "activities.modular.title": "Modular Structures",
@@ -330,6 +333,7 @@ const translations: Translations = {
         "modular.benefit3.desc": "Easy to transport to a new location",
         "modular.button": "More about modular solutions",
 
+        "competencies.eyebrow": "Why Us",
         "competencies.title": "Key Competencies",
         "competencies.title_alt": "Why Choose Us",
         "competencies.c1.title": "Experience and Scale",

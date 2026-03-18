@@ -4,18 +4,18 @@
 import styles from './WhereUsed.module.css';
 import RevealOnScroll from '../ui/RevealOnScroll';
 import { useLanguage } from '../../context/LanguageContext';
-import { ShieldCheck, MonitorCog, Factory, Wind, School, Sword, HeartPulse } from 'lucide-react';
+import { IconShieldCheck, IconDeviceDesktopCog, IconBuildingFactory2, IconWindmill, IconSchool, IconSword, IconStethoscope } from '@tabler/icons-react';
 
 export default function WhereUsed() {
     const { t } = useLanguage();
     const items = [
-        { text: t("where.i1"), icon: <ShieldCheck className={styles.icon} /> },
-        { text: t("where.i2"), icon: <MonitorCog className={styles.icon} /> },
-        { text: t("where.i3"), icon: <Factory className={styles.icon} /> },
-        { text: t("where.i4"), icon: <Wind className={styles.icon} /> },
-        { text: t("where.i5"), icon: <School className={styles.icon} /> },
-        { text: t("where.i6"), icon: <Sword className={styles.icon} /> },
-        { text: t("where.i7"), icon: <HeartPulse className={styles.icon} /> },
+        { text: t("where.i1"), icon: <IconShieldCheck className={styles.icon} stroke={1.5} /> },
+        { text: t("where.i2"), icon: <IconDeviceDesktopCog className={styles.icon} stroke={1.5} /> },
+        { text: t("where.i3"), icon: <IconBuildingFactory2 className={styles.icon} stroke={1.5} /> },
+        { text: t("where.i4"), icon: <IconWindmill className={styles.icon} stroke={1.5} /> },
+        { text: t("where.i5"), icon: <IconSchool className={styles.icon} stroke={1.5} /> },
+        { text: t("where.i6"), icon: <IconSword className={styles.icon} stroke={1.5} /> },
+        { text: t("where.i7"), icon: <IconStethoscope className={styles.icon} stroke={1.5} /> },
     ];
 
     return (
