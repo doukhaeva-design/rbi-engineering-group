@@ -10,8 +10,8 @@
 /* Default Grid (for Competencies Page) */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 /* Split Layout (for Home Page "Why Choose Us") */
@@ -44,68 +44,48 @@
 
 .item {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    background: #fff;
-    border: 1px solid rgba(47, 93, 159, 0.09);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    background: #f8f9fb;
     border-radius: 16px;
-    padding: 20px 24px;
+    padding: 32px 24px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .iconWrapper {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: rgba(47, 93, 159, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: all 0.3s ease;
 }
 
 @media (hover: hover) {
     .item:hover {
-        box-shadow: 0 8px 28px rgba(47, 93, 159, 0.1);
-        transform: translateY(-2px);
-    }
-
-    .item:hover .iconWrapper {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
         transform: translateY(-3px);
-        background: rgba(47, 93, 159, 0.14);
     }
 }
-
-/* Split layout icon */
-.splitLayout .iconWrapper {
-    width: 52px;
-    height: 52px;
-    transform: none !important;
-}
-
 
 .icon {
-    width: 28px;
-    height: 28px;
+    width: 52px;
+    height: 52px;
     color: var(--primary-color);
     flex-shrink: 0;
 }
 
 .compTitle {
-    font-size: 20px;
-    /* Slightly larger */
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 4px;
     color: var(--text-main);
     font-weight: 700;
-    letter-spacing: 0.01em;
 }
 
 .compDesc {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
     color: var(--text-secondary);
-    max-width: 480px;
 }
 
 @media (max-width: 968px) {
@@ -127,32 +107,31 @@
 
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
     .item {
-        gap: 14px;
-        align-items: flex-start;
-        padding: 16px 18px;
-    }
-
-    .iconWrapper {
-        width: 48px;
-        height: 48px;
+        padding: 24px 16px;
+        gap: 12px;
     }
 
     .icon {
-        width: 24px;
-        height: 24px;
+        width: 40px;
+        height: 40px;
     }
 
     .compTitle {
-        font-size: 18px;
-        margin-bottom: 4px;
+        font-size: 16px;
     }
 
     .compDesc {
-        font-size: 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 }

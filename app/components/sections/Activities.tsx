@@ -46,6 +46,7 @@ export default function Activities() {
         <section className={`section ${styles.activitiesSection}`} id="services">
             <div className={`container`}>
                 <RevealOnScroll>
+                    <p className="eyebrow">{t('activities.eyebrow')}</p>
                     <h2 className={styles.sectionTitle}>{t('activities.title')}</h2>
                     <p className={styles.sectionDescription}>{t('activities.desc')}</p>
                 </RevealOnScroll>

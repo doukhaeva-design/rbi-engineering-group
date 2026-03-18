@@ -59,5 +59,28 @@ UI-элементы:
 - Мобильная адаптация обязательна при любом изменении дизайна
 - Не дублировать стили — сначала проверить есть ли нужная переменная
 
+## Иконки — ВАЖНО
+- Библиотека: `@tabler/icons-react` — штриховые, `stroke={1.5}`
+- НЕ использовать Lucide для карточек с контентом — только Tabler
+- Lucide допустим только для UI-элементов (кнопки, стрелки, мелкие утилитарные иконки в Hero)
+- Цвет иконок: `var(--primary-color)` (#2F5D9F) — не менять на другие цвета без причины
+
+### Текущие иконки KeyCompetencies (`KeyCompetencies.tsx`):
+- Опыт и масштаб → `IconMountain`
+- Профессиональная команда → `IconUsersGroup`
+- Техническая база → `IconTruck`
+- Специализация на модулях → `IconBuildingFactory2`
+- Партнёрская сеть → `IconHeartHandshake`
+- Документы и подтверждения → `IconRosetteDiscountCheck`
+
+### Текущие иконки WhereUsed (`WhereUsed.tsx`):
+- Посты охраны / КПП → `IconShieldCheck`
+- Диспетчерские и технические помещения → `IconDeviceDesktopCog`
+- Заводы → `IconBuildingFactory2`
+- Ветровые электростанции → `IconWindmill`
+- Школы / образование → `IconSchool`
+- Военные объекты → `IconSword`
+- Медицина → `IconStethoscope`
+
 ## GitHub
 - НЕ делать `git push` и `git commit` без явной просьбы

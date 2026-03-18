@@ -1,8 +1,8 @@
 .ctaSection {
-    background-color: rgba(47, 93, 159, 0.05);
-    /* Gentle light blue tint */
+    background-color: #0D1B2E;
     padding: 100px 0;
     text-align: center;
+    border-top: none;
 }
 
 .container {
@@ -16,14 +16,14 @@
 
 .title {
     margin-bottom: 24px;
-    color: var(--text-main);
+    color: #ffffff;
 }
 
 .text {
     font-size: 18px;
     margin-bottom: 32px;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
 }
 

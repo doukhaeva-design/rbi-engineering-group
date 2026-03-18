@@ -1,14 +1,31 @@
 .section {
     position: relative;
     background-color: #111827;
-    background: radial-gradient(circle at center top, #1F2937 0%, #111827 80%);
     color: #FFFFFF;
     overflow: hidden;
+}
+
+.bgPhoto {
+    position: absolute;
+    inset: 0;
+    background-image: url('/ModulnieSoorujeniya.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.bgOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.98);
+    z-index: 1;
 }
 
 .container {
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
 .content {
