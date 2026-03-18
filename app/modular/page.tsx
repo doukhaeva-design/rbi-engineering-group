@@ -34,10 +34,12 @@ export default function ModularPage() {
 
             {/* Hero */}
             <section className={styles.hero}>
+                <div className={styles.heroBg} />
+                <div className={styles.heroOverlay} />
                 <div className={`container ${styles.wrapper}`} style={{ position: 'relative' }}>
-                    <BackButton />
+                    <BackButton style={{ color: 'white' }} />
                 </div>
-                <div className="container">
+                <div className={`container ${styles.heroContent}`}>
                     <h1 className={styles.heroTitle}>{t("modular_page.title")}</h1>
                     <p className={styles.heroText}>
                         {t("modular_page.subtitle")}
