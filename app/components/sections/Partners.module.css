@@ -40,12 +40,6 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
 }
 
-.logoWrapper:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-}
-
 .logoImage {
     padding: 20px;
     width: 100%;
@@ -54,8 +48,16 @@
     transition: transform 0.3s ease;
 }
 
-.logoWrapper:hover .logoImage {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .logoWrapper:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    }
+
+    .logoWrapper:hover .logoImage {
+        transform: scale(1.05);
+    }
 }
 
 /* Customers Section */
@@ -81,10 +83,12 @@
     min-height: 140px;
 }
 
-.customerCard:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+@media (hover: hover) {
+    .customerCard:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
 }
 
 .customerDecoration {

@@ -25,11 +25,12 @@
     /* Stretch to fill grid row height */
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    /* Softer light shadow */
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary-color);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
 }
 
 .imagePlaceholder {
@@ -57,8 +58,10 @@
     transition: transform 0.8s ease;
 }
 
-.card:hover .imagePlaceholder::after {
-    transform: translateX(100%);
+@media (hover: hover) {
+    .card:hover .imagePlaceholder::after {
+        transform: translateX(100%);
+    }
 }
 
 .content {

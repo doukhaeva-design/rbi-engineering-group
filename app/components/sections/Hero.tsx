@@ -44,15 +44,21 @@ export default function Hero() {
                 </p>
                 <div className={styles.trustLine}>
                     <div className={styles.trustItem}>
-                        <Clock className={styles.trustIcon} />
+                        <div className={styles.iconPulseWrapper}>
+                            <Clock className={styles.trustIcon} />
+                        </div>
                         <span>{t('hero.trust.years')}</span>
                     </div>
                     <div className={styles.trustItem}>
-                        <CheckCircle2 className={styles.trustIcon} />
+                        <div className={styles.iconPulseWrapper}>
+                            <CheckCircle2 className={styles.trustIcon} />
+                        </div>
                         <span>{t('hero.trust.projects')}</span>
                     </div>
                     <div className={styles.trustItem}>
-                        <ShieldCheck className={styles.trustIcon} />
+                        <div className={styles.iconPulseWrapper}>
+                            <ShieldCheck className={styles.trustIcon} />
+                        </div>
                         <span>{t('hero.trust.license')}</span>
                     </div>
                 </div>

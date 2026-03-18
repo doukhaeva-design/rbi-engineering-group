@@ -170,6 +170,55 @@
     height: 18px;
     color: var(--primary-color);
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* === RADAR PULSE === */
+@keyframes radarPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.4;
+    }
+    40% {
+        transform: scale(2.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(2.8);
+        opacity: 0;
+    }
+}
+
+.iconPulseWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.iconPulseWrapper::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(47, 93, 159, 0.35);
+    opacity: 0;
+    animation: radarPulse 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s backwards infinite;
+    pointer-events: none;
+}
+
+.trustItem:nth-child(2) .iconPulseWrapper::before {
+    animation-delay: 4.3s;
+}
+
+.trustItem:nth-child(3) .iconPulseWrapper::before {
+    animation-delay: 6.6s;
 }
 
 .mobileBreak {

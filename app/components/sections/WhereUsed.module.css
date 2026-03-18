@@ -55,15 +55,47 @@
     flex-shrink: 0;
     width: 56px;
     height: 56px;
-    border-radius: 8px;
-    background: transparent;
-    /* Very light orange tint */
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2F5D9F 0%, #1a3d75 100%);
+    box-shadow: 0 4px 14px rgba(47, 93, 159, 0.30);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gold accent dot */
+.iconWrapper::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #EAA52F;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(234, 165, 47, 0.5);
+    transition: transform 0.3s ease;
 }
 
 .icon {
-    width: 32px;
-    height: 32px;
-    /* color: #EAA52F; - Removed to allow SVG own colors */
+    width: 26px;
+    height: 26px;
+    color: #ffffff;
+}
+
+@media (hover: hover) {
+    .card:hover .iconWrapper {
+        transform: scale(1.1) translateY(-2px);
+        box-shadow: 0 10px 28px rgba(47, 93, 159, 0.35);
+    }
+
+    .card:hover .iconWrapper::after {
+        transform: scale(1.2);
+    }
+
+    .card:hover .icon {
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+    }
 }
 
 .text {
@@ -84,9 +116,9 @@
     }
 
     .card {
-        padding: 16px 0;
+        padding: 12px 0;
         min-height: auto;
-        gap: 16px;
+        gap: 14px;
     }
 
     /* Restore border for the second to last item on mobile (since it's a single column) */
@@ -95,13 +127,14 @@
     }
 
     .iconWrapper {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
     }
 
-    .iconWrapper svg {
-        width: 24px;
-        height: 24px;
+    .icon {
+        width: 18px;
+        height: 18px;
     }
 
     .text {
