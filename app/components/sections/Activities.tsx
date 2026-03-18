@@ -53,7 +53,7 @@ export default function Activities() {
                 <div className={styles.gridContainer}>
                     <div className={styles.grid}>
                         {items.map((item, index) => (
-                            <RevealOnScroll key={index} delay={index * 0.1} className={styles.cardWrapper}>
+                            <RevealOnScroll key={index} delay={index * 0.08} className={styles.cardWrapper}>
                                 <div className={styles.card}>
                                     <div className={styles.cardContent}>
                                         <span className={styles.cardNumber}>0{index + 1}</span>
@@ -65,7 +65,7 @@ export default function Activities() {
                                             src={item.image}
                                             alt={item.title}
                                             fill
-                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            sizes="(max-width: 768px) 100vw, 40vw"
                                             className={styles.sketchImage}
                                         />
                                     </div>
