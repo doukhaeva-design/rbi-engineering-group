@@ -56,10 +56,12 @@
     /* Stretch to fill grid row height */
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-    border-color: var(--primary-color);
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        border-color: var(--primary-color);
+    }
 }
 
 .cardContent {
