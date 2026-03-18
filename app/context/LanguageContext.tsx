@@ -66,7 +66,7 @@ const translations: Translations = {
         "modular.benefit2.desc": "Работает в любых погодных условиях",
         "modular.benefit3.title": "Мобильно",
         "modular.benefit3.desc": "Легко перевезти на новое место",
-        "modular.button": "Подробнее о модульных решениях",
+        "modular.button": "Подробнее",
 
         "competencies.eyebrow": "Преимущества",
         "competencies.title": "Ключевые компетенции",
@@ -331,7 +331,7 @@ const translations: Translations = {
         "modular.benefit2.desc": "Works in any weather conditions",
         "modular.benefit3.title": "Mobile",
         "modular.benefit3.desc": "Easy to transport to a new location",
-        "modular.button": "More about modular solutions",
+        "modular.button": "Learn more",
 
         "competencies.eyebrow": "Why Us",
         "competencies.title": "Key Competencies",

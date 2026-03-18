@@ -138,6 +138,24 @@
     transform: translateY(0);
 }
 
+/* White button for dark backgrounds */
+.white {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+@media (hover: hover) {
+    .white:hover {
+        background: rgba(255, 255, 255, 0.16);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+    }
+}
+
 /* Responsive Button: Outline on Desktop, Solid on Mobile */
 .filled {
     background: transparent;

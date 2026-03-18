@@ -72,7 +72,7 @@ export default function ModularPreview() {
                     </div>
 
                     <RevealOnScroll delay={0.4}>
-                        <div style={{ marginTop: '40px' }}>
+                        <div style={{ marginTop: '40px' }} className={styles.buttonWrapper}>
                             <Button href="/modular" variant="filled">{t('modular.button')}</Button>
                         </div>
                     </RevealOnScroll>
