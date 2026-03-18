@@ -219,6 +219,9 @@ const translations: Translations = {
         "modular_page.design.colors.val": "RAL 9003 (белый), другие цвета по RAL-карте, возможна отделка «под дерево»",
         "modular_page.design.frame": "Каркас:",
         "modular_page.design.frame.val": "RAL 7004 (серый) или другие варианты",
+        "modular_page.specs.title": "УСТРОЙСТВО МОДУЛЯ",
+        "modular_page.specs.col3.title": "ДИЗАЙН",
+        "modular_page.specs.col4.title": "ПРИМЕНЕНИЕ",
 
         "licenses_page.title": "ЛИЦЕНЗИИ И ДОКУМЕНТЫ",
         "licenses_page.doc.title": "ГОСУДАРСТВЕННАЯ ЛИЦЕНЗИЯ НА СТРОИТЕЛЬНО-МОНТАЖНЫЕ РАБОТЫ (I КАТЕГОРИЯ)",
@@ -484,6 +487,9 @@ const translations: Translations = {
         "modular_page.design.colors.val": "RAL 9003 (white), other colors by RAL card, wood-like finish available",
         "modular_page.design.frame": "Frame:",
         "modular_page.design.frame.val": "RAL 7004 (grey) or other options",
+        "modular_page.specs.title": "MODULE SPECIFICATIONS",
+        "modular_page.specs.col3.title": "DESIGN",
+        "modular_page.specs.col4.title": "APPLICATION",
 
         "licenses_page.title": "LICENSES AND DOCUMENTS",
         "licenses_page.doc.title": "STATE LICENSE FOR CONSTRUCTION AND INSTALLATION WORKS (CATEGORY I)",
