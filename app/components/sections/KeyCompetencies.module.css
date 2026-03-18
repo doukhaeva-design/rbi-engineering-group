@@ -53,11 +53,6 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.item:hover {
-    box-shadow: 0 8px 28px rgba(47, 93, 159, 0.1);
-    transform: translateY(-2px);
-}
-
 .iconWrapper {
     width: 60px;
     height: 60px;
@@ -70,12 +65,19 @@
     transition: all 0.3s ease;
 }
 
-.item:hover .iconWrapper {
-    transform: translateY(-3px);
-    background: rgba(47, 93, 159, 0.14);
+@media (hover: hover) {
+    .item:hover {
+        box-shadow: 0 8px 28px rgba(47, 93, 159, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .item:hover .iconWrapper {
+        transform: translateY(-3px);
+        background: rgba(47, 93, 159, 0.14);
+    }
 }
 
-/* Split layout icon — same gold style */
+/* Split layout icon */
 .splitLayout .iconWrapper {
     width: 52px;
     height: 52px;
