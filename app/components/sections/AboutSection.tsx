@@ -18,7 +18,7 @@ export default function AboutSection() {
 
     const stats: StatItem[] = [
         { label: t("about.stat.years"), value: 13, suffix: "+", isDominant: true },
-        { label: t("about.stat.projects"), value: 50, suffix: "+", isDominant: true },
+        { label: t("about.stat.projects"), value: 60, suffix: "+", isDominant: true },
         { label: t("about.stat.employees"), value: 50, suffix: "+" },
         { label: t("about.stat.machinery"), value: 53, suffix: "" },
         { label: t("about.stat.license"), value: 1, suffix: t("about.stat.license.suffix") }
