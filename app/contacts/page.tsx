@@ -66,8 +66,7 @@ export default function ContactsPage() {
         const text = `Здравствуйте! Хочу оставить заявку с сайта:\n\nИмя: ${formData.name || '-'}\nТелефон: ${formData.phone || '-'}\nEmail: ${formData.email || '-'}\nУслуга: ${translatedPurpose || 'Не указана'}\n\nСообщение:\n${formData.message || '-'}`;
 
         const encodedText = encodeURIComponent(text);
-        // Note: Temporarily using test number +33768770697
-        const url = `https://wa.me/33768770697?text=${encodedText}`;
+        const url = `https://wa.me/77025555169?text=${encodedText}`;
         window.open(url, '_blank');
     };
 
