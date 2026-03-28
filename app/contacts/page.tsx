@@ -203,7 +203,7 @@ export default function ContactsPage() {
                                 </div>
 
                                 <div className={styles.submitGroup}>
-                                    <Button type="submit" variant="outline">
+                                    <Button type="submit" variant="blue">
                                         {status === 'loading' ? t("contacts_page.form.sending") : t("contacts_page.form.submit.email")}
                                     </Button>
                                 </div>
